@@ -1,15 +1,14 @@
 <template>
-  <button
-    class="bg-[#FAB705] text-white px-10 py-3 rounded-full transition-colors duration-150 hover:bg-yellow-500"
-  >
-    <slot>
-      {{ title }}
-    </slot>
+  <button class="text-base text-white py-3 px-8 rounded-full" :class="customClass">
+    <slot>{{ title }}</slot>
   </button>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   title?: string;
+  bgClass?: "bg-primary" | "bg-secondary";
 }>();
+
+const customClass = computed(() => props.bgClass || "bg-primary");
 </script>

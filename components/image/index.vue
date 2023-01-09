@@ -1,5 +1,11 @@
 <template>
-  <NImage :src="imageUrl" :alt="aboutUs" class="rounded shadow-md" />
+  <NImage
+    class="rounded transition-transform duration-150 shadow-md"
+    :preview-disabled="isPreviewable"
+    :src="src"
+    :alt="aboutUs"
+    :class="dynamicClass"
+  />
 </template>
 
 <script setup lang="ts">
@@ -8,12 +14,21 @@ import { NImage } from "naive-ui";
 const props = defineProps<{
   src: string;
   alt?: string;
+  isPreviewable?: boolean;
 }>();
 
+const isPreviewable = computed(() => (!props.isPreviewable ? true : false));
+const dynamicClass = computed(() => {
+  let customClass = "";
+
+  if (props.isPreviewable) {
+    customClass += "hover:scale-105 hover:shadow-lg";
+  }
+
+  return customClass;
+});
 const aboutUs = computed(() => {
   const imageLastName = props.src.split("/")[props.src.split("/").length - 1];
   return props.alt || imageLastName;
 });
-
-const imageUrl = computed(() => require(props.src));
 </script>

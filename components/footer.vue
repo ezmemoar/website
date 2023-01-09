@@ -1,8 +1,8 @@
 <template>
-  <WrapperSection class="bg-[#1D5796]">
+  <WrapperSection class="bg-primary">
     <div class="flex justify-around">
       <div class="w-[33%]">
-        <img src="~/assets/logo.svg" class="w-[50%]" />
+        <img src="/logo.svg" class="w-[50%]" />
         <div class="mt-10 text-white">
           <div class="font-bold">Kantor Jakarta</div>
           <div class="mt-2">
@@ -16,59 +16,29 @@
         </div>
         <div class="mt-10 flex space-x-3">
           <a href="#">
-            <NIconWrapper
-              :size="25"
-              :border-radius="9999"
-              class="bg-white hover:bg-white/[.6] p-5 text-center text-[#1D5796]"
-            >
-              <NIcon :size="25">
-                <LogoFacebook />
-              </NIcon>
-            </NIconWrapper>
+            <IconRoundWrapper>
+              <LogoFacebook />
+            </IconRoundWrapper>
           </a>
           <a href="#">
-            <NIconWrapper
-              :size="25"
-              :border-radius="9999"
-              class="bg-white hover:bg-white/[.6] p-5 text-center text-[#1D5796]"
-            >
-              <NIcon :size="25">
-                <LogoTwitter />
-              </NIcon>
-            </NIconWrapper>
+            <IconRoundWrapper>
+              <LogoTwitter />
+            </IconRoundWrapper>
           </a>
           <a href="#">
-            <NIconWrapper
-              :size="25"
-              :border-radius="9999"
-              class="bg-white hover:bg-white/[.6] p-5 text-center text-[#1D5796]"
-            >
-              <NIcon :size="25">
-                <LogoLinkedin />
-              </NIcon>
-            </NIconWrapper>
+            <IconRoundWrapper>
+              <LogoLinkedin />
+            </IconRoundWrapper>
           </a>
           <a href="#">
-            <NIconWrapper
-              :size="25"
-              :border-radius="9999"
-              class="bg-white hover:bg-white/[.6] p-5 text-center text-[#1D5796]"
-            >
-              <NIcon :size="25">
-                <LogoYoutube />
-              </NIcon>
-            </NIconWrapper>
+            <IconRoundWrapper>
+              <LogoYoutube />
+            </IconRoundWrapper>
           </a>
           <a href="#">
-            <NIconWrapper
-              :size="25"
-              :border-radius="9999"
-              class="bg-white hover:bg-white/[.6] p-5 text-center text-[#1D5796]"
-            >
-              <NIcon :size="25">
-                <LogoInstagram />
-              </NIcon>
-            </NIconWrapper>
+            <IconRoundWrapper>
+              <LogoInstagram />
+            </IconRoundWrapper>
           </a>
         </div>
       </div>

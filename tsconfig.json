@@ -1,4 +1,14 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "~/enums": ["enums"],
+      "~/enums/*": ["enums/*"],
+      "~/interfaces": ["interfaces"],
+      "~/interfaces/*": ["interfaces/*"],
+      "~/languages": ["languages"],
+      "~/languages/*": ["languages/*"]
+    }
+  }
 }

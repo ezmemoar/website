@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#1D5796] text-center text-white text-lg p-5 rounded font-bold">
+  <div class="bg-primary text-center text-white text-lg p-5 rounded font-bold">
     "{{ quote }}"
     <div class="mt-3 italic">
       - {{ creator }}
