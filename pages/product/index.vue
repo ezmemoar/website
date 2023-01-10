@@ -5,7 +5,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div class="bg-primary bg-opacity-90 min-h-screen overflow-x-hidden">
+  <div class="bg-primary bg-opacity-80 min-h-screen overflow-x-hidden">
     <div class="py-20">
       <div class="absolute z-[-1] w-full overflow-x-hidden" >
         <!-- <img src="gallery/slice1.png" alt="" class="min-w-full h-min-screen"> -->
@@ -18,36 +18,36 @@ onMounted(()=>{
           <div class="bg-gray-200 rounded-xl shadow">
             <img src="gallery/mommy-vegetable.png" alt="" class="w-full rounded-xl">
             <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg font-sans mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
-              <small class="font-sans font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
+              <p class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
             </div>
           </div>
           <div class="bg-gray-200 rounded-xl shadow">
             <img src="gallery/mommy-vegetable.png" alt="" class="w-full rounded-xl">
             <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg font-sans mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
-              <small class="font-sans font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
+              <p class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
             </div>
           </div>
           <div class="bg-gray-200 rounded-xl shadow">
             <img src="gallery/mommy-vegetable.png" alt="" class="w-full rounded-xl">
             <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg font-sans mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
-              <small class="font-sans font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
+              <p class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
             </div>
           </div>
           <div class="bg-gray-200 rounded-xl shadow">
             <img src="gallery/mommy-vegetable.png" alt="" class="w-full rounded-xl">
             <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg font-sans mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
-              <small class="font-sans font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
+              <p class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
             </div>
           </div>
           <div class="bg-gray-200 rounded-xl shadow">
             <img src="gallery/mommy-vegetable.png" alt="" class="w-full rounded-xl">
             <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg font-sans mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
-              <small class="font-sans font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
+              <p class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-bold text-gray-500 font-[Poppins]">08 Desember 2022</small>
             </div>
           </div> 
            
