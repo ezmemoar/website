@@ -5,3 +5,7 @@
 .button {
   @apply hover:bg-none;
 }
+@font-face{
+  font-family: 'Poppins';
+  src: url('./Poppins/Poppins-Regular.ttf');
+}
