@@ -1,32 +1,15 @@
-<script lang="ts" setup></script>
-
 <template>
   <div>
-    <div
-      class="bg-[url(/gallery/mommy-vegetable-2x.jpg)] w-full h-screen bg-no-repeat bg-cover absolute z-[-1]"
-    ></div>
-    <div class="w-full h-screen bg-black opacity-60 absolute z-[-1]"></div>
-    <div class="w-full h-screen z-50 py-32 flex justify-center items-center">
-      <div class="text-center">
-        <button
-          class="rounded-full border-2 font-[Poppins] border-white py-1 px-5 text-lg text-gray-100 font-semibold"
-        >
-          Articles
-        </button>
-        <br />
-        <br />
-        <p class="text-gray-100 text-3xl font-semibold font-[Poppins]">
-          11 Desember 2022
-        </p>
-
-        <br />
-        <p
-          class="text-gray-100 text-3xl font-semibold font-[Poppins] w-6/12 text-center m-auto"
-        >
-          Upaya pengendalian hama dan Penyakit Tanaman Dalam Bidang Pertanian
-        </p>
+    <WrapperSection>
+      <div class="mt-5 flex justify-between">
+        <div class="w-[40%]">
+          <Image src="/about-us.jpg" />
+        </div>
+        <div class="w-[50%] text-3xl font-bold">
+          ALPUKAT MIKI ADALAH ALPUKAT YANG TELAH DIPASARKAN OLEH ALL FRESH
+        </div>
       </div>
-    </div>
+    </WrapperSection>
 
     <WrapperReadSection>
       <p>

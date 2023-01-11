@@ -8,9 +8,10 @@
       </NuxtLink>
       <div class="ml-5 flex">
         <NavbarItem to="/about-us" :title="t('aboutUs')" />
-        <NavbarItem to="/" :title="t('business')" />
-        <NavbarItem to="/" :title="t('sustainability')" />
-        <NavbarItem to="/" :title="t('mediaAndPublication')" />
+        <NavbarItem to="/csr" :title="t('csr')" />
+        <NavbarItem to="/product" :title="t('product')" />
+        <NavbarItem to="/gallery" :title="t('gallery')" />
+        <NavbarItem to="/contact-us" :title="t('contactUs')" />
       </div>
     </div>
     <div class="flex items-center">
@@ -38,26 +39,19 @@ const { t } = useI18n({
 
 const { locale } = useI18n();
 const languageOption = ["id", "en"];
-
-const scrollPosition = ref(0);
-
-onMounted(() => {
-  window.addEventListener(
-    "scroll",
-    () => (scrollPosition.value = window.scrollY)
-  );
-});
 </script>
 
 <i18n lang="yaml">
 en:
   aboutUs: "About Us"
-  business: "Business"
-  sustainability: "Sustainability"
-  mediaAndPublication: "Media & Publication"
+  csr: "CSR"
+  product: "Product"
+  gallery: "Gallery"
+  contactUs: "Contact Us"
 id:
   aboutUs: "Tentang Kami"
-  business: "Bisnis"
-  sustainability: "Keberlanjutan"
-  mediaAndPublication: "Media & Publikasi"
+  csr: "CSR"
+  product: "Produk"
+  gallery: "Galeri"
+  contactUs: "Kontak Kami"
 </i18n>
