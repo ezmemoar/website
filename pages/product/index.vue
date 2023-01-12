@@ -15,9 +15,13 @@
               class="w-full rounded-xl"
             />
             <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
+              <NuxtLink
+                to="/product/detail"
+                class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
+                <p>
+                  Pisang
+                </p>
+            </NuxtLink>
               <small class="font-bold text-gray-500 font-[Poppins]"
                 >PT Indonesia</small
               >

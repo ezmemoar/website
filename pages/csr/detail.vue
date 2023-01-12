@@ -3,8 +3,7 @@
 <template>
   <div>
     <div
-      class="bg-[url(/gallery/mommy-vegetable-2x.jpg)] w-full h-screen bg-no-repeat bg-cover absolute z-[-1]"
-    ></div>
+      class="bg-[url(/gallery/mommy-vegetable-2x.jpg)] w-full h-screen bg-no-repeat bg-cover absolute z-[-1]"></div>
     <div class="w-full h-screen bg-black opacity-60 absolute z-[-1]"></div>
     <div class="w-full h-screen z-50 py-32 flex justify-center items-center">
       <div class="text-center">
