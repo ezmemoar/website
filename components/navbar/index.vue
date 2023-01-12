@@ -1,17 +1,17 @@
 <template>
-  <div
-    class="w-full flex justify-between px-36 py-2 fixed transition-colors duration-150 z-50"
-    :class="scrollClass"
+  <nav
+    class="w-full flex justify-between px-36 py-2 fixed transition-colors duration-150 z-50 bg-white text-black"
   >
     <div class="flex items-center">
-      <div>
+      <NuxtLink to="/">
         <img src="/logo.svg" alt="logo" class="w-32" />
-      </div>
+      </NuxtLink>
       <div class="ml-5 flex">
-        <NavbarItem :class="itemClass" :title="t('aboutUs')" />
-        <NavbarItem :class="itemClass" :title="t('business')" />
-        <NavbarItem :class="itemClass" :title="t('sustainability')" />
-        <NavbarItem :class="itemClass" :title="t('mediaAndPublication')" />
+        <NavbarItem to="/about-us" :title="t('aboutUs')" />
+        <NavbarItem to="/csr" :title="t('csr')" />
+        <NavbarItem to="/product" :title="t('product')" />
+        <NavbarItem to="/gallery" :title="t('gallery')" />
+        <NavbarItem to="/contact-us" :title="t('contactUs')" />
       </div>
     </div>
     <div class="flex items-center">
@@ -20,13 +20,13 @@
           {{ val }}
         </option>
       </select>
-      <NavbarItem :class="itemClass">
+      <NavbarItem to="#">
         <NIcon size="20" class="translate-y-1">
           <Search />
         </NIcon>
       </NavbarItem>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -39,36 +39,19 @@ const { t } = useI18n({
 
 const { locale } = useI18n();
 const languageOption = ["id", "en"];
-
-const scrollPosition = ref(0);
-
-const scrollClass = computed(() =>
-  scrollPosition.value > 0 ? "bg-white text-black" : "text-white"
-);
-
-const itemClass = computed(() =>
-  scrollPosition.value > 0
-    ? "p-5 transition-colors duration-150 text-black hover:underline"
-    : "p-5 transition-colors duration-150 text-white hover:underline"
-);
-
-onMounted(() => {
-  window.addEventListener(
-    "scroll",
-    () => (scrollPosition.value = window.scrollY)
-  );
-});
 </script>
 
 <i18n lang="yaml">
 en:
   aboutUs: "About Us"
-  business: "Business"
-  sustainability: "Sustainability"
-  mediaAndPublication: "Media & Publication"
+  csr: "CSR"
+  product: "Product"
+  gallery: "Gallery"
+  contactUs: "Contact Us"
 id:
   aboutUs: "Tentang Kami"
-  business: "Bisnis"
-  sustainability: "Keberlanjutan"
-  mediaAndPublication: "Media & Publikasi"
+  csr: "CSR"
+  product: "Produk"
+  gallery: "Galeri"
+  contactUs: "Kontak Kami"
 </i18n>
