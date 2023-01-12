@@ -1,7 +1,7 @@
 <template>
   <main>
     <section
-      class="w-full py-48 bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat"
+      class="w-full py-44 bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat"
     >
       <div class="px-36">
         <div class="text-6xl font-bold text-white">
