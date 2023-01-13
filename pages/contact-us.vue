@@ -83,11 +83,12 @@
         </div>
       </div>
     </div>
-  </div>
-  <br />
-  <div>
+    <div>
+      <br>
+      <br>
     <iframe title="location" width="100%" height="300" id="gmap_canvas"
       src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  </div>
   </div>
 </template>
   
