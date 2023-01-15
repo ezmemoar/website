@@ -1,15 +1,13 @@
 <template>
-  <div class="px-36 py-36">
+  <WrapperSection class="px-36 py-20">
     <div class="text-6xl font-bold">
       {{ t("aboutUsLabel") }}
     </div>
-    <div class="w-3/4">
+    <div class="mt-8">
       <div class="mt-8">
-        <div class="mt-8">
-          <p>
-            {{ t("aboutUsDesc") }}
-          </p>
-        </div>
+        <p>
+          {{ t("aboutUsDesc") }}
+        </p>
       </div>
     </div>
     <div class="mt-20 flex gap-10 justify-between">
@@ -117,17 +115,16 @@
       </div>
     </div>
     <div>
-
-    <div class="mt-20">
-      <iframe
-        title="location"
-        width="100%"
-        height="300"
-        src="https://maps.google.com/maps?q=Kirana%20Boutique%20Office,%20Kirana%20Avenue%20III%20Blok%20E%201%20Nomor%203.%20Kelapa%20Gading,%20Jakarta%20Utara%20%E2%80%93%2014240&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      ></iframe>
+      <div class="mt-20">
+        <iframe
+          title="location"
+          width="100%"
+          height="300"
+          src="https://maps.google.com/maps?q=Kirana%20Boutique%20Office,%20Kirana%20Avenue%20III%20Blok%20E%201%20Nomor%203.%20Kelapa%20Gading,%20Jakarta%20Utara%20%E2%80%93%2014240&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+      </div>
     </div>
-    </div>
-  </div>
+  </WrapperSection>
 </template>
 
 <script setup lang="ts">
