@@ -1,8 +1,8 @@
 <template>
   <WrapperSection class="bg-primary">
-    <div class="flex justify-around">
+    <div class="w-full text-white flex justify-evenly">
       <div class="w-[33%]">
-        <img src="/logo.svg" class="w-[50%]" />
+        <img src="/logo-white.svg" class="w-52" />
         <div class="mt-10 text-white">
           <div class="font-bold">Kantor Jakarta</div>
           <div class="mt-2">
@@ -43,43 +43,28 @@
         </div>
       </div>
 
-      <div class="w-[67%] text-white grid grid-cols-2 gap-10">
-        <div>
-          <div class="font-bold">Bisnis Kami</div>
-          <div class="mt-2 flex flex-col">
-            <a href="#">Perkebunan</a>
-            <a href="#">Pabrik</a>
-            <a href="#">Produk</a>
-            <a href="#">Penelitian dan Pengembangan</a>
-          </div>
+      <div class="mt-5 w-[33%]">
+        <div class="font-bold">Navigation Menu</div>
+        <div class="mt-2 flex flex-col">
+          <NuxtLink to="/about-us">Tentang Kami</NuxtLink>
+          <NuxtLink to="/csr">CSR</NuxtLink>
+          <NuxtLink to="/product">Produk</NuxtLink>
+          <NuxtLink to="/gallery">Galeri</NuxtLink>
+          <NuxtLink to="/contact-us">Kontak Kami</NuxtLink>
         </div>
+      </div>
 
-        <div>
-          <div class="font-bold">Keberlanjutan</div>
-          <div class="mt-2 flex flex-col">
-            <a href="#">Kebijakan Keberlanjutan</a>
-            <a href="#">Laporan Keberlanjutan</a>
-            <a href="#">Standar & Sertifikasi</a>
-            <a href="#">Program & inisiatif</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="font-bold">Media & Publikasi</div>
-          <div class="mt-2 flex flex-col">
-            <a href="#">Siaran Pers</a>
-            <a href="#">Berita</a>
-            <a href="#">Artikel</a>
-            <a href="#">Publikasi</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="font-bold">Lainnya</div>
-          <div class="mt-2 flex flex-col">
-            <a href="#">Policy</a>
-            <a href="#">Privacy</a>
-          </div>
+      <div class="mt-5 w-[33%]">
+        <div class="font-bold">Contact Information</div>
+        <div class="mt-2 flex flex-col">
+          <p>
+            Kirana Boutique Office, Kirana Avenue III Blok E 1 Nomor 3. Kelapa
+            Gading, Jakarta Utara – 14240. Phone: (021) 29365166
+          </p>
+          <p>
+            Email:
+            <a href="#">loremipsum@gmail.com</a>
+          </p>
         </div>
       </div>
     </div>
@@ -104,5 +89,4 @@ import {
   LogoYoutube,
   LogoInstagram,
 } from "@vicons/ionicons5";
-import { NIconWrapper, NIcon } from "naive-ui";
 </script>

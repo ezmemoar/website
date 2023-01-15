@@ -1,13 +1,19 @@
 <template>
   <NConfigProvider :theme-overrides="themeOverrides">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <NNotificationProvider placement="bottom">
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </NNotificationProvider>
   </NConfigProvider>
 </template>
 
 <script setup lang="ts">
-import { NConfigProvider, GlobalThemeOverrides } from "naive-ui";
+import {
+  NConfigProvider,
+  GlobalThemeOverrides,
+  NNotificationProvider,
+} from "naive-ui";
 import { COLORS } from "./enums/colors";
 
 const themeOverrides: GlobalThemeOverrides = {
@@ -16,6 +22,6 @@ const themeOverrides: GlobalThemeOverrides = {
   },
   Button: {
     colorPrimary: COLORS.PRIMARY,
-  }
+  },
 };
 </script>

@@ -7,39 +7,39 @@
         </h1>
         <div class="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           <div
-            class="bg-gray-200 rounded-xl shadow"
             v-for="(gallery, index) in galleries"
             :key="index"
             @click="showContent(index)"
+            class="cursor-pointer rounded"
           >
-            <img :src="gallery.img" alt="" class="w-full rounded-xl" />
-            <div class="px-5 py-2">
-              <p class="font-bold text-gray-800 text-lg mb-2">
-                {{ gallery.title }}
-              </p>
-            </div>
+            <Image :src="gallery.img" :alt="gallery.img" is-animated />
           </div>
-
-          <NModal
-            v-model:show="showModal"
-            class="w-3/4"
-            preset="card"
-            transform-origin="center"
-          >
-            <div class="flex justify-between space-x-3">
-              <img class="w-1/2 rounded" src="/gallery/mommy-vegetable.png" />
-              <div class="w-1/2 py-2">
-                <div class="text-lg font-bold">
-                  {{ selectedGallery.title }}
-                </div>
-                <div class="mt-3 text-base overflow-y-auto max-h-52">
-                  {{ selectedGallery.desc }}
-                </div>
+        </div>
+        <NModal
+          v-model:show="showModal"
+          class="w-3/4 pb-5 px-5 pt-1"
+          preset="card"
+          transform-origin="center"
+        >
+          <div class="flex justify-between space-x-3">
+            <img class="w-1/2 rounded" src="/gallery/mommy-vegetable.png" />
+            <div class="w-1/2 py-2">
+              <div class="text-lg font-bold">
+                {{ selectedGallery.title }}
+              </div>
+              <div class="mt-3 text-base overflow-y-auto max-h-52">
+                {{ selectedGallery.desc }}
               </div>
             </div>
-          </NModal>
-        </div>
+          </div>
+        </NModal>
       </div>
+    </div>
+
+    <div class="w-full bg-white">
+      <WrapperSection>
+        
+      </WrapperSection>
     </div>
   </div>
 </template>
