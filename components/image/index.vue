@@ -15,13 +15,14 @@ const props = defineProps<{
   src: string;
   alt?: string;
   isPreviewable?: boolean;
+  isAnimated?: boolean;
 }>();
 
 const isPreviewable = computed(() => (!props.isPreviewable ? true : false));
 const dynamicClass = computed(() => {
   let customClass = "";
 
-  if (props.isPreviewable) {
+  if (props.isPreviewable || props.isAnimated) {
     customClass += "hover:scale-105 hover:shadow-lg";
   }
 

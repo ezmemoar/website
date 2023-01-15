@@ -15,21 +15,19 @@
 
     <WrapperSection>
       <TextSectionLabel :title="t('aboutUsLabel')" />
-      <div class="mt-5 flex justify-between">
+      <div class="mt-10 flex justify-between">
         <div class="w-[50%]">
           <div class="text-3xl font-bold">
             {{ t("aboutUsTitle") }}
           </div>
-          <div class="mt-5">
-            <div class="mt-5">
+          <div class="mt-10">
               <p>
                 {{ t("aboutUsDesc") }}
               </p>
               <p>
                 {{ t("aboutUsDescc") }}
               </p>
-              <Button bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
-            </div>
+              <Button class="mt-10" bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
           </div>
         </div>
         <div class="w-[40%]">
@@ -188,6 +186,10 @@
         </div>
       </div>
     </WrapperSection>
+
+    <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">
+      <WhatsappBubble />
+    </div>
   </main>
 </template>
 
