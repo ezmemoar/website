@@ -50,7 +50,7 @@
             <div
               @click="
                 copyText(
-                  'Kirana Boutique Office, Kirana Avenue III Blok E 1 Nomor 3. Kelapa Gading, Jakarta Utara – 14240.'
+                  'Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang (Happy Garden (Villa)), Kab. Bogor, Leuwiliang, Jawa Barat, Indonesia, 16640'
                 )
               "
               class="flex mb-5 text-gray-500 hover:text-black cursor-pointer"
@@ -63,8 +63,9 @@
               <div>
                 <h1 class="font-bold">Address</h1>
                 <p class="text-base">
-                  Kirana Boutique Office, Kirana Avenue III Blok E 1 Nomor 3.
-                  Kelapa Gading, Jakarta Utara – 14240.
+                  Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang (Happy
+                  Garden (Villa)), Kab. Bogor, Leuwiliang, Jawa Barat,
+                  Indonesia, 16640
                 </p>
               </div>
             </div>
@@ -114,15 +115,13 @@
         </div>
       </div>
     </div>
-    <div>
-      <div class="mt-20">
-        <iframe
-          title="location"
-          width="100%"
-          height="300"
-          src="https://maps.google.com/maps?q=Kirana%20Boutique%20Office,%20Kirana%20Avenue%20III%20Blok%20E%201%20Nomor%203.%20Kelapa%20Gading,%20Jakarta%20Utara%20%E2%80%93%2014240&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        ></iframe>
-      </div>
+    <div class="mt-20">
+      <iframe
+        title="location"
+        width="100%"
+        height="300"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0912202328645!2d106.62632069999997!3d-6.635592800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d765b4cd4279%3A0x95a1bccc0c7fe860!2sHappy%20Sentosa%20Garden%20(area%20Alpukat%20Miki)!5e0!3m2!1sen!2sid!4v1673860609524!5m2!1sen!2sid"
+      ></iframe>
     </div>
   </WrapperSection>
 </template>
