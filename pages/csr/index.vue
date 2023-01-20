@@ -1,31 +1,82 @@
 <template>
-  <div class="bg-primary min-h-screen overflow-x-hidden">
-    <div class="py-20">
+  <div class="min-h-screen overflow-x-hidden bg-[#f1f1f1]">
+    <div class="py-1">
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="px-36 z-50">
-        <h1 class="text-2xl font-bold text-gray-50 my-14 font-[Poppins]">
+        <h1 class="text-3xl font-bold my-10 text-center">
           Corporate social responsibility
         </h1>
-        <div class="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
+        <div class="block pb-20">
+          <div class="flex py-5">
+            <div class="w-4/12">
+              <img
               src="/gallery/mommy-vegetable.png"
               alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 py-2">
-              <NuxtLink
-                to="/csr/detail"
-                class="font-bold text-gray-800 text-lg mb-2 font-[Poppins]"
-                >Upaya pengendalian hama tanaman dalam bidang
-                pertanian</NuxtLink
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >08 Desember 2022</small
-              >
+              class="w-80 shadow-xl"
+              />
+            </div>
+            <div class="px-7 w-8/12">
+              <small class="text-gray-600 font-[Poppins] font-semibold text-xs">
+                8 desember 2023
+              </small>
+              <p class="text-2xl mt-1 font-bold ">Upaya pengendalian hama tanaman dalam bidang pertanian</p>
+              <small class="font-[Poppins] font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</small>
             </div>
           </div>
+          <div class="flex py-5">
+            <div class="w-4/12">
+              <img
+              src="/gallery/gallery-7.jpg"
+              alt=""
+              class="w-80 shadow-xl"
+              />
+            </div>
+            <div class="px-7 w-8/12">
+              <small class="text-gray-600 font-[Poppins] font-semibold text-xs">
+                8 desember 2023
+              </small>
+              <p class="text-2xl mt-1 font-bold ">Kolaborasi antara petani dan peneliti untuk memberikan solusi dalam mengatasi pertanian</p>
+              <small class="font-[Poppins] font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+          </div>
+          <div class="flex py-5">
+            <div class="w-4/12">
+              <img
+              src="/gallery/gallery-8.jpg"
+              alt=""
+              class="w-80 shadow-xl"
+              />
+            </div>
+            <div class="px-7 w-8/12">
+              <small class="text-gray-600 font-[Poppins] font-semibold text-xs">
+                8 desember 2023
+              </small>
+              <p class="text-2xl mt-1 font-bold ">Pemberian pupuk dan irigasi dapat mempengaruhi kualitas hasil panen dari tanaman </p>
+              <small class="font-[Poppins] font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+          </div>
+          <div class="flex py-5">
+            <div class="w-4/12">
+              <img
+              src="/gallery/gallery-9.jpg"
+              alt=""
+              class="w-80 shadow-xl"
+              />
+            </div>
+            <div class="px-7 w-8/12">
+              <small class="text-gray-600 font-[Poppins] font-semibold text-xs">
+                8 desember 2023
+              </small>
+              <p class="text-2xl mt-1 font-bold ">Pertanian adalah sektor ekonomi yang penting bagi keberlangsungan hidup</p>
+              <small class="font-[Poppins] font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</small>
+            </div>
+          </div>
+          
+
         </div>
       </div>
     </div>
