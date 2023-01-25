@@ -1,203 +1,43 @@
 <template>
   <div class="bg-primary min-h-screen overflow-x-hidden">
-    <div class="py-20">
+    <div class="pb-20">
       <div class="absolute z-[-1] w-full overflow-x-hidden">
       </div>
       <div class="px-36 z-50">
         <h1 class="text-2xl font-bold text-gray-50 my-14 font-[Poppins]">
           Product
         </h1>
-        <div class="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
+        <div class="grid gap-16 lg:grid-cols-2 sm:grid-cols-1">
+          <NuxtLink to="/product/category" >
+            <div class="bg-gray-200 rounded-xl shadow">
+              <div class="bg-[url('/gallery/gallery-fruit.jpg')] w-full h-64 bg-center rounded-xl bg-cover ">
+                <div class="pb-10 absolute relative h-full rounded-xl">
+                  <div class="bg-black h-full w-full absolute rounded-xl opacity-60"></div>
+                  <div class="absolute px-5 py-10" style="bottom:0;">
+                    <p class="font-semibold text-white text-xl mb-2 opacity-100">
+                      Produk Tersedia
+                    </p>
+                    <small class="font-medium font-[Poppins] text-white">Contact: (+62) 85871359105</small>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
+          </NuxtLink>
+          <NuxtLink to="/product/category" >
+            <div class="bg-gray-200 rounded-xl shadow">
+              <div class="bg-[url('/gallery/gallery-fruit.jpg')] w-full h-64 bg-center rounded-xl bg-cover ">
+                <div class="pb-10 absolute relative h-full rounded-xl">
+                  <div class="bg-black h-full w-full absolute rounded-xl opacity-60"></div>
+                  <div class="absolute px-5 py-10" style="bottom:0;">
+                    <p class="font-semibold text-white text-xl mb-2 opacity-100">
+                      Produk Tidak Tersedia
+                    </p>
+                    <small class="font-medium font-[Poppins] text-white">Contact: (+62) 85871359105</small>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
-          <div class="bg-gray-200 rounded-xl shadow">
-            <img
-              src="/gallery/mommy-vegetable.png"
-              alt=""
-              class="w-full rounded-xl"
-            />
-            <div class="px-5 pt-2 pb-10">
-              <p class="font-black text-gray-800 text-base mb-2 font-[Poppins]">
-                Pisang
-              </p>
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >PT Indonesia</small
-              >
-              <br />
-              <small class="font-bold text-gray-500 font-[Poppins]"
-                >Total 200 Buah tersisa</small
-              >
-            </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </div>

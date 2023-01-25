@@ -1,102 +1,79 @@
 <template>
-  <div>
+  <div class="bg-primary">
     <WrapperSection>
       <div class="mt-5 flex justify-between">
-        <div class="w-[40%]">
-          <Image src="/about-us.jpg" />
+        <div class="flex-1">
+          <Image src="/gallery/gallery-anggur.jpg" class="rounded-xl"/>
         </div>
-        <div class="w-[50%] text-3xl font-bold">
-          ALPUKAT MIKI ADALAH ALPUKAT YANG TELAH DIPASARKAN OLEH ALL FRESH
+        <div class="flex-1 flex justify-center items-center text-gray-100 pl-10">
+          <div>
+            <div class="text-3xl font-semibold">
+              Anggur Merah
+            </div>
+            <br>
+            <div class="font-semibold text-gray-100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </div>
+          </div>
         </div>
       </div>
     </WrapperSection>
 
-    <WrapperReadSection>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac
-        ullamcorper dui, et eleifend sem. Maecenas non lacus enim. Mauris a
-        convallis velit. Ut eget elit at nisi consequat euismod ut quis ipsum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt
-        aliquam tempore repellat blanditiis. Quam, quae. Saepe rerum impedit
-        minima in, molestias, ipsam blanditiis quae doloribus molestiae tenetur
-        quia ullam praesentium dolorum officia, ratione totam sed dolor. Ipsa
-        cum ea maiores, ipsum ratione perferendis adipisci asperiores deleniti
-        eos eum illo obcaecati mollitia amet explicabo natus earum dolor.
-        Voluptas dolorem molestiae error numquam odit reprehenderit rerum totam
-        cupiditate? Repudiandae officia cupiditate veniam consequatur, quam
-        itaque quo odit! Modi libero corporis totam blanditiis eligendi tempora
-        neque natus quia, eaque iste doloribus officia esse consequatur dolorum
-        consectetur? Eveniet iusto iste officiis provident eaque.
-      </p>
-      <img
-        src="/gallery/mommy-vegetable-2x.jpg"
-        alt=""
-        class="m-auto w-8/12 mt-5 rounded"
-      />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt
-        aliquam tempore repellat blanditiis. Quam, quae. Saepe rerum impedit
-        minima in, molestias, ipsam blanditiis quae doloribus molestiae tenetur
-        quia ullam praesentium dolorum officia, ratione totam sed dolor. Ipsa
-        cum ea maiores, ipsum ratione perferendis adipisci asperiores deleniti
-        eos eum illo obcaecati mollitia amet explicabo natus earum dolor.
-        Voluptas dolorem molestiae error numquam odit reprehenderit rerum totam
-        cupiditate? Repudiandae officia cupiditate veniam consequatur, quam
-        itaque quo odit! Modi libero corporis totam blanditiis eligendi tempora
-        neque natus quia, eaque iste doloribus officia esse consequatur dolorum
-        consectetur? Eveniet iusto iste officiis provident eaque.
-      </p>
-    </WrapperReadSection>
-
-    <WrapperSection class="font-medium text-base">
-      <h1 class="text-2xl font-bold">See More</h1>
+    <WrapperSection class="font-medium text-base text-gray-100">
+      <h1 class="text-2xl font-semibold">Toko yang Menyediakan</h1>
       <br />
-      <div class="grid gap-20 grid-cols-3">
-        <div class="rounded-xl">
+      <br />
+      <div class="flex grid grid-cols-3 gap-16" >
+        <div class="bg-gray-200 rounded-xl shadow" v-for="(shop,index) in shops">
           <img
-            src="/gallery/mommy-vegetable.png"
-            alt=""
-            class="w-full rounded-xl"
+          src="/gallery/mommy-vegetable.png"
+          alt=""
+          class="w-full rounded-xl"
           />
-          <div class="px-2 py-4">
-            <p class="text-gray-800 text-base mb-2 font-bold">
-              Pertanian adalah sector ekonomi yang penting bagi keberlangsungan
-              hidup
-            </p>
-            <small class="text-gray-500 font-bold">20 Juli 2020</small>
-          </div>
-        </div>
-        <div class="rounded-xl">
-          <img
-            src="/gallery/mommy-vegetable.png"
-            alt=""
-            class="w-full rounded-xl"
-          />
-          <div class="px-2 py-4">
-            <p class="text-gray-800 text-base mb-2 font-bold">
-              Pertanian adalah sector ekonomi yang penting bagi keberlangsungan
-              hidup
-            </p>
-            <small class="text-gray-500 font-bold">20 Juli 2020</small>
-          </div>
-        </div>
-        <div class="rounded-xl">
-          <img
-            src="/gallery/mommy-vegetable.png"
-            alt=""
-            class="w-full rounded-xl"
-          />
-          <div class="px-2 py-4">
-            <p class="text-gray-800 text-base mb-2 font-bold">
-              Pertanian adalah sector ekonomi yang penting bagi keberlangsungan
-              hidup
-            </p>
-            <small class="text-gray-500 font-bold">20 Juli 2020</small>
+          <div class="px-5 py-2">
+            <NuxtLink
+            to="/csr/detail"
+            class="font-bold text-gray-800 text-sm mb-2"
+            >{{ shop.pt }}</NuxtLink
+            >
+            <br />
+            <small class="font-bold text-gray-500 font-[Poppins]"
+            >{{ shop.qty }}</small
+            >
           </div>
         </div>
       </div>
     </WrapperSection>
   </div>
 </template>
+<script type="text/javascript" setup>
+const shops = ref([
+{
+  pt: 'PT Testing 1',
+  qty: 'Total Buah 50 Buah'
+},
+{
+  pt: 'PT Testing 2',
+  qty: 'Total Buah 50 Buah'
+},
+{
+  pt: 'PT Testing 3',
+  qty: 'Total Buah 50 Buah'
+},
+{
+  pt: 'PT Testing 4',
+  qty: 'Total Buah 50 Buah'
+},
+{
+  pt: 'PT Testing 5',
+  qty: 'Total Buah 50 Buah'
+},
+{
+  pt: 'PT Testing 6',
+  qty: 'Total Buah 50 Buah'
+},
+]);
+</script>
