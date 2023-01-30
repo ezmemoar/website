@@ -3,11 +3,11 @@
     <div class="pb-20">
       <div class="absolute z-[-1] w-full overflow-x-hidden">
       </div>
-      <div class="px-36 z-50">
+      <div class="max-md:px-10 md:px-10 lg:px-36 z-50">
         <h1 class="text-2xl font-bold text-gray-50 my-14 font-[Poppins]">
           Product
         </h1>
-        <div class="grid gap-16 lg:grid-cols-2 sm:grid-cols-1">
+        <div class="grid gap-16 md:grid-cols-2 sm:grid-cols-1">
           <NuxtLink to="/product/category" >
             <div class="bg-gray-200 rounded-xl shadow">
               <div class="bg-[url('/gallery/gallery-fruit.jpg')] w-full h-64 bg-center rounded-xl bg-cover ">

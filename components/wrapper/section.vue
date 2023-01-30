@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <div class="py-20">
-      <div class="px-36">
+    <div class="">
+      <div class="max-md:px-10 md:px-20 lg:px-36">
         <slot />
       </div>
     </div>

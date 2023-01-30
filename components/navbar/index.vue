@@ -1,8 +1,6 @@
 <template>
-  <nav
-    class="w-full flex justify-between px-36 py-2 fixed transition-colors duration-150 z-50 bg-white text-black"
-  >
-    <div class="flex items-center">
+  <nav class="w-full flex justify-between px-36 py-2 fixed transition-colors duration-150 z-50 bg-white text-black max-md:hidden">
+    <div class="flex items-center ">
       <NuxtLink to="/">
         <img src="/logo.svg" alt="logo" class="w-32" />
       </NuxtLink>
@@ -27,10 +25,20 @@
       </NavbarItem>
     </div>
   </nav>
+  <nav class="w-full flex justify-between px-5 pt-3 pb-4 fixed transition-colors duration-150 z-50 bg-white text-black md:hidden">
+    <div>
+      <img src="/logo.svg" alt="logo" class="w-[70px]" />
+    </div>
+    <div>
+      <NIcon size="30" class="translate-y-1 py-1">
+        <Menu />
+      </NIcon>
+    </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
-import { Search } from "@vicons/ionicons5";
+import { Search, Menu } from "@vicons/ionicons5";
 import { NIcon } from "naive-ui";
 
 const { t } = useI18n({

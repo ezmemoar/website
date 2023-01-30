@@ -1,21 +1,20 @@
 <template>
   <div class="bg-primary">
-    <WrapperSection>
-      <div class="mt-5 flex justify-between">
+    <WrapperSection class="pt-20">
+      <div class="mt-5 flex justify-between bg-gray-100 pt-5 pb-5 px-5 rounded-xl text-black">
         <div class="flex-1">
-          <Image src="/gallery/gallery-anggur.jpg" class="rounded-xl"/>
+          <div class="rounded-xl max-md:h-52 md:h-72 bg-[url('/gallery/gallery-anggur.jpg')] bg-cover bg-center"/>
         </div>
-        <div class="flex-1 flex justify-center items-center text-gray-100 pl-10">
+        <div class="flex-1 flex pl-10">
           <div>
-            <div class="text-3xl font-semibold">
+            <div class="max-md:text-2xl md:text-3xl font-bold border-b-[2px] border-primary md:pt-5 max-md:pb-1 md:pb-2">
               Anggur Merah
             </div>
-            <br>
-            <div class="font-semibold text-gray-100">
+            <div class="font-bold max-md:text-sm md:text-base pt-3">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
+              consequat. 
             </div>
           </div>
         </div>
@@ -23,10 +22,10 @@
     </WrapperSection>
 
     <WrapperSection class="font-medium text-base text-gray-100">
-      <h1 class="text-2xl font-semibold">Toko yang Menyediakan</h1>
+      <h1 class="text-2xl font-semibold max-md:text-center">Toko yang Menyediakan</h1>
       <br />
       <br />
-      <div class="flex grid grid-cols-3 gap-16" >
+      <div class="flex grid max-md:grid-cols-2 md:grid-cols-3 max-md:gap-10 md:gap-16 max-md:px-10" >
         <div class="bg-gray-200 rounded-xl shadow" v-for="(shop,index) in shops">
           <img
           src="/gallery/mommy-vegetable.png"

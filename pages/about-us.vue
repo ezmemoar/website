@@ -1,60 +1,67 @@
 <template>
   <main>
-    <section class="w-full pt-14 bg-cover bg-center bg-no-repeat">
-      <div class="px-36">
-        <div class="text-4xl font-bold text-primary">
+    <section class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat">
+      <div class="px-10 text-center">
+        <div class="max-md:text-3xl md:text-4xl font-bold text-primary">
           {{ t("aboutUs") }}
         </div>
       </div>
     </section>
 
     <WrapperSection>
-      <div class="mt-5 flex justify-between">
-        <div class="w-[50%]">
+      <div class="md:my-20 max-md:my-10 md:flex md:justify-between">
+        <div class="md:w-[50%]">
           <div class="mt-7">
             <TextSectionLabel :title="t('visionAndMission')" />
+            <div class="w-full mt-5 md:hidden">
+              <Image src="/about-us.jpg" />
+            </div>
             <p class="mt-5">
               {{ t("vision") }}
             </p>
             <p class="mt-5" v-html="t('mission')"></p>
           </div>
         </div>
-        <div class="w-[40%]">
+        <div class="w-[40%] max-md:hidden">
           <Image src="/about-us.jpg" />
         </div>
       </div>
     </WrapperSection>
 
     <WrapperSection class="bg-primary text-white">
-      <div class="mt-5 flex justify-between">
-        <div class="w-[40%]">
+      <br>
+      <div class="md:my-20 max-md:my-5 md:flex md:justify-between">
+        <TextSectionLabel class="!text-white md:hidden mb-5" :title="t('history')" />
+        <div class="md:w-[40%]">
           <Image src="/about-us.jpg" />
         </div>
-        <div class="w-[50%]">
+        <div class="md:w-[50%]">
           <div class="mt-7">
-            <TextSectionLabel class="!text-white" :title="t('history')" />
+            <TextSectionLabel class="!text-white max-md:hidden" :title="t('history')" />
             <p class="mt-5" v-html="t('historyDesc')"></p>
           </div>
         </div>
       </div>
+      <br>
     </WrapperSection>
 
     <WrapperSection class="text-white">
       <div class="py-5 text-center">
         <TextSectionLabel :title="t('ourTeam')" />
       </div>
-      <div class="mt-5 flex justify-around">
-        <TeamCard name="Testing" position="IT Staff" />
-        <TeamCard name="Testing" position="IT Staff" />
-        <TeamCard name="Testing" position="IT Staff" />
+      <div class="mt-5 flex md:justify-around max-md:grid max-md:grid-cols-4">
+        <TeamCard name="Testing" position="IT Staff" class=" col-span-2" />
+        <TeamCard name="Testing" position="IT Staff" class=" col-span-2" />
+        <TeamCard name="Testing" position="IT Staff" class="col-start-2 col-span-2" />
       </div>
+      <br><br>
     </WrapperSection>
 
-    <WrapperSection class="bg-[#F9F9F9]">
-      <div class="py-5 text-center">
+    <WrapperSection class="bg-[#F9F9F9] py-10">
+      <div class="py-1 text-center">
         <TextSectionLabel :title="t('happySentosaGarden')" />
       </div>
-      <div class="mt-5 text-center px-20 text-lg">
+      <div class="mt-5 text-center md:px-20 max-md:text-base md:text-lg">
         {{ t("happySentosaGardenDesc") }}
       </div>
     </WrapperSection>
