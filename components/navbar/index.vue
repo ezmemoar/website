@@ -25,22 +25,45 @@
       </NavbarItem>
     </div>
   </nav>
-  <nav class="w-full flex justify-between px-5 pt-3 pb-4 fixed transition-colors duration-150 z-50 bg-white text-black md:hidden">
-    <div>
-      <img src="/logo.svg" alt="logo" class="w-[70px]" />
+  <nav class="w-full px-5 py-4 fixed transition-colors duration-150 z-50 bg-white text-black md:hidden">
+    <div class="flex justify-between">
+      <div class="">
+        <img src="/logo.svg" alt="logo" class="w-[70px]" />
+      </div>
+      <div>
+        <NIcon size="30" class="translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150" :class="[ navbarItem.items == false ? 'hidden' : '' ]"  @click="navbarItem.items = !navbarItem.items">
+          <Menu />
+        </NIcon>
+        <NIcon size="30" class="translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150" :class="[ navbarItem.items == true ? 'hidden' : '' ]" @click="navbarItem.items = !navbarItem.items">
+          <Close />
+        </NIcon>
+      </div>
     </div>
-    <div>
-      <NIcon size="30" class="translate-y-1 py-1">
-        <Menu />
-      </NIcon>
+    <div class="pt-5 pb-2 block" :class="{ hidden : navbarItem.items }">
+      <select class="bg-transparent hover:cursor-pointer p-5" v-model="locale">
+        <option v-for="val in languageOption" :key="val" :value="val">
+          {{ val }}
+        </option>
+      </select>
+              <NIcon size="20" class="translate-y-1 p-5">
+          <Search />
+        </NIcon>
+
+      <NavbarItem to="/about-us" :title="t('aboutUs')" class="block" @click="navbarItem.items = !navbarItem.items" />
+      <NavbarItem to="/csr" :title="t('csr')" class="block" @click="navbarItem.items = !navbarItem.items" />
+      <NavbarItem to="/product" :title="t('product')" class="block" @click="navbarItem.items = !navbarItem.items" />
+      <NavbarItem to="/gallery" :title="t('gallery')" class="block" @click="navbarItem.items = !navbarItem.items" />
+      <NavbarItem to="/contact-us" :title="t('contactUs')" class="block" @click="navbarItem.items = !navbarItem.items" />
     </div>
   </nav>
 </template>
-
 <script setup lang="ts">
-import { Search, Menu } from "@vicons/ionicons5";
+import { Search, Menu,Close } from "@vicons/ionicons5";
 import { NIcon } from "naive-ui";
 
+let navbarItem = ref({
+  items: true,
+});
 const { t } = useI18n({
   useScope: "local",
 });
@@ -48,7 +71,6 @@ const { t } = useI18n({
 const { locale } = useI18n();
 const languageOption = ["id", "en"];
 </script>
-
 <i18n lang="yaml">
 en:
   aboutUs: "About Us"
@@ -63,3 +85,4 @@ id:
   gallery: "Galeri"
   contactUs: "Kontak Kami"
 </i18n>
+
