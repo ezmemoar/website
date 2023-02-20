@@ -1,10 +1,10 @@
 <template>
-  <div class="px-36 py-20">
-    <div class="w-8/12">
-      <div class="text-4xl font-bold">
+  <div class="max-md:px-10 md:px-36 pt-20">
+    <div class="max-md:w-full md:w-8/12">
+      <div class="max-md:text-2xl md:text-4xl font-bold max-md:text-center">
         {{ t("aboutUsLabel") }}
       </div>
-      <div class="w-3/4">
+      <div class="max-md:w-full md:w-3/4 max-md:text-center">
         <div class="mt-8">
           <div class="mt-8">
             <p>
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-10 justify-between">
+      <div class="flex gap-10">
         <div class="flex-1 mt-10 text-lg">
           <div>
             <input
@@ -35,25 +35,30 @@
               </div>
             </div>
             <div class="mt-5">
-              <Button class="!rounded">send</Button>
+              <Button class="!rounded max-md:w-full">send</Button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <p class="text-center font-bold max-md:text-xl md:text-2xl">ALAMAT KAMI</p>
     <div class="mb-32">
       <br />
-      <br />
-      <div class="flex justify-evenly">
-        <div class="w-[40%] flex items-center">
+      <div class="md:flex justify-evenly gap-16">
+        <div class="w-full items-center">
+          <p class="font-bold max-md:text-base md:text-xl md:hidden max-md:mb-3">KANTOR JAKARTA</p>
           <iframe
             title="location"
-            width="350"
-            height="300"
             id="gmap_canvas"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.676775967154!2d106.89297076476889!3d-6.1740106955301615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f520aed63795%3A0xd18f4ce7a8259dbb!2sKirana%20Boutique%20Office!5e0!3m2!1sen!2sid!4v1674612562833!5m2!1sen!2sid"
-            class=""
+            class="md:w-full md:h-[300px] max-md:w-full max-md:h-52"
           ></iframe>
+          <br>
+          <p class="font-bold max-md:text-base md:text-xl max-md:hidden">KANTOR JAKARTA</p>
+          <br>
           <div class="pl-5 text-base">
             <div
               @click="copyText('Kirana Boutiqe Office, Kirana Avenue III')"
@@ -102,15 +107,18 @@
             </div>
           </div>
         </div>
-        <div class="w-[40%] flex items-center">
+        <br>
+        <div class="w-full items-center">
+          <p class="font-bold max-md:text-base md:text-xl md:hidden max-md:mb-3">Perkebunan</p>
           <iframe
             title="location"
-            width="350"
-            height="300"
             id="gmap_canvas"
+            class="md:w-full md:h-[300px] max-md:w-full max-md:h-52"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126890.38112247406!2d106.62429415913434!3d-6.352030335017695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d765b4cd4279%3A0x95a1bccc0c7fe860!2sHappy%20Sentosa%20Garden%20(area%20Alpukat%20Miki)!5e0!3m2!1sid!2sid!4v1673860525792!5m2!1sid!2sid"
-            class=""
           ></iframe>
+          <br>
+          <p class="font-bold max-md:text-base md:text-xl max-md:hidden">Perkebunan</p>
+          <br>
           <div class="pl-5 text-base">
             <div
               @click="

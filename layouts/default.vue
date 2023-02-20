@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <div class="pt-20">
+  <div class="pt-20 font-[Poppins]">
     <slot />
   </div>
   <Footer />

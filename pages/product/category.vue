@@ -1,7 +1,7 @@
 <template>
   <div class="bg-primary min-h-screen overflow-x-hidden">
     <div class="pt-5 pb-20">
-      <div class="px-36 z-50">
+      <div class="max-md:px-10 max-lg:px-20 lg:px-36 z-50">
         <div class="flex justify-center text-white font-semibold mt-10">
           <p class="mr-5" :class="{ 'border-b': active == 'tersedia' }">
             Tersedia
@@ -13,7 +13,7 @@
         <h1 class="text-2xl font-bold text-gray-50 my-10">
           All fresh Product
         </h1>
-        <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2 max-md:grid-cols-2">
           <NuxtLink v-for="(gallery, index) in galleries" to="/product/detail">
             <div
             class="bg-gray-200 rounded-xl shadow"          
@@ -44,7 +44,7 @@ const galleries = ref([
   qty: "Total Buah 10 Buah",
 },
 {
-  img: "/gallery/gallery-pears.jpg",
+  img: "/gallery/gallery-anggur.jpg",
   fruit: "Peer",
   qty: "Total Buah 10 Buah",
 },

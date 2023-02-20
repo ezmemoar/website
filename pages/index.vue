@@ -3,8 +3,8 @@
     <section
       class="w-full py-44 bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat"
     >
-      <div class="px-36">
-        <div class="text-6xl font-bold text-white">
+      <div class="max-md:px-10 md:px-36">
+        <div class="max-md:text-3xl md:text-6xl font-bold text-white">
           {{ t("mainText") }}
           <div class="mt-10">
             <Button bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
@@ -12,11 +12,11 @@
         </div>
       </div>
     </section>
-
+<br>
     <WrapperSection>
       <TextSectionLabel :title="t('aboutUsLabel')" />
-      <div class="mt-10 flex justify-between">
-        <div class="w-[50%]">
+      <div class="mt-10 md:flex md:justify-between ">
+        <div class="md:w-[50%] max-md:w-full">
           <div class="text-3xl font-bold">
             {{ t("aboutUsTitle") }}
           </div>
@@ -28,16 +28,19 @@
                 {{ t("aboutUsDescc") }}
               </p>
               <Button class="mt-10" bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
+              <br>
+              <br>
+              <br>
           </div>
         </div>
-        <div class="w-[40%]">
+        <div class="max-md:w-full md:w-[40%] px-20">
           <Image src="/about-us.jpg" />
         </div>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex justify-center px-10">
         <Quote
-          class="w-[100%] md:w-[80%] xl:w-[60%] translate-y-[8rem]"
+          class="w-[100%] md:w-[80%] xl:w-[60%] max-md:translate-y-[4rem] md:translate-y-[5rem] max-md:text-sm"
           quote="Pertanian adalah profesi terbaik di dunia. Anda dapat menanam, menyiram, dan merasakan kepuasan yang tak ternilai saat melihat hasilnya tumbuh dan tumbuh."
           creator="Joel Salatin"
         />
@@ -45,20 +48,25 @@
     </WrapperSection>
 
     <WrapperSection class="bg-[#F9F9F9]">
+      <br><br><br><br><br><br>
+      <div class="mt-5 md:flex">
+        <div class="md:w-[30%] space-y-3">
       <TextSectionLabel title="Apa yang kami lakukan" />
-      <div class="mt-5 flex">
-        <div class="w-[30%] space-y-3">
-          <div class="font-bold">Kemitraan dengan petani</div>
-          <div class="font-bold">Penelitian dan pengembangan</div>
-          <div class="font-bold">Benih Topas</div>
-          <div class="font-bold">Komitmen Berkelanjutan</div>
+
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Kemitraan dengan petani</div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Penelitian dan pengembangan</div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Benih Topas</div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Komitmen Berkelanjutan</div>
         </div>
-        <div class="w-[70%] space-y-8">
+        <br class="md:hidden">
+        <br class="md:hidden">
+
+        <div class="md:w-[70%] space-y-8">
           <div class="font-bold text-2xl">
             Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
             ekosistem pertanian
           </div>
-          <div class="flex">
+          <div class="md:flex">
             <div class="pr-5">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -71,21 +79,24 @@
                 commodo lacus, eget viverra dui
               </p>
             </div>
-            <div class="w-[100%]">
+            <br class="md:hidden">
+            <div class="w-[100%] max-md:px-5">
               <Image src="/about-us.jpg" alt="About Us" />
             </div>
           </div>
         </div>
       </div>
+      <br>
+      <br>
     </WrapperSection>
 
     <WrapperSection class="bg-primary">
-      <div class="w-[50%] text-3xl text-white font-bold">
-        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan
-        kehidupan yang lebih baik
+      <br><br>
+      <div class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold">
+        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan kehidupan yang lebih baik
         <hr class="bg-white mt-5 border-t-2" />
       </div>
-      <div class="mt-14 grid grid-cols-3 gap-7">
+      <div class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7">
         <Image
           :is-previewable="true"
           src="/gallery/gallery-1.jpg"
@@ -121,27 +132,29 @@
       <div class="mt-8 flex justify-center">
         <Button bg-class="bg-secondary" title="Lihat Semua" />
       </div>
+      <br><br>
     </WrapperSection>
 
     <WrapperSection>
+      <br><br>
       <div class="flex justify-around">
         <div class="text-center">
           <Image
             src="/statistic/wheat.svg"
             alt="wheat"
-            class="w-[60%] mx-auto"
+            class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary text-2xl font-bold">12</div>
-          <div class="mt-2 text-lg font-semibold">PERKEBUNAN</div>
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">12</div>
+          <div class="mt-2 max-md:text-base md:text-lg font-semibold">PERKEBUNAN</div>
         </div>
         <div class="text-center">
           <Image
             src="/statistic/wheat.svg"
             alt="wheat"
-            class="w-[60%] mx-auto"
+            class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary text-2xl font-bold">1,000</div>
-          <div class="mt-2 text-lg font-semibold">
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">1,000</div>
+          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
             HEKTAR PERKEBUNAN
             <br />
             MILIK PERUSAHAAN
@@ -151,40 +164,47 @@
           <Image
             src="/statistic/wheat.svg"
             alt="wheat"
-            class="w-[60%] mx-auto"
+            class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary text-2xl font-bold">130</div>
-          <div class="mt-2 text-lg font-semibold">PETANI LADANG</div>
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">130</div>
+          <div class="mt-2 max-md:text-base md:text-lg font-semibold">PETANI LADANG</div>
         </div>
       </div>
     </WrapperSection>
-
+<br><br>
     <WrapperSection class="bg-[#F9F9F9]">
-      <div class="flex">
-        <div class="w-[20%] text-3xl font-bold">Berita</div>
-        <div class="flex-1 grid grid-cols-2 gap-20">
+      <br><br>
+      <div class="md:flex">
+        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">Berita</div>
+        <br>
+        <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
           <NewsThumbnail
             image="/about-us.jpg"
             title="Efektivitas petani dalam kehidupan"
             date="Juli 20, 2022"
+            class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-1.jpg"
             title="Efektivitas petani dalam kehidupan"
             date="Juli 20, 2022"
+            class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-2.jpg"
             title="Efektivitas petani dalam kehidupan"
             date="Juli 20, 2022"
+            class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-3.jpg"
             title="Efektivitas petani dalam kehidupan"
             date="Juli 20, 2022"
+            class="max-md:mb-10"
           />
         </div>
       </div>
+      <br><br><br><br>
     </WrapperSection>
 
     <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">
