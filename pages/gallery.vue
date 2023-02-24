@@ -112,27 +112,22 @@ for (let data in galleries.value) {
   dateTitle.value.push(galleries.value[data].date);
 }
 const dateTitleSlice = ref([]);
-// debugger;
 let filterArr = function (arr) {
   if (dateTitleSlice.value.includes(arr.slice(0, 7)) == false) {
     dateTitleSlice.value.push(arr.slice(0, 7));
-    // console.log(arr);
   }
 };
 dateTitle.value.filter(filterArr);
+dateTitleSlice.value.reverse();
 
 const show = (index, title) => {
-  console.log(galleries.value[index].date.slice(0, 7) === title ? true : false);
   return galleries.value[index].date.slice(0, 7) === title ? true : false;
 };
 
-// console.log(dateTitleSlice.value);
 const selectedGallery = computed(() => galleries.value[selectedIndex.value]);
 
 const showContent = (index: number) => {
   selectedIndex.value = index;
   showModal.value = true;
 };
-// let date = new Date;
-// console.log(date.getMonth());
 </script>
