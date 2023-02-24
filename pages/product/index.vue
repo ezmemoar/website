@@ -21,9 +21,9 @@
                   <div
                     class="bg-gradient-to-t from-black h-full w-full absolute rounded-xl opacity-60"
                   ></div>
-                  <div class="absolute px-5 py-10" style="bottom: 0">
+                  <div class="absolute px-5 py-3" style="bottom: 0">
                     <p
-                      class="font-semibold text-white text-xl mb-2 opacity-100"
+                      class="font-semibold text-white text-xl mb-1 opacity-100"
                     >
                       {{ data.title }}
                     </p>
