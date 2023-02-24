@@ -3,8 +3,8 @@
     <div class="py-1">
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="max-md:px-20 px-36 z-50">
-        <h1 class="text-3xl font-bold my-10 text-center">
-          Corporate social responsibility
+        <h1 class="text-3xl font-bold mt-20 mb-10 text-center">
+          CORPORATE SOCIAL RESPONSIBILITY
         </h1>
         <div class="pb-20 w-full">
           <div class="">

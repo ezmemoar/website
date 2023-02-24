@@ -1,6 +1,8 @@
 <template>
   <main>
-    <section class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat">
+    <section
+      class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat"
+    >
       <div class="px-10 text-center">
         <div class="max-md:text-3xl md:text-4xl font-bold text-primary">
           {{ t("aboutUs") }}
@@ -29,37 +31,82 @@
     </WrapperSection>
 
     <WrapperSection class="bg-primary text-white">
-      <br>
+      <br />
       <div class="md:my-20 max-md:my-5 md:flex md:justify-between">
-        <TextSectionLabel class="!text-white md:hidden mb-5" :title="t('history')" />
+        <TextSectionLabel
+          class="!text-white md:hidden mb-5"
+          :title="t('history')"
+        />
         <div class="md:w-[40%]">
           <Image src="/about-us.jpg" />
         </div>
         <div class="md:w-[50%]">
           <div class="mt-7">
-            <TextSectionLabel class="!text-white max-md:hidden" :title="t('history')" />
+            <TextSectionLabel
+              class="!text-white max-md:hidden"
+              :title="t('history')"
+            />
             <p class="mt-5" v-html="t('historyDesc')"></p>
           </div>
         </div>
       </div>
-      <br>
+      <br />
     </WrapperSection>
 
+    <WrapperSection class="text-white mt-10">
+      <div class="py-5 text-center">
+        <TextSectionLabel :title="t('ourTeamFarmer')" />
+      </div>
+      <div class="mt-5 flex flex-wrap justify-center border-none">
+        <TeamCard
+          name="Bagus Dwi Eriyanto"
+          position="Koordinator Kebun"
+          class="max-md:w-6/12 md:w-4/12"
+        />
+        <TeamCard
+          name="Rizki Triadi"
+          position="Staff "
+          class="max-md:w-6/12 md:w-4/12 h-full"
+        />
+        <TeamCard
+          name="Sellvya Evitarani"
+          position="Staff "
+          class="max-md:w-6/12 md:w-4/12"
+        />
+        <TeamCard
+          name="Nisa Cahyaningsih"
+          position="Admin"
+          class="max-md:w-6/12 md:w-4/12"
+        />
+      </div>
+      <br /><br />
+    </WrapperSection>
     <WrapperSection class="text-white">
       <div class="py-5 text-center">
-        <TextSectionLabel :title="t('ourTeam')" />
+        <TextSectionLabel :title="t('ourTeamOperasional')" />
       </div>
-      <div class="mt-5 flex md:justify-around max-md:grid max-md:grid-cols-4">
-        <TeamCard name="Testing" position="IT Staff" class=" col-span-2" />
-        <TeamCard name="Testing" position="IT Staff" class=" col-span-2" />
-        <TeamCard name="Testing" position="IT Staff" class="col-start-2 col-span-2" />
+      <div class="mt-5 flex flex-wrap justify-center border-none">
+        <TeamCard
+          name="Andi Setiawan"
+          position=""
+          class="max-md:w-6/12 md:w-4/12"
+        />
+        <TeamCard
+          name="Randi Faisal Akbar"
+          position=""
+          class="max-md:w-6/12 md:w-4/12 h-full"
+        />
       </div>
-      <br><br>
+      <br /><br />
     </WrapperSection>
 
     <WrapperSection class="bg-[#F9F9F9] py-10">
       <div class="py-1 text-center">
         <TextSectionLabel :title="t('happySentosaGarden')" />
+        <img
+          src="/gallery/hsg-removebg-preview.png"
+          class="m-auto w-5/12 mb-5 mt-10"
+        />
       </div>
       <div class="mt-5 text-center md:px-20 max-md:text-base md:text-lg">
         {{ t("happySentosaGardenDesc") }}
@@ -82,7 +129,8 @@ id:
   mission: "<ol><li>meningkatkan produktivitas perkebunan dan pertanian dengan menggunakan teknologi</li><li>fokus pada pengembangan program sosial yang bertujuan untuk meningkatkan kesejahteraan masyarakat setempat.</li></ol>"
   history: "Sejarah Kami"
   historyDesc: "Perusahaan ini didirikan oleh sekelompok petani dan pebisnis yang ingin meningkatkan produktivitas perkebunan dan pertanian di wilayah mereka. Sejak awal, perusahaan ini fokus pada pengembangan teknologi dan praktik-praktik yang baik untuk meningkatkan hasil produksi. Seiring berjalannya waktu, perusahaan ini berhasil meningkatkan produktivitas perkebunan dan pertanian di wilayah kerjanya."
-  ourTeam: "Team Kami"
+  ourTeamFarmer: "Tim Kebun"
+  ourTeamOperasional: "Tim Operasional"
   happySentosaGarden: "Happy Sentosa Garden"
   happySentosaGardenDesc: "Merupakan salah satu usaha di bidang perkebunaan dalam naungan Multi Propertindo Indonesia. Dengan kegiatan yang mengusahakan tanaman mulai dari pembukaan dan persiapan lahan, proses pembibitan, pemeliharaan tanaman, panen, serta memasarkan hasil tanaman tersebut, dengan bantuan ilmu pengetahuan dan tenaga para petani yang profesional serta manajemen untuk mewujudkan kesejahteraan HSG"
 en:
@@ -92,7 +140,9 @@ en:
   mission: "<ol><li>meningkatkan produktivitas perkebunan dan pertanian dengan menggunakan teknologi</li><li>fokus pada pengembangan program sosial yang bertujuan untuk meningkatkan kesejahteraan masyarakat setempat.</li></ol>"
   history: "Our History"
   historyDesc: "Perusahaan ini didirikan oleh sekelompok petani dan pebisnis yang ingin meningkatkan produktivitas perkebunan dan pertanian di wilayah mereka. Sejak awal, perusahaan ini fokus pada pengembangan teknologi dan praktik-praktik yang baik untuk meningkatkan hasil produksi. Seiring berjalannya waktu, perusahaan ini berhasil meningkatkan produktivitas perkebunan dan pertanian di wilayah kerjanya."
-  ourTeam: "Our Team"
+  ourTeamFarmer: "Team Garden"
+  ourTeamOperasional: "Team Operasional"
+
   happySentosaGarden: "Happy Sentosa Garden"
   happySentosaGardenDesc: "Merupakan salah satu usaha di bidang perkebunaan dalam naungan Multi Propertindo Indonesia. Dengan kegiatan yang mengusahakan tanaman mulai dari pembukaan dan persiapan lahan, proses pembibitan, pemeliharaan tanaman, panen, serta memasarkan hasil tanaman tersebut, dengan bantuan ilmu pengetahuan dan tenaga para petani yang profesional serta manajemen untuk mewujudkan kesejahteraan HSG"
 </i18n>
