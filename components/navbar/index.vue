@@ -2,7 +2,7 @@
   <nav class="w-full flex justify-between px-36 py-2 fixed transition-colors duration-150 z-50 bg-white text-black max-md:hidden">
     <div class="flex items-center ">
       <NuxtLink to="/">
-        <img src="/logo.svg" alt="logo" class="w-32" />
+        <img src="/logo.svg" alt="logo" class="w-[9rem]" />
       </NuxtLink>
       <div class="ml-5 flex">
         <NavbarItem to="/about-us" :title="t('aboutUs')" />
@@ -18,11 +18,6 @@
           {{ val }}
         </option>
       </select>
-      <NavbarItem to="#">
-        <NIcon size="20" class="translate-y-1">
-          <Search />
-        </NIcon>
-      </NavbarItem>
     </div>
   </nav>
   <nav class="w-full px-5 py-4 fixed transition-colors duration-150 z-50 bg-white text-black md:hidden">

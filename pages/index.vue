@@ -12,8 +12,7 @@
         </div>
       </div>
     </section>
-<br>
-    <WrapperSection>
+    <WrapperSection class="mt-10">
       <TextSectionLabel :title="t('aboutUsLabel')" />
       <div class="mt-10 md:flex md:justify-between ">
         <div class="md:w-[50%] max-md:w-full">
@@ -28,9 +27,6 @@
                 {{ t("aboutUsDescc") }}
               </p>
               <Button class="mt-10" bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
-              <br>
-              <br>
-              <br>
           </div>
         </div>
         <div class="max-md:w-full md:w-[40%] px-20">

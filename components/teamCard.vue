@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NCard class="text-center max-md:border-0"  size="huge">
-      <img src="/teams/team-1.png" class="w-32" />
-      <div class="mt-5 text-xl font-bold text-primary">{{ $props.name }}</div>
-      <div class="mt-3 text-xl text-gray-500">{{ $props.position }}</div>
+    <NCard class="text-center" style="border-style: none;" size="huge">
+      <img src="/teams/team-1.png" class="w-32 m-auto" />
+      <div class="mt-5 text-xl font-bold text-primary max-md:text-base">{{ $props.name }}</div>
+      <div class="mt-3 text-xl text-gray-500  max-md:text-base">{{ $props.position }}</div>
     </NCard>
   </div>
 </template>

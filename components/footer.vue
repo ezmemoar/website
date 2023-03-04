@@ -77,10 +77,10 @@
 
 
 
-  <WrapperSection class="bg-gradient-to-b from-[#0d650ec7] via-[#0D650E] to-[#0D650E] text-white max-md:hidden">
+  <WrapperSection class="bg-gradient-to-b from-[#0d650ec7] via-[#0D650E] to-[#0D650E] text-white max-md:hidden pt-10">
     <div class="flex justify-around">
       <div class="w-3/12">
-        <img src="/logo-white.svg" class="w-[50%]" />
+        <img src="/logo-white.svg" class="w-[10rem]" />
         <div class="mt-10">
           <div class="font-bold">Kantor Jakarta</div>
           <div class="mt-2">
