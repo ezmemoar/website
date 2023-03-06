@@ -14,19 +14,23 @@
     </section>
     <WrapperSection class="mt-10">
       <TextSectionLabel :title="t('aboutUsLabel')" />
-      <div class="mt-10 md:flex md:justify-between ">
+      <div class="mt-10 md:flex md:justify-between">
         <div class="md:w-[50%] max-md:w-full">
           <div class="text-3xl font-bold">
             {{ t("aboutUsTitle") }}
           </div>
           <div class="mt-10">
-              <p>
-                {{ t("aboutUsDesc") }}
-              </p>
-              <p>
-                {{ t("aboutUsDescc") }}
-              </p>
-              <Button class="mt-10" bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
+            <p>
+              {{ t("aboutUsDesc") }}
+            </p>
+            <p>
+              {{ t("aboutUsDescc") }}
+            </p>
+            <Button
+              class="mt-10"
+              bg-class="bg-secondary"
+              title="Pelajari Lebih Lanjut"
+            />
           </div>
         </div>
         <div class="max-md:w-full md:w-[40%] px-20">
@@ -44,18 +48,26 @@
     </WrapperSection>
 
     <WrapperSection class="bg-[#F9F9F9]">
-      <br><br><br><br><br><br>
+      <br /><br /><br /><br /><br /><br />
       <div class="mt-5 md:flex">
         <div class="md:w-[30%] space-y-3">
-      <TextSectionLabel title="Apa yang kami lakukan" />
+          <TextSectionLabel title="Apa yang kami lakukan" />
 
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Kemitraan dengan petani</div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Penelitian dan pengembangan</div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Benih Topas</div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">Komitmen Berkelanjutan</div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
+            Kemitraan dengan petani
+          </div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
+            Penelitian dan pengembangan
+          </div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
+            Benih Topas
+          </div>
+          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
+            Komitmen Berkelanjutan
+          </div>
         </div>
-        <br class="md:hidden">
-        <br class="md:hidden">
+        <br class="md:hidden" />
+        <br class="md:hidden" />
 
         <div class="md:w-[70%] space-y-8">
           <div class="font-bold text-2xl">
@@ -75,64 +87,46 @@
                 commodo lacus, eget viverra dui
               </p>
             </div>
-            <br class="md:hidden">
+            <br class="md:hidden" />
             <div class="w-[100%] max-md:px-5">
               <Image src="/about-us.jpg" alt="About Us" />
             </div>
           </div>
         </div>
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
     </WrapperSection>
 
     <WrapperSection class="bg-primary">
-      <br><br>
-      <div class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold">
-        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan kehidupan yang lebih baik
+      <br /><br />
+      <div
+        class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold"
+      >
+        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan
+        kehidupan yang lebih baik
         <hr class="bg-white mt-5 border-t-2" />
       </div>
       <div class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7">
         <Image
+          v-for="(data, index) in gallery"
+          :key="index"
           :is-previewable="true"
-          src="/gallery/gallery-1.jpg"
+          :src="`http://localhost:8000${data.image}`"
           alt="gallery 1"
-        />
-        <Image
-          :is-previewable="true"
-          src="/gallery/gallery-2.jpg"
-          alt="gallery 2"
-        />
-        <Image
-          :is-previewable="true"
-          src="/gallery/gallery-3.jpg"
-          alt="gallery 3"
-        />
-        <Image
-          :is-previewable="true"
-          src="/gallery/gallery-4.jpg"
-          alt="gallery 4"
-        />
-        <Image
-          :is-previewable="true"
-          src="/gallery/gallery-5.jpg"
-          alt="gallery 5"
-        />
-        <Image
-          :is-previewable="true"
-          src="/gallery/gallery-6.jpg"
-          alt="gallery 6"
         />
       </div>
 
       <div class="mt-8 flex justify-center">
-        <Button bg-class="bg-secondary" title="Lihat Semua" />
+        <NuxtLink to="/gallery">
+          <Button bg-class="bg-secondary" title="Lihat Semua" />
+        </NuxtLink>
       </div>
-      <br><br>
+      <br /><br />
     </WrapperSection>
 
     <WrapperSection>
-      <br><br>
+      <br /><br />
       <div class="flex justify-around">
         <div class="text-center">
           <Image
@@ -140,8 +134,12 @@
             alt="wheat"
             class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">12</div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">PERKEBUNAN</div>
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
+            12
+          </div>
+          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
+            PERKEBUNAN
+          </div>
         </div>
         <div class="text-center">
           <Image
@@ -149,7 +147,9 @@
             alt="wheat"
             class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">1,000</div>
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
+            1,000
+          </div>
           <div class="mt-2 max-md:text-base md:text-lg font-semibold">
             HEKTAR PERKEBUNAN
             <br />
@@ -162,17 +162,21 @@
             alt="wheat"
             class="max-md:w-[50%] md:w-[60%] mx-auto"
           />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">130</div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">PETANI LADANG</div>
+          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
+            130
+          </div>
+          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
+            PETANI LADANG
+          </div>
         </div>
       </div>
     </WrapperSection>
-<br><br>
+    <br /><br />
     <WrapperSection class="bg-[#F9F9F9]">
-      <br><br>
+      <br /><br />
       <div class="md:flex">
         <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">Berita</div>
-        <br>
+        <br />
         <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
           <NewsThumbnail
             image="/about-us.jpg"
@@ -200,7 +204,7 @@
           />
         </div>
       </div>
-      <br><br><br><br>
+      <br /><br /><br /><br />
     </WrapperSection>
 
     <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">
@@ -212,6 +216,14 @@
 <script setup lang="ts">
 const { t } = useI18n({
   useScope: "local",
+});
+const gallery = ref([]);
+const { pending, data: posts } = useLazyFetch(
+  "http://localhost:8000/api/dashboard"
+);
+watch(posts, (newPosts) => {
+  gallery.value.push(...newPosts.data);
+  // console.log(newPosts);
 });
 </script>
 

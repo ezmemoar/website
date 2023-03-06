@@ -62,6 +62,7 @@ const loadData = async () => {
     },
   })
     .then((val) => {
+      // console.log(val);
       if (val) {
         res.value.data.push(...val.data);
         res.value.links = val.links;
