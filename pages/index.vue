@@ -7,7 +7,7 @@
         <div class="max-md:text-3xl md:text-6xl font-bold text-white">
           {{ t("mainText") }}
           <div class="mt-10">
-            <Button bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
+            <Button bg-class="bg-secondary" :title="t('learnMore')" />
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
             <Button
               class="mt-10"
               bg-class="bg-secondary"
-              title="Pelajari Lebih Lanjut"
+              :title="t('learnMore')"
             />
           </div>
         </div>
@@ -51,19 +51,19 @@
       <br /><br /><br /><br /><br /><br />
       <div class="mt-5 md:flex">
         <div class="md:w-[30%] space-y-3">
-          <TextSectionLabel title="Apa yang kami lakukan" />
+          <TextSectionLabel :title="t('whatWeDo')" />
 
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Kemitraan dengan petani
+            {{ t("farmerPartnership") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Penelitian dan pengembangan
+            {{ t("researchAndDevelopment") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Benih Topas
+            {{ t("topazSeed") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Komitmen Berkelanjutan
+            {{ t("sustainableCommitment") }}
           </div>
         </div>
         <br class="md:hidden" />
@@ -71,8 +71,7 @@
 
         <div class="md:w-[70%] space-y-8">
           <div class="font-bold text-2xl">
-            Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
-            ekosistem pertanian
+            {{ t('agriculturalBalance') }}
           </div>
           <div class="md:flex">
             <div class="pr-5">
@@ -103,105 +102,39 @@
       <div
         class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold"
       >
-        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan
-        kehidupan yang lebih baik
+        {{ t('ourGoal') }}
         <hr class="bg-white mt-5 border-t-2" />
       </div>
-      <div class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7">
-        <Image
-          v-for="(data, index) in gallery"
-          :key="index"
-          :is-previewable="true"
-          :src="`http://localhost:8000${data.image}`"
-          alt="gallery 1"
-        />
-      </div>
+      <NSpin :show="pending">
+        <div
+          v-if="gallery.length > 0"
+          class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7"
+        >
+          <Image
+            v-for="(data, index) in gallery"
+            :key="index"
+            :is-previewable="true"
+            :src="`${data.image}`"
+            alt="gallery 1"
+          />
+        </div>
+      </NSpin>
 
       <div class="mt-8 flex justify-center">
         <NuxtLink to="/gallery">
-          <Button bg-class="bg-secondary" title="Lihat Semua" />
+          <Button bg-class="bg-secondary" :title="t('learnMore')" />
         </NuxtLink>
       </div>
       <br /><br />
     </WrapperSection>
 
-    <WrapperSection>
-      <br /><br />
-      <div class="flex justify-around">
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            12
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            PERKEBUNAN
-          </div>
+    <WrapperSection class="bg-[#F9F9F9] pt-20">
+      <div class="space-y-5 md:space-y-0 md:flex md:gap-7">
+        <div class="md:basis-1/12 max-md:text-2xl md:text-3xl font-bold">
+          {{ t('csr') }}
         </div>
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            1,000
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            HEKTAR PERKEBUNAN
-            <br />
-            MILIK PERUSAHAAN
-          </div>
-        </div>
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            130
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            PETANI LADANG
-          </div>
-        </div>
-      </div>
-    </WrapperSection>
-    <br /><br />
-    <WrapperSection class="bg-[#F9F9F9]">
-      <br /><br />
-      <div class="md:flex">
-        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">Berita</div>
-        <br />
-        <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
-          <NewsThumbnail
-            image="/about-us.jpg"
-            title="Efektivitas petani dalam kehidupan"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-1.jpg"
-            title="Efektivitas petani dalam kehidupan"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-2.jpg"
-            title="Efektivitas petani dalam kehidupan"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-3.jpg"
-            title="Efektivitas petani dalam kehidupan"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
+        <div class="md:basis-11/12">
+          <CsrShowcase />
         </div>
       </div>
       <br /><br /><br /><br />
@@ -214,14 +147,14 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: "local",
-});
-const gallery = ref([]);
+import { NSpin } from "naive-ui";
+
+const { t } = useI18n();
+const gallery = ref<any>([]);
 const { pending, data: posts } = useLazyFetch(
-  "http://localhost:8000/api/dashboard"
+  "http://localhost:8000/api/gallery"
 );
-watch(posts, (newPosts) => {
+watch(posts, (newPosts: any) => {
   gallery.value.push(...newPosts.data);
   // console.log(newPosts);
 });
@@ -235,6 +168,14 @@ en:
   aboutUsTitle: "Our Journey in the Agricultural World"
   aboutUsDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   aboutUsDescc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  whatWeDo: "What We Do"
+  farmerPartnership: "Partnership with farmers"
+  researchAndDevelopment: "Research and Development"
+  topazSeed: "Topaz Seed"
+  sustainableCommitment: "Sustainable Commitment"
+  agriculturalBalance: "Uphold farmer partnerships in maintaining the balance of agricultural ecosystems"
+  ourGoal: "Our goal has always been to make farmers a place to grow a better life"
+  csr: "Corporate Social Responsibility"
 id:
   mainText: "Hasil alam yang berkualitas, untuk kepuasan pelanggan yang tinggi"
   learnMore: "Pelajari Lebih Lanjut"
@@ -242,4 +183,12 @@ id:
   aboutUsTitle: "Perjalanan Kami dalam Dunia Pertanian"
   aboutUsDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   aboutUsDescc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  whatWeDo: "Apa yang kami lakukan"
+  farmerPartnership: "Kemitraan dengan petani"
+  researchAndDevelopment: "Penelitian dan pengembangan"
+  topazSeed: "Benih Topas"
+  sustainableCommitment: "Komitmen Berkelanjutan"
+  agriculturalBalance: "Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan ekosistem pertanian"
+  ourGoal: "Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan kehidupan yang lebih baik"
+  csr: "Tanggung jawab sosial perusahaan"
 </i18n>
