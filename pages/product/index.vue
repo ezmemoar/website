@@ -4,7 +4,7 @@
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="max-md:px-10 md:px-10 lg:px-36 z-50">
         <h1 class="text-2xl font-bold text-gray-50 mt-20 mb-10 font-[Poppins]">
-          Tersedia
+          {{t('available')}}
         </h1>
         <div class="grid gap-16 md:grid-cols-2 sm:grid-cols-1">
           <NuxtLink
@@ -28,7 +28,8 @@
                       {{ data.title }}
                     </p>
                     <small class="font-medium font-[Poppins] text-white"
-                      >Contact: {{ data.contact }}
+                      >{{t('contact')}}
+: {{ data.contact }}
                     </small>
                   </div>
                 </div>
@@ -43,6 +44,9 @@
 
 <style scoped></style>
 <script setup>
+const { t } = useI18n({
+  useScope: "local",
+});
 let datas = [
   {
     title: "Alpukal Miki",
@@ -78,3 +82,12 @@ let datas = [
   },
 ];
 </script>
+<i18n lang="yaml">
+en:
+  available: "Available"
+  contact: "Contact"
+id:
+  available: "Tersedia"
+  contact: "Kontak"
+
+</i18n>

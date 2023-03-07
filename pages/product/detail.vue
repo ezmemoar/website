@@ -22,7 +22,7 @@
     </WrapperSection>
 
     <WrapperSection class="font-medium text-base text-gray-100 py-10">
-      <h1 class="text-2xl font-semibold max-md:text-center py-5">Toko yang Menyediakan</h1>
+      <h1 class="text-2xl font-semibold max-md:text-center py-5">{{t(('shop'))}}</h1>
       <div class="flex grid max-md:grid-cols-2 md:grid-cols-3 max-md:gap-10 md:gap-16 max-md:px-10" >
         <div class="bg-gray-200 rounded-xl shadow" v-for="(shop,index) in shops">
           <img
@@ -38,7 +38,7 @@
             >
             <br />
             <small class="font-bold text-gray-500 font-[Poppins]"
-            >{{ shop.qty }}</small
+            >{{t(('total'))}} {{ shop.qty }} {{t(('fruit'))}}</small
             >
           </div>
         </div>
@@ -47,30 +47,45 @@
   </div>
 </template>
 <script type="text/javascript" setup>
+const { t } = useI18n({
+  useScope: "local",
+});
 const shops = ref([
 {
   pt: 'PT Testing 1',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 {
   pt: 'PT Testing 2',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 {
   pt: 'PT Testing 3',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 {
   pt: 'PT Testing 4',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 {
   pt: 'PT Testing 5',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 {
   pt: 'PT Testing 6',
-  qty: 'Total Buah 50 Buah'
+  qty: 50
 },
 ]);
 </script>
+<i18n lang="yaml">
+en:
+  shop: "Shop that Provides"
+  total: "Total Fruit"
+  fruit: "fruit"
+
+id:
+  shop: "Toko yang Menyediakan"
+  total: "Total Buah"
+  fruit: "Buah"
+
+</i18n>

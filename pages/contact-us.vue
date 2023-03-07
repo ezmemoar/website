@@ -19,7 +19,7 @@
                   <input
                      type="text"
                      class="w-full px-5 py-3 rounded bg-gray-200"
-                     placeholder="name"
+                     :placeholder="t('name')"
                   />
                   <div class="mt-5">
                      <input
@@ -29,13 +29,13 @@
                      />
                      <div class="mt-5">
                         <textarea
-                           placeholder="message"
+                           :placeholder="t('message')"
                            class="w-full px-5 py-3 rounded bg-gray-200"
                         ></textarea>
                      </div>
                   </div>
                   <div class="mt-5">
-                     <Button class="!rounded max-md:w-full">send</Button>
+                     <Button class="!rounded max-md:w-full">{{ t('send') }}</Button>
                   </div>
                </div>
             </div>
@@ -45,13 +45,13 @@
       <br />
       <br />
       <p class="text-center font-bold max-md:text-xl md:text-2xl my-5">
-         ALAMAT KAMI
+         {{t('ourAddress')}}
       </p>
       <div class="mb-32">
          <br />
          <div class="justify-evenly gap-16">
             <p class="font-bold max-md:text-base md:text-xl mb-5">
-               KANTOR JAKARTA
+               {{t('office')}}
             </p>
             <div class="md:flex md:justify-between">
                <div class="w-full items-center">
@@ -77,7 +77,7 @@
                         </n-icon>
                      </div>
                      <div>
-                        <h1 class="font-bold">Address</h1>
+                        <h1 class="font-bold">{{t('address')}}</h1>
                         <p class="text-base">Kirana Boutiqe Office,</p>
                         <p class="text-base">
                            Kirana Avenue III, Blok E 1 Nomor 3.
@@ -146,7 +146,7 @@
                         </n-icon>
                      </div>
                      <div>
-                        <h1 class="font-bold">Address</h1>
+                        <h1 class="font-bold">{{t('address')}}</h1>
                         <p class="text-base">
                            Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang,
                            Kab.Bogor, Jawa Barat – 16640
@@ -194,8 +194,22 @@ const copyText = (value: string) => {
 <i18n lang="yaml">
 en:
    aboutUsLabel: "Let's make a connection with us"
+   send: "Send"
    aboutUsDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptas ipsum! Ducimus debitis temporibus voluptatum. Facere, eaque? Esse deserunt assumenda suscipit corrupti? Non tenetur dicta expedita eius ipsa, totam est."
+   ourAddress: "OUR ADDRESS"
+   office: "Jakarta Office"
+   address: "Address"
+   message: "Message"
+   name: "Name"
+
 id:
    aboutUsLabel: "Mari jalin kerja sama dengan kami"
    aboutUsDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptas ipsum! Ducimus debitis temporibus voluptatum. Facere, eaque? Esse deserunt assumenda suscipit corrupti? Non tenetur dicta expedita eius ipsa, totam est."
+   send: "Kirim"
+   ourAddress: "ALAMAT KAMI"
+   office: "KANTOR JAKARTA"
+   address: "Alamat"
+   message: "Pesan"
+   name: "Nama"
+
 </i18n>

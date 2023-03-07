@@ -2,7 +2,7 @@
   <div class="bg-primary min-h-screen overflow-x-hidden">
     <div class="py-20">
       <div class="max-md:px-10 md:px-36 z-50">
-        <h1 class="text-2xl font-bold text-gray-50">Gallery</h1>
+        <h1 class="text-2xl font-bold text-gray-50">{{t('gallery')}}</h1>
 
         <div v-for="(title, index) in dateTitleSlice" :key="index">
           <h1 class="text-white text-base font-semibold pt-10 pb-5">
@@ -58,7 +58,9 @@
 
 <script lang="ts" setup>
 import { NModal } from "naive-ui";
-
+const { t } = useI18n({
+  useScope: "local",
+});
 const showModal = ref(false);
 
 const galleries = ref({ data: [], links: {}, meta: {} });
@@ -119,3 +121,9 @@ const showContent = (index: number) => {
   showModal.value = true;
 };
 </script>
+<i18n lang="yaml">
+en:
+  gallery: "Gallery"
+id:
+  gallery: "Galeri"
+</i18n>

@@ -7,7 +7,7 @@
         <div class="max-md:text-3xl md:text-6xl font-bold text-white">
           {{ t("mainText") }}
           <div class="mt-10">
-            <Button bg-class="bg-secondary" title="Pelajari Lebih Lanjut" />
+            <Button bg-class="bg-secondary" :title="t('learnButton')" />
           </div>
         </div>
       </div>
@@ -27,9 +27,9 @@
               {{ t("aboutUsDescc") }}
             </p>
             <Button
-              class="mt-10"
+              class="my-10"
               bg-class="bg-secondary"
-              title="Pelajari Lebih Lanjut"
+              :title="t('learnButton')"
             />
           </div>
         </div>
@@ -41,7 +41,7 @@
       <div class="flex justify-center px-10">
         <Quote
           class="w-[100%] md:w-[80%] xl:w-[60%] max-md:translate-y-[4rem] md:translate-y-[5rem] max-md:text-sm"
-          quote="Pertanian adalah profesi terbaik di dunia. Anda dapat menanam, menyiram, dan merasakan kepuasan yang tak ternilai saat melihat hasilnya tumbuh dan tumbuh."
+          :quote="t('quote')"
           creator="Joel Salatin"
         />
       </div>
@@ -51,19 +51,19 @@
       <br /><br /><br /><br /><br /><br />
       <div class="mt-5 md:flex">
         <div class="md:w-[30%] space-y-3">
-          <TextSectionLabel title="Apa yang kami lakukan" />
+          <TextSectionLabel :title="t('whatWeDoTitle')" />
 
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Kemitraan dengan petani
+            {{ t("whatWeDoPatnership") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Penelitian dan pengembangan
+            {{ t("whatWeDoDevelopment") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Benih Topas
+            {{ t("whatWeDoTopas") }}
           </div>
           <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            Komitmen Berkelanjutan
+            {{ t("whatWeDoCommitment") }}
           </div>
         </div>
         <br class="md:hidden" />
@@ -71,20 +71,15 @@
 
         <div class="md:w-[70%] space-y-8">
           <div class="font-bold text-2xl">
-            Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
-            ekosistem pertanian
+            {{ t("ecosystem") }}
           </div>
           <div class="md:flex">
             <div class="pr-5">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ut neque eget nisl dapibus aliquam. Duis in velit eu orci
-                aliquam laoreet imperdiet vitae turpis.
+                {{ t("acosystemAbout1") }}
               </p>
               <p class="mt-3">
-                Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit,
-                elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis
-                commodo lacus, eget viverra dui
+                {{ t("acosystemAbout2") }}
               </p>
             </div>
             <br class="md:hidden" />
@@ -103,8 +98,8 @@
       <div
         class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold"
       >
-        Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan
-        kehidupan yang lebih baik
+        {{ t("ourGoal") }}
+
         <hr class="bg-white mt-5 border-t-2" />
       </div>
       <div class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7">
@@ -119,7 +114,7 @@
 
       <div class="mt-8 flex justify-center">
         <NuxtLink to="/gallery">
-          <Button bg-class="bg-secondary" title="Lihat Semua" />
+          <Button bg-class="bg-secondary" :title="t('seeAll')" />
         </NuxtLink>
       </div>
       <br /><br />
@@ -138,7 +133,7 @@
             12
           </div>
           <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            PERKEBUNAN
+            {{ t("plantation") }}
           </div>
         </div>
         <div class="text-center">
@@ -151,9 +146,9 @@
             1,000
           </div>
           <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            HEKTAR PERKEBUNAN
+            {{ t("hectares") }}
             <br />
-            MILIK PERUSAHAAN
+            {{ t("companyProperty") }}
           </div>
         </div>
         <div class="text-center">
@@ -166,7 +161,8 @@
             130
           </div>
           <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            PETANI LADANG
+            {{ t("farmersFields") }}
+
           </div>
         </div>
       </div>
@@ -175,30 +171,30 @@
     <WrapperSection class="bg-[#F9F9F9]">
       <br /><br />
       <div class="md:flex">
-        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">Berita</div>
+        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">{{ t('news') }}</div>
         <br />
         <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
           <NewsThumbnail
             image="/about-us.jpg"
-            title="Efektivitas petani dalam kehidupan"
+            :title="t('effective')"
             date="Juli 20, 2022"
             class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-1.jpg"
-            title="Efektivitas petani dalam kehidupan"
+            :title="t('effective')"
             date="Juli 20, 2022"
             class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-2.jpg"
-            title="Efektivitas petani dalam kehidupan"
+            :title="t('effective')"
             date="Juli 20, 2022"
             class="max-md:mb-10"
           />
           <NewsThumbnail
             image="/gallery/gallery-3.jpg"
-            title="Efektivitas petani dalam kehidupan"
+            :title="t('effective')"
             date="Juli 20, 2022"
             class="max-md:mb-10"
           />
@@ -217,6 +213,7 @@
 const { t } = useI18n({
   useScope: "local",
 });
+const a = ref("adas");
 const gallery = ref([]);
 const { pending, data: posts } = useLazyFetch(
   "http://localhost:8000/api/dashboard"
@@ -235,6 +232,26 @@ en:
   aboutUsTitle: "Our Journey in the Agricultural World"
   aboutUsDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   aboutUsDescc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  whatWeDoTitle: "What we do"
+  whatWeDoPatnership: "Partnership with farmers"
+  whatWeDoDevelopment: "Research and development"
+  whatWeDoTopas: "Topas seed"
+  whatWeDoCommitment: "Ongoing commitment"
+  quote: "Agriculture is the best profession in the world. You can make it, water, and feel invaluable satisfaction when you see the results grow and grow."
+  learnButton: "Learn further"
+  ecosystem: "Upholding farmers' partnerships in maintaining balance
+    agricultural ecosystem"
+  acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
+  acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
+  ourGoal: "Our goal is to always make farmers a place to grow a better life"
+  seeAll: "See All"
+  plantation: "PLANTATION"
+  hectares: "HECTARES OF PLANTATIONS"
+  companyProperty: "COMPANY PROPERTY"
+  farmersFields: "FARMERS FIELDS"
+  news: "News"
+  effective: "The effectiveness of farmers in life"
+
 id:
   mainText: "Hasil alam yang berkualitas, untuk kepuasan pelanggan yang tinggi"
   learnMore: "Pelajari Lebih Lanjut"
@@ -242,4 +259,23 @@ id:
   aboutUsTitle: "Perjalanan Kami dalam Dunia Pertanian"
   aboutUsDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   aboutUsDescc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  whatWeDoTitle: "Apa yang kita lakukan"
+  whatWeDoPatnership: "Kemitraan dengan petani"
+  whatWeDoDevelopment: "Penelitian dan pengembangan"
+  whatWeDoTopas: "Benih Topas"
+  whatWeDoCommitment: "Komitmen Berkelanjutan"
+  learnButton: "Pelajari Lebih Lanjut"
+  quote: "Pertanian adalah profesi terbaik di dunia. Anda dapat menanam, menyiram, dan merasakan kepuasan yang tak ternilai saat melihat hasilnya tumbuh dan tumbuh."
+  ecosystem: "Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
+    ekosistem pertanian"
+  acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
+  acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
+  ourGoal: "Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan kehidupan yang lebih baik"
+  seeAll: "Lihat Semua"
+  plantation: "PERKEBUNAN"
+  hectares: "HEKTAR PERKEBUNAN"
+  companyProperty: "PROPERTI PERUSAHAAN"
+  farmersFields: "PETANI LADANG"
+  news: "Berita"
+  effective: "Efektivitas petani dalam kehidupan"
 </i18n>

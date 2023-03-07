@@ -5,11 +5,11 @@
         <div class="flex justify-center text-white font-semibold mt-10">
           <NuxtLink to="/product/category">
           <p class="mr-5" :class="{ 'border-b': active == 'tersedia' }">
-            Tersedia
+            {{ t('available') }}
           </p>
         </NuxtLink>
           <NuxtLink to="/product/hasilKebun" :class="{ 'border-b': active == 'tidak tersedia' }">
-          <p>Hasil Kebun</p>
+          <p> {{ t('product') }}</p>
         </NuxtLink>
         </div>
         <h1 class="text-2xl font-bold text-gray-50 my-10">Alpukat Miki</h1>
@@ -26,9 +26,9 @@
                 <p class="font-bold text-gray-800 text-lg leading-[1rem]">
                   {{ gallery.fruit }}
                 </p>
-                <small class="mb-2 font-bold text-gray-500">{{
+                <small class="mb-2 font-bold text-gray-500">{{t('total')}} {{
                   gallery.qty
-                }}</small>
+                }} {{t('fruit')}}</small>
               </div>
             </div>
           </NuxtLink>
@@ -39,28 +39,47 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n({
+  useScope: "local",
+});
 const active = "tersedia";
 
 const galleries = ref([
   {
     img: "/gallery/gallery-bananas.jpg",
     fruit: "Pisang",
-    qty: "Total Buah 10 Buah",
+    qty: "10",
   },
   {
     img: "/gallery/gallery-anggur.jpg",
     fruit: "Peer",
-    qty: "Total Buah 10 Buah",
+    qty: "10",
   },
   {
     img: "/gallery/gallery-fruit.jpg",
     fruit: "Buah Naga",
-    qty: "Total Buah 10 Buah",
+    qty: "10",
   },
   {
     img: "/gallery/gallery-oranges.jpg",
     fruit: "Jeruk",
-    qty: "Total Buah 10 Buah",
+    qty: "10",
   },
 ]);
 </script>
+<i18n lang="yaml">
+en:
+  available: "Available"
+  contact: "Contact"
+  product: "Garden products"
+  total: "Total Fruit"
+  fruit: "fruit"
+
+id:
+  available: "Tersedia"
+  contact: "Kontak"
+  product: "Hasil Kebun"
+  total: "Total Buah"
+  fruit: "Buah"
+
+</i18n>
