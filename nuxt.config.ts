@@ -11,10 +11,12 @@ export default defineNuxtConfig({
   i18n: {
     strategy: "no_prefix",
     locales: ["en", "id"],
-    defaultLocale: "id",
+    defaultLocale: "en",
     vueI18n: {
+      globalInjection: true,
       legacy: false,
       locale: "en",
+
     },
   },
   ssr: false,

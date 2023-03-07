@@ -55,7 +55,9 @@
     </div>
 
     <div class="mt-10">
-      <div class="font-bold text-lg border-b border-[#FAB705]">{{ t("plantation") }}</div>
+      <div class="font-bold text-lg border-b border-[#FAB705]">
+        {{ t("plantation") }}
+      </div>
       <div class="mt-2">
         Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang (Happy Garden
         (Villa)), Kab. Bogor, Leuwiliang, Jawa Barat, Indonesia, 16640
@@ -135,7 +137,10 @@
             <NIcon :size="30"><Business /></NIcon>
             <div>
               <div>
-                Kirana Boutique Office, Kirana Avenue III Blok E 1 Nomor 3.
+                Kirana Boutique Office,
+                <br />
+                Kirana Avenue III Blok E 1 No 3
+                <br />
                 Kelapa Gading, Jakarta Utara – 14240.
               </div>
               <div>Phone: (021) 29365166</div>
@@ -195,8 +200,7 @@ en:
   gallery: "Gallery"
   contactUs: "Contact Us"
   office: "Jakarta Office"
-  aboutMultiPropertindoIndonesia:
-    "Multi Propertindo Indonesia was established to respond to corporate and public demand for practice which is efficient, effective, and Innovative in Resolving Agriculture Issues."
+  aboutMultiPropertindoIndonesia: "Multi Propertindo Indonesia was established to respond to corporate and public demand for practice which is efficient, effective, and Innovative in Resolving Agriculture Issues."
   contactInformation: "Contact Information"
   plantation: "Plantation"
 id:
@@ -207,8 +211,7 @@ id:
   gallery: "Galeri"
   contactUs: "Kontak Kami"
   office: "Kantor Jakarta"
-  aboutMultiPropertindoIndonesia:
-    "Multi Propertido Indonesia didirikan untuk menanggapi perusahaan dan permintaan publik untuk praktik yang efisien, efektif, dan Inovatif dalam menyelesaikan masalah pertanian."
+  aboutMultiPropertindoIndonesia: "Multi Propertido Indonesia didirikan untuk menanggapi perusahaan dan permintaan publik untuk praktik yang efisien, efektif, dan Inovatif dalam menyelesaikan masalah pertanian."
   contactInformation: "Kontak Informasi"
   plantation: "Perkebunan"
 </i18n>

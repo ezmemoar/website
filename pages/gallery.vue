@@ -1,72 +1,76 @@
 <template>
   <div class="bg-primary min-h-screen overflow-x-hidden">
     <div class="py-20">
-      <div class="max-md:px-10 md:px-36 z-50">
-        <h1 class="text-2xl font-bold text-gray-50">{{t('gallery')}}</h1>
+      <NSpin stroke="white" :show="pending">
+        <div class="max-md:px-10 md:px-36 z-50">
+          <h1 class="text-2xl font-bold text-gray-50">{{ t("gallery") }}</h1>
 
-        <div v-for="(title, index) in dateTitleSlice" :key="index">
-          <h1 class="text-white text-base font-semibold pt-10 pb-5">
-            {{ title }}
-          </h1>
-          <div class="grid max-md:gap-5 md:gap-10 md:grid-cols-3 max-md:grid-cols-2 sm:grid-cols-1">
+          <div v-for="(title, index) in dateTitleSlice" :key="index">
+            <h1 class="text-white text-base font-semibold pt-10 pb-5">
+              {{ title }}
+            </h1>
             <div
-              v-for="(gallery, index) in dateTitle"
-              :key="index"
-              @click="showContent(index)"
-              class="cursor-pointer rounded"
-              v-show="show(index, title)"
+              class="grid max-md:gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <Image
-                :src="`http://localhost:8000${gallery.image}`"
-                :alt="gallery.image"
-                is-animated
-              />
+              <div
+                v-for="(gallery, index) in dateTitle"
+                :key="index"
+                @click="showContent(index)"
+                class="cursor-pointer rounded"
+                v-show="show(index, title)"
+              >
+                <Image
+                  :src="`http://localhost:8000${gallery.image}`"
+                  :alt="gallery.image"
+                  is-animated
+                />
+              </div>
             </div>
           </div>
+          <NModal
+            v-model:show="showModal"
+            class="w-3/4 pb-5 px-5 pt-1"
+            preset="card"
+            transform-origin="center"
+          >
+            <div class="flex justify-between space-x-3">
+              <img class="w-1/2 rounded" :src="selectedGallery.image" />
+              <div class="w-1/2 py-2">
+                <div class="text-lg font-bold">
+                  {{ selectedGallery.title }}
+                </div>
+                <div class="mt-3 text-base overflow-y-auto max-h-52">
+                  {{ selectedGallery.content }}
+                </div>
+              </div>
+            </div>
+          </NModal>
         </div>
-        <NModal
-          v-model:show="showModal"
-          class="w-3/4 pb-5 px-5 pt-1"
-          preset="card"
-          transform-origin="center"
-        >
-          <div class="flex justify-between space-x-3">
-            <img class="w-1/2 rounded" src="/gallery/mommy-vegetable.png" />
-            <div class="w-1/2 py-2">
-              <div class="text-lg font-bold">
-                {{ selectedGallery.title }}
-              </div>
-              <div class="mt-3 text-base overflow-y-auto max-h-52">
-                {{ selectedGallery.desc }}
-              </div>
-            </div>
-          </div>
-        </NModal>
-      </div>
-      <div class="flex justify-center pt-10" v-if="galleries.links.next">
-      <button
-        class="text-white border border-white py-2 px-3 hover:bg-white hover:bg-opacity-10 transition ease-in-out duration-150"
-        @click="nextPage"
-        :disabled="pending"
-      >
-        {{ pending ? 'pending' : 'Load More' }}
-      </button>
-    </div>
+        <div class="flex justify-center pt-10" v-if="galleries.links.next">
+          <button
+            class="text-white border border-white py-2 px-3 hover:bg-white hover:bg-opacity-10 transition ease-in-out duration-150"
+            @click="nextPage"
+            :disabled="pending"
+          >
+            {{ pending ? "pending" : "Load More" }}
+          </button>
+        </div>
+      </NSpin>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { NModal } from "naive-ui";
+import { NModal, NSpin } from "naive-ui";
 const { t } = useI18n({
   useScope: "local",
 });
 const showModal = ref(false);
 
-const galleries = ref({ data: [], links: {}, meta: {} });
+const galleries = ref<any>({ data: [], links: {}, meta: {} });
 const selectedIndex = ref(0);
-const dateTitle = ref([]);
-const dateTitleSlice = ref([]);
+const dateTitle = ref<any>([]);
+const dateTitleSlice = ref<any>([]);
 const page = ref(1);
 const pending = ref(false);
 
@@ -91,7 +95,7 @@ const loadData = async () => {
       pending.value = false;
       dateTitle.value = [];
       dateTitle.value.push(...galleries.value.data);
-      let filterArr = function (arr) {
+      let filterArr = function (arr: any) {
         if (
           dateTitleSlice.value.includes(arr.created_at.slice(0, 7)) == false
         ) {
@@ -99,22 +103,22 @@ const loadData = async () => {
         }
       };
       dateTitle.value.filter(filterArr);
-      dateTitleSlice.value.sort()
-      dateTitleSlice.value.reverse()
+      dateTitleSlice.value.sort();
+      dateTitleSlice.value.reverse();
       // console.log(galleries.value.data[1]);
-pending.value = false
+      pending.value = false;
     });
 };
 watch(page, () => loadData(), {
   immediate: true,
 });
 
-
-
-const show = (index, title) => {
+const show = (index: number, title: string) => {
   return dateTitle.value[index].created_at.slice(0, 7) === title ? true : false;
 };
-const selectedGallery = computed(() => galleries.value.data[selectedIndex.value]);
+const selectedGallery = computed(
+  () => galleries.value.data[selectedIndex.value]
+);
 
 const showContent = (index: number) => {
   selectedIndex.value = index;

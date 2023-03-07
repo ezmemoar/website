@@ -4,7 +4,7 @@
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="max-md:px-20 px-36 z-50">
         <h1 class="text-3xl font-bold mt-20 mb-10 text-center">
-          CORPORATE SOCIAL RESPONSIBILITY
+          {{ t('csr') }}
         </h1>
         <NSpin :show="pending" class="pb-20 w-full">
           <template v-if="res.data.length != 0">
@@ -47,6 +47,7 @@ import { NButton, NSpin } from "naive-ui";
 
 const { API_LIST } = useApiUrl();
 const { formatDate } = useDate();
+const { t } = useI18n();
 
 const page = ref(1);
 const pending = ref(true);
@@ -76,3 +77,10 @@ watch(page, () => loadData(), {
   immediate: true,
 });
 </script>
+
+<i18n lang="yaml">
+en:
+  csr: "Corporate Social Responsibility"
+id:
+  csr: "Tanggung jawab sosial perusahaan"
+</i18n>

@@ -104,7 +104,7 @@
       <div class="py-1 text-center">
         <TextSectionLabel :title="t('happySentosaGarden')" />
         <img
-          src="/gallery/hsg-removebg-preview.png"
+          src="/happy-sentosa-garden.png"
           class="m-auto w-5/12 mb-5 mt-10"
         />
       </div>
@@ -136,13 +136,12 @@ id:
 en:
   aboutUs: "About Us"
   visionAndMission: "Vision And Mission"
-  vision: "Visi kami adalah adalah menjadi perusahaan perkebunan dan pertanian terkemuka di dunia yang mampu memberikan nilai tambah bagi seluruh stakeholder."
-  mission: "<ol><li>meningkatkan produktivitas perkebunan dan pertanian dengan menggunakan teknologi</li><li>fokus pada pengembangan program sosial yang bertujuan untuk meningkatkan kesejahteraan masyarakat setempat.</li></ol>"
+  vision: "Our vision is to become a leading plantation and plantation company in the world that is able to provide added value to all stakeholders."
+  mission: "<ol><li>increase the productivity of plantations and agriculture using technology</li><li>focus on developing social programs aimed at improving the welfare of local communities.</li></ol>"
   history: "Our History"
-  historyDesc: "Perusahaan ini didirikan oleh sekelompok petani dan pebisnis yang ingin meningkatkan produktivitas perkebunan dan pertanian di wilayah mereka. Sejak awal, perusahaan ini fokus pada pengembangan teknologi dan praktik-praktik yang baik untuk meningkatkan hasil produksi. Seiring berjalannya waktu, perusahaan ini berhasil meningkatkan produktivitas perkebunan dan pertanian di wilayah kerjanya."
-  ourTeamFarmer: "Team Garden"
-  ourTeamOperasional: "Team Operasional"
-
+  historyDesc: "This company was founded by a group of farmers and businessmen who wanted to increase the productivity of plantations and agriculture in their area. Since its inception, the company has focused on developing technology and good practices to increase production output. Over time, this company has succeeded in increasing the productivity of plantations and agriculture in its working area."
+  ourTeamFarmer: "Garden Team"
+  ourTeamOperasional: "Operational Team"
   happySentosaGarden: "Happy Sentosa Garden"
-  happySentosaGardenDesc: "Merupakan salah satu usaha di bidang perkebunaan dalam naungan Multi Propertindo Indonesia. Dengan kegiatan yang mengusahakan tanaman mulai dari pembukaan dan persiapan lahan, proses pembibitan, pemeliharaan tanaman, panen, serta memasarkan hasil tanaman tersebut, dengan bantuan ilmu pengetahuan dan tenaga para petani yang profesional serta manajemen untuk mewujudkan kesejahteraan HSG"
+  happySentosaGardenDesc: "Is one of the businesses in the plantation sector under the auspices of Multi Propertindo Indonesia. With activities that cultivate plants starting from land clearing and preparation, nursery processes, plant maintenance, harvesting, and marketing of these crops, with the help of science and professional farmers and management to realize the welfare of HSG"
 </i18n>

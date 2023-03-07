@@ -102,15 +102,20 @@
 
         <hr class="bg-white mt-5 border-t-2" />
       </div>
-      <div class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7">
-        <Image
-          v-for="(data, index) in gallery"
-          :key="index"
-          :is-previewable="true"
-          :src="`http://localhost:8000${data.image}`"
-          alt="gallery 1"
-        />
-      </div>
+      <NSpin :show="pending">
+        <div
+          v-if="gallery.length > 0"
+          class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7"
+        >
+          <Image
+            v-for="(data, index) in gallery"
+            :key="index"
+            :is-previewable="true"
+            :src="`http://localhost:8000${data.image}`"
+            alt="gallery 1"
+          />
+        </div>
+      </NSpin>
 
       <div class="mt-8 flex justify-center">
         <NuxtLink to="/gallery">
@@ -162,7 +167,6 @@
           </div>
           <div class="mt-2 max-md:text-base md:text-lg font-semibold">
             {{ t("farmersFields") }}
-
           </div>
         </div>
       </div>
@@ -171,7 +175,9 @@
     <WrapperSection class="bg-[#F9F9F9]">
       <br /><br />
       <div class="md:flex">
-        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">{{ t('news') }}</div>
+        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">
+          {{ t("news") }}
+        </div>
         <br />
         <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
           <NewsThumbnail
@@ -213,14 +219,12 @@
 const { t } = useI18n({
   useScope: "local",
 });
-const a = ref("adas");
 const gallery = ref([]);
 const { pending, data: posts } = useLazyFetch(
-  "http://localhost:8000/api/dashboard"
+  "http://localhost:8000/api/gallery"
 );
-watch(posts, (newPosts) => {
+watch(posts, (newPosts: any) => {
   gallery.value.push(...newPosts.data);
-  // console.log(newPosts);
 });
 </script>
 
