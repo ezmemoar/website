@@ -23,7 +23,7 @@
                       Alpukat Miki
                     </p>
                     <small class="font-medium font-[Poppins] text-white">
-                      Contact: 085881234491 (Andi Setiawan)
+                      {{ t("Contact") }}: 085881234491 (Andi Setiawan)
                     </small>
                   </div>
                 </div>
@@ -60,12 +60,49 @@
 </template>
 
 <script setup>
-const { t } = useI18n();
+const { t } = useI18n({
+  useScope: "local",
+});
+let datas = [
+  {
+    title: "Alpukal Miki",
+    contact: "085881234491 (Andi Setiawan)",
+    items: [
+      {
+        img: "/gallery/gallery-fruit.jpg",
+        fruit: "Buah Naga",
+        qty: "Total Buah 10 Buah",
+      },
+      {
+        img: "/gallery/gallery-oranges.jpg",
+        fruit: "Jeruk",
+        qty: "Total Buah 10 Buah",
+      },
+    ],
+  },
+  {
+    title: "Alpukal Miki 2",
+    contact: "085881234491 (Andi Setiawan)",
+    items: [
+      {
+        img: "/gallery/gallery-bananas.jpg",
+        fruit: "Pisang",
+        qty: "Total Buah 10 Buah",
+      },
+      {
+        img: "/gallery/gallery-anggur.jpg",
+        fruit: "Peer",
+        qty: "Total Buah 10 Buah",
+      },
+    ],
+  },
+];
 </script>
-
 <i18n lang="yaml">
 en:
-  available: "available"
+  available: "Available"
+  contact: "Contact"
 id:
   available: "Tersedia"
+  contact: "Kontak"
 </i18n>

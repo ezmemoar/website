@@ -33,7 +33,7 @@
     <br />
     <div class="flex pt-5">
       <div class="w-full">
-        <div class="font-bold text-lg">{{ t("navigationMenu") }}</div>
+        <div class="font-bold text-lg">{{ t("navigation") }}</div>
         <div class="mt-4 flex flex-col leading-[2rem]">
           <NuxtLink to="/about-us">{{ t("aboutUs") }}</NuxtLink>
           <NuxtLink to="/csr">{{ t("csr") }}</NuxtLink>
@@ -45,17 +45,19 @@
     </div>
     <div class="mt-10">
       <div class="font-bold text-lg border-b border-[#FAB705]">
-        {{ t("jakartaOffice") }}
+        {{ t("office") }}
       </div>
       <div class="mt-2">
-        {{ t("jakartaOfficeDesc") }}
+        {{ t("aboutMultiPropertindoIndonesia") }}
       </div>
       <br />
       <div>Phone: (021) 29365166</div>
     </div>
 
     <div class="mt-10">
-      <div class="font-bold text-lg border-b border-[#FAB705]">Perkebunan</div>
+      <div class="font-bold text-lg border-b border-[#FAB705]">
+        {{ t("plantation") }}
+      </div>
       <div class="mt-2">
         Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang (Happy Garden
         (Villa)), Kab. Bogor, Leuwiliang, Jawa Barat, Indonesia, 16640
@@ -82,11 +84,9 @@
       <div class="w-3/12">
         <img src="/logo-white.svg" class="w-[10rem]" />
         <div class="mt-10">
-          <div class="font-bold">
-            {{ t("jakartaOffice") }}
-          </div>
+          <div class="font-bold">{{ t("office") }}</div>
           <div class="mt-2">
-            {{ t("jakartaOfficeDesc") }}
+            {{ t("aboutMultiPropertindoIndonesia") }}
           </div>
         </div>
         <div class="mt-10 flex space-x-3">
@@ -131,7 +131,7 @@
       </div>
 
       <div class="w-4/12 pl-10 pt-5">
-        <div class="font-bold text-lg">{{ t('contactInformation') }}</div>
+        <div class="font-bold text-lg">{{ t("contactInformation") }}</div>
         <div class="mt-4 flex flex-col">
           <div>
             <NIcon :size="30"><Business /></NIcon>
@@ -186,30 +186,32 @@ import {
   Business,
   Home,
 } from "@vicons/ionicons5";
-import { NIcon } from "naive-ui";
-
-const { t } = useI18n();
+import { NIcon, NIconWrapper } from "naive-ui";
+const { t } = useI18n({
+  useScope: "local",
+});
 </script>
-
 <i18n lang="yaml">
 en:
-  jakartaOffice: "Jakarta Office"
-  jakartaOfficeDesc: "MULTI PROPERTINDO INDONESIA was established to respond to corporate and public demand for practice which is efficient, effective, and innovative in resolving agriculture issues."
   navigation: "Navigation Menu"
   aboutUs: "About Us"
   csr: "CSR"
   product: "Product"
   gallery: "Gallery"
   contactUs: "Contact Us"
+  office: "Jakarta Office"
+  aboutMultiPropertindoIndonesia: "Multi Propertindo Indonesia was established to respond to corporate and public demand for practice which is efficient, effective, and Innovative in Resolving Agriculture Issues."
   contactInformation: "Contact Information"
+  plantation: "Plantation"
 id:
-  jakartaOffice: "Kantor Jakarta"
-  jakartaOfficeDesc: "MULTI PROPERTINDO INDONESIA didirikan untuk menjawab kebutuhan korporasi dan publik akan praktik yang efisien, efektif, dan inovatif dalam menyelesaikan masalah pertanian."
-  navigation: "Menu Navigasi"
+  navigation: "Navigasi Menu"
   aboutUs: "Tentang Kami"
   csr: "CSR"
   product: "Produk"
   gallery: "Galeri"
   contactUs: "Kontak Kami"
-  contactInformation: "Informasi Kontak"
+  office: "Kantor Jakarta"
+  aboutMultiPropertindoIndonesia: "Multi Propertido Indonesia didirikan untuk menanggapi perusahaan dan permintaan publik untuk praktik yang efisien, efektif, dan Inovatif dalam menyelesaikan masalah pertanian."
+  contactInformation: "Kontak Informasi"
+  plantation: "Perkebunan"
 </i18n>

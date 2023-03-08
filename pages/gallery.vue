@@ -3,7 +3,7 @@
     <div class="py-20">
       <NSpin stroke="white" :show="pending">
         <div class="max-md:px-10 md:px-36 z-50">
-          <h1 class="text-2xl font-bold text-gray-50">Gallery</h1>
+          <h1 class="text-2xl font-bold text-gray-50">{{ t("gallery") }}</h1>
 
           <div v-for="(title, index) in dateTitleSlice" :key="index">
             <h1 class="text-white text-base font-semibold pt-10 pb-5">
@@ -20,7 +20,7 @@
                 v-show="show(index, title)"
               >
                 <Image
-                  :src="`${gallery.image}`"
+                  :src="`http://localhost:8000${gallery.image}`"
                   :alt="gallery.image"
                   is-animated
                 />
@@ -62,7 +62,9 @@
 
 <script lang="ts" setup>
 import { NModal, NSpin } from "naive-ui";
-
+const { t } = useI18n({
+  useScope: "local",
+});
 const showModal = ref(false);
 
 const galleries = ref<any>({ data: [], links: {}, meta: {} });
@@ -123,3 +125,9 @@ const showContent = (index: number) => {
   showModal.value = true;
 };
 </script>
+<i18n lang="yaml">
+en:
+  gallery: "Gallery"
+id:
+  gallery: "Galeri"
+</i18n>
