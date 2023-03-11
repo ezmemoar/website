@@ -132,7 +132,7 @@ id:
   ourTeamFarmer: "Tim Kebun"
   ourTeamOperasional: "Tim Operasional"
   happySentosaGarden: "Happy Sentosa Garden"
-  happySentosaGardenDesc: "Merupakan salah satu usaha di bidang perkebunaan dalam naungan Multi Propertindo Indonesia. Dengan kegiatan yang mengusahakan tanaman mulai dari pembukaan dan persiapan lahan, proses pembibitan, pemeliharaan tanaman, panen, serta memasarkan hasil tanaman tersebut, dengan bantuan ilmu pengetahuan dan tenaga para petani yang profesional serta manajemen untuk mewujudkan kesejahteraan HSG"
+  happySentosaGardenDesc: "Merupakan salah satu usaha di bidang perkebunaan dalam naungan PT Multi Propertindo Indonesia. Dengan kegiatan yang mengusahakan tanaman mulai dari pembukaan dan persiapan lahan, proses pembibitan, pemeliharaan tanaman, panen, serta memasarkan hasil tanaman tersebut, dengan bantuan ilmu pengetahuan dan tenaga para petani yang profesional serta manajemen untuk mewujudkan kesejahteraan Happy Sentosa Garden"
 en:
   aboutUs: "About Us"
   visionAndMission: "Vision And Mission"
@@ -143,5 +143,5 @@ en:
   ourTeamFarmer: "Garden Team"
   ourTeamOperasional: "Operational Team"
   happySentosaGarden: "Happy Sentosa Garden"
-  happySentosaGardenDesc: "Is one of the businesses in the plantation sector under the auspices of Multi Propertindo Indonesia. With activities that cultivate plants starting from land clearing and preparation, nursery processes, plant maintenance, harvesting, and marketing of these crops, with the help of science and professional farmers and management to realize the welfare of HSG"
+  happySentosaGardenDesc: "Is one of the businesses in the plantation sector under the auspices of PT Multi Propertindo Indonesia. With activities that cultivate plants starting from land clearing and preparation, nursery processes, plant maintenance, harvesting, and marketing of these crops, with the help of science and professional farmers and management to realize the welfare of Happy Sentosa Garden"
 </i18n>

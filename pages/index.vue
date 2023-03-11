@@ -125,53 +125,6 @@
       <br /><br />
     </WrapperSection>
 
-    <WrapperSection>
-      <br /><br />
-      <div class="flex justify-around">
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            12
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            {{ t("plantation") }}
-          </div>
-        </div>
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            1,000
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            {{ t("hectares") }}
-            <br />
-            {{ t("companyProperty") }}
-          </div>
-        </div>
-        <div class="text-center">
-          <Image
-            src="/statistic/wheat.svg"
-            alt="wheat"
-            class="max-md:w-[50%] md:w-[60%] mx-auto"
-          />
-          <div class="mt-2 text-primary max-md:text-xl md:text-2xl font-bold">
-            130
-          </div>
-          <div class="mt-2 max-md:text-base md:text-lg font-semibold">
-            {{ t("farmersFields") }}
-          </div>
-        </div>
-      </div>
-    </WrapperSection>
-    <br /><br />
     <WrapperSection class="bg-[#F9F9F9]">
       <br /><br />
       <div class="md:flex">

@@ -20,18 +20,11 @@
                     <div
                       :style="{
                         'background-image':
-                          'url(' + productVal.attachment.image + ')',
+                          'url(http://localhost:8000' + productVal.attachment.image + ')',
                       }"
                       class="w-full h-52 bg-cover rounded-xl bg-center"
                     ></div>
-                    <div class="px-5 py-4">
-                      <p class="font-bold text-gray-800 text-lg leading-[1rem]">
-                        {{ productVal.content.title }}
-                      </p>
-                      <p class="mt-1 text-sm font-bold text-gray-500">
-                        Jumlah Buah: {{ productVal.quantity }}
-                      </p>
-                    </div>
+
                   </div>
                 </NuxtLink>
               </div>
@@ -58,9 +51,9 @@ const loadData = async () => {
   await $fetch<any>(`${API_LIST.GET_PRODUCT_LIST}/${1}`)
     .then((val) => {
       const newRes: any = {};
+        console.log(val);
 
       for (let product of val.data) {
-        console.log(product);
 
         if (!newRes[product.company.name]) {
           newRes[product.company.name] = [];

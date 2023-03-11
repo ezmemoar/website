@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     locales: ["en", "id"],
     defaultLocale: "en",
     vueI18n: {
+      fallbackLocale: ['en', 'id'],
       globalInjection: true,
       legacy: false,
       locale: "en",
