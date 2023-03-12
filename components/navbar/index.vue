@@ -19,7 +19,7 @@
         class="bg-transparent hover:cursor-pointer outline-none"
         v-model="$i18n.locale"
       >
-        <option v-for="val in languageOption" :key="val" :value="val">
+        <option v-for="(val, i) in languageOption" :key="i" :value="val">
           {{ val }}
         </option>
       </select>
@@ -88,30 +88,18 @@
       />
     </div>
   </nav>
+
 </template>
 <script setup lang="ts">
 import { Search, Menu, Close } from "@vicons/ionicons5";
 import { NIcon } from "naive-ui";
 
 const { t, locale } = useI18n();
-
-watch(
-  locale,
-  (newVal) => {
-    if (!locale.value) {
-      localStorage.setItem("language", "en");
-    }
-
-    locale.value = localStorage.getItem("language") as string;
-  },
-  { immediate: true }
-);
-
 let navbarItem = ref({
   items: true,
 });
 
-const languageOption = ["id", "en"];
+const languageOption = ["en", "id"];
 </script>
 <i18n lang="yaml">
 en:

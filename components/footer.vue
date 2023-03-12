@@ -134,7 +134,10 @@
         <div class="font-bold text-lg">{{ t("contactInformation") }}</div>
         <div class="mt-4 flex flex-col">
           <div>
+            <div class="flex items-center mb-3">
             <NIcon :size="30"><Business /></NIcon>
+            <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
+            </div>
             <div>
               <div>
                 Kirana Boutique Office,
@@ -149,7 +152,11 @@
           </div>
 
           <div class="mt-8">
+            <div class="flex items-center mb-3">
             <NIcon :size="30"><Home /></NIcon>
+
+              <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
+            </div>
             <div>
               <div>
                 Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang, Kab.Bogor,

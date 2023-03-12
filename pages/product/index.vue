@@ -18,11 +18,11 @@
                   ></div>
                   <div class="absolute px-5 py-3" style="bottom: 0">
                     <p
-                      class="font-semibold text-white text-xl mb-1 opacity-100"
+                      class="font-semibold text-white text-2xl mb-1 opacity-100"
                     >
                       Alpukat Miki
                     </p>
-                    <small class="font-medium font-[Poppins] text-white">
+                    <small class="text-lg font-medium font-[Poppins] text-white">
                       {{ t("Contact") }}: 085881234491 (Andi Setiawan)
                     </small>
                   </div>
@@ -45,7 +45,7 @@
                     >
                       Hasil Kebun
                     </p>
-                    <small class="font-medium font-[Poppins] text-white">
+                    <small class="text-base font-medium font-[Poppins] text-white">
                       Contact: 085736921243 (Sellvya Evitarani)
                     </small>
                   </div>
