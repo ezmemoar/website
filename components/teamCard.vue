@@ -1,7 +1,7 @@
 <template>
   <div>
     <NCard class="text-center" style="border-style: none;" size="huge">
-      <img src="/teams/team-1.png" class="w-32 m-auto" />
+      <img :src="`http://localhost:8000${$props.image}`" class="w-32 m-auto" />
       <div class="mt-5 text-xl font-bold text-primary max-md:text-base">{{ $props.name }}</div>
       <div class="mt-3 text-xl text-gray-500  max-md:text-base">{{ $props.position }}</div>
     </NCard>
@@ -14,5 +14,6 @@ import { NCard } from "naive-ui";
 defineProps<{
   name: string;
   position: string;
+  image: string;
 }>();
 </script>
