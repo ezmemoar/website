@@ -126,40 +126,7 @@
     </WrapperSection>
 
     <WrapperSection class="bg-[#F9F9F9]">
-      <br /><br />
-      <div class="md:flex">
-        <div class="w-[20%] max-md:text-2xl md:text-3xl font-bold">
-          {{ t("news") }}
-        </div>
-        <br />
-        <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
-          <NewsThumbnail
-            image="/about-us.jpg"
-            :title="t('effective')"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-1.jpg"
-            :title="t('effective')"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-2.jpg"
-            :title="t('effective')"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-          <NewsThumbnail
-            image="/gallery/gallery-3.jpg"
-            :title="t('effective')"
-            date="Juli 20, 2022"
-            class="max-md:mb-10"
-          />
-        </div>
-      </div>
-      <br /><br /><br /><br />
+      <CsrShowcase />
     </WrapperSection>
 
     <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">

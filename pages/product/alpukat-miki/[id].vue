@@ -52,16 +52,26 @@ const { API_LIST } = useApiUrl();
 const res = ref<any>({ data: {} });
 const pending = ref(true);
 
+const { locale } = useI18n();
+
 const loadData = async () => {
   pending.value = true;
 
-  await $fetch<any>(`${API_LIST.GET_PRODUCT_LIST}/${1}/${id}`)
+  await $fetch<any>(`${API_LIST.GET_PRODUCT_LIST}/${1}/${id}`, {
+    params: {
+      lang: locale.value,
+    }
+  })
     .then((val) => {
-      console.log(val.data);
       res.value.data = val.data;
     })
     .finally(() => (pending.value = false));
 };
 
-onMounted(() => loadData());
+watch(locale, () => {
+  res.value.data = {};
+  loadData();
+}, {
+  immediate: true
+});
 </script>

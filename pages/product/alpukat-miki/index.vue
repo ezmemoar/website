@@ -18,13 +18,12 @@
                 >
                   <div class="bg-gray-200 rounded-xl shadow" :key="index">
                     <div
+                      class="w-full h-52 bg-cover rounded-xl bg-center"
                       :style="{
                         'background-image':
-                          'url(http://localhost:8000' + productVal.attachment.image + ')',
+                          'url(' + productVal.attachment.image + ')',
                       }"
-                      class="w-full h-52 bg-cover rounded-xl bg-center"
                     ></div>
-
                   </div>
                 </NuxtLink>
               </div>
@@ -45,16 +44,21 @@ const { API_LIST } = useApiUrl();
 const res = ref<any>({ data: {} });
 const pending = ref(true);
 
+const { locale } = useI18n();
+
 const loadData = async () => {
   pending.value = true;
 
-  await $fetch<any>(`${API_LIST.GET_PRODUCT_LIST}/${1}`)
+  await $fetch<any>(`${API_LIST.GET_PRODUCT_LIST}/${1}`, {
+    params: {
+      lang: locale.value,
+    },
+  })
     .then((val) => {
       const newRes: any = {};
-        console.log(val);
+      console.log(val);
 
       for (let product of val.data) {
-
         if (!newRes[product.company.name]) {
           newRes[product.company.name] = [];
         }
@@ -68,5 +72,14 @@ const loadData = async () => {
     .finally(() => (pending.value = false));
 };
 
-onMounted(() => loadData());
+watch(
+  locale,
+  () => {
+    res.value.data = {};
+    loadData();
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
