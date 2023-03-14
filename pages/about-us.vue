@@ -131,6 +131,7 @@ const apiTeams = async () => {
 watch(
   locale,
   () => {
+    teams.value.data = [];
     apivisi();
     apiTeams();
   },
