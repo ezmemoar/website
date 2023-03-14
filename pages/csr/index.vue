@@ -4,7 +4,7 @@
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="max-md:px-20 px-36 z-50">
         <h1 class="text-3xl font-bold mt-20 mb-10 text-center">
-          {{ t('csr') }}
+          {{ t("csr") }}
         </h1>
         <NSpin :show="pending" class="pb-20 w-full">
           <template v-if="res.data.length != 0">
@@ -34,7 +34,9 @@
             </div>
 
             <div class="flex justify-center mt-5" v-if="res.links.next">
-              <NButton @click="nextPage" :disabled="pending"> Load More </NButton>
+              <NButton @click="nextPage" :disabled="pending">
+                Load More
+              </NButton>
             </div>
           </template>
         </NSpin>
@@ -47,7 +49,7 @@ import { NButton, NSpin } from "naive-ui";
 
 const { API_LIST } = useApiUrl();
 const { formatDate } = useDate();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const page = ref(1);
 const pending = ref(true);
@@ -60,10 +62,10 @@ const loadData = async () => {
   await $fetch<any>(API_LIST.GET_CSR_LIST, {
     params: {
       page: page.value,
+      lang: locale.value,
     },
   })
     .then((val) => {
-      // console.log(val);
       if (val) {
         res.value.data.push(...val.data);
         res.value.links = val.links;
@@ -75,6 +77,16 @@ const loadData = async () => {
 
 watch(page, () => loadData(), {
   immediate: true,
+});
+
+watch(locale, () => {
+  res.value.data = [];
+
+  if (page.value == 1) {
+    loadData();
+  } else {
+    page.value = 1;
+  }
 });
 </script>
 

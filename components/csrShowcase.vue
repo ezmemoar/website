@@ -1,5 +1,5 @@
 <template>
-  <NSpin :show="pending" class="pb-20 w-full">
+  <NSpin :show="pending" class="py-20 w-full">
     <div class="md:flex-1 md:grid md:grid-cols-2 md:gap-20">
       <template v-if="res.data.length != 0">
         <div class="md:flex py-5 m-auto" v-for="(val, i) in res.data" :key="i">
@@ -27,6 +27,8 @@ import { NButton, NSpin } from "naive-ui";
 const { API_LIST } = useApiUrl();
 const { formatDate } = useDate();
 
+const { locale } = useI18n();
+
 const page = ref(1);
 const pending = ref(true);
 const res = ref<any>({ data: [], links: {}, meta: {} });
@@ -38,10 +40,10 @@ const loadData = async () => {
   await $fetch<any>(API_LIST.GET_CSR_LIST, {
     params: {
       page: page.value,
+      lang: locale.value,
     },
   })
     .then((val) => {
-      // console.log(val);
       if (val) {
         res.value.data.push(...val.data);
         res.value.links = val.links;
@@ -53,5 +55,15 @@ const loadData = async () => {
 
 watch(page, () => loadData(), {
   immediate: true,
+});
+
+watch(locale, () => {
+  res.value.data = [];
+
+  if (page.value == 1) {
+    loadData();
+  } else {
+    page.value = 1;
+  }
 });
 </script>
