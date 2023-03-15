@@ -19,9 +19,11 @@
               <Image src="/about-us.jpg" />
             </div>
             <p class="mt-5">
-              {{ t("vision") }}
+              {{ data.vision }}
             </p>
-            <p class="mt-5" v-html="t('mission')"></p>
+            <p class="mt-5">
+              {{ data.mission }}
+            </p>
           </div>
         </div>
         <div class="w-[40%] max-md:hidden">
@@ -59,24 +61,12 @@
       </div>
       <div class="mt-5 flex flex-wrap justify-center border-none">
         <TeamCard
-          name="Bagus Dwi Eriyanto"
-          position="Koordinator Kebun"
+          v-for="team in teams.data"
+          :name="team.name"
+          :position="team.role"
+          :image="team.image"
           class="max-md:w-6/12 md:w-4/12"
-        />
-        <TeamCard
-          name="Rizki Triadi"
-          position="Staff "
-          class="max-md:w-6/12 md:w-4/12 h-full"
-        />
-        <TeamCard
-          name="Sellvya Evitarani"
-          position="Staff "
-          class="max-md:w-6/12 md:w-4/12"
-        />
-        <TeamCard
-          name="Nisa Cahyaningsih"
-          position="Admin"
-          class="max-md:w-6/12 md:w-4/12"
+          v-show="team.role == 'Petani'"
         />
       </div>
       <br /><br />
@@ -87,14 +77,12 @@
       </div>
       <div class="mt-5 flex flex-wrap justify-center border-none">
         <TeamCard
-          name="Andi Setiawan"
-          position=""
+         v-for="team in teams.data"
+          :name="team.name"
+          :position="team.role"
+          :image="team.image"
           class="max-md:w-6/12 md:w-4/12"
-        />
-        <TeamCard
-          name="Randi Faisal Akbar"
-          position=""
-          class="max-md:w-6/12 md:w-4/12 h-full"
+          v-show="team.role != 'Petani'"
         />
       </div>
       <br /><br />
@@ -103,10 +91,7 @@
     <WrapperSection class="bg-[#F9F9F9] py-10">
       <div class="py-1 text-center">
         <TextSectionLabel :title="t('happySentosaGarden')" />
-        <img
-          src="/happy-sentosa-garden.png"
-          class="m-auto w-5/12 mb-5 mt-10"
-        />
+        <img src="/happy-sentosa-garden.png" class="m-auto w-5/12 mb-5 mt-10" />
       </div>
       <div class="mt-5 text-center md:px-20 max-md:text-base md:text-lg">
         {{ t("happySentosaGardenDesc") }}
@@ -116,9 +101,42 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n({
+const { t, locale } = useI18n({
   useScope: "local",
 });
+const { API_LIST } = useApiUrl();
+
+const data = ref<any>({ mission: {}, vision: {} });
+const teams = ref({data: []});
+const apivisi = async () => {
+  await $fetch<any>(API_LIST.GET_VISION, {
+    params: {
+      lang: locale.value,
+    },
+  }).then((val) => {
+    data.value.mission = val.data.mission;
+    data.value.vision = val.data.vision;
+  });
+};
+const apiTeams = async () => {
+  await $fetch<any>(API_LIST.GET_TEAMS, {
+    params: {
+      lang: locale.value,
+    },
+  }).then((val) => {
+    teams.value.data.push(...val.data);
+    console.log(teams.value);
+  });
+};
+watch(
+  locale,
+  () => {
+    teams.value.data = [];
+    apivisi();
+    apiTeams();
+  },
+  { immediate: true }
+);
 </script>
 
 <i18n lang="yaml">
