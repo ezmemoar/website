@@ -94,35 +94,7 @@
     </WrapperSection>
 
     <WrapperSection class="bg-primary">
-      <br /><br />
-      <div
-        class="max-md:w-full md:w-[50%] max-md:text-xl md:text-3xl text-white font-bold"
-      >
-        {{ t("ourGoal") }}
-
-        <hr class="bg-white mt-5 border-t-2" />
-      </div>
-      <NSpin :show="pending">
-        <div
-          v-if="gallery.length > 0"
-          class="mt-14 grid max-md:grid-cols-2 md:grid-cols-3 gap-7"
-        >
-          <Image
-            v-for="(data, index) in gallery"
-            :key="index"
-            :is-previewable="true"
-            :src="`http://localhost:8000${data.image}`"
-            alt="gallery 1"
-          />
-        </div>
-      </NSpin>
-
-      <div class="mt-8 flex justify-center">
-        <NuxtLink to="/gallery">
-          <Button bg-class="bg-secondary" :title="t('seeAll')" />
-        </NuxtLink>
-      </div>
-      <br /><br />
+      <GalleryShowcase />
     </WrapperSection>
 
     <WrapperSection class="bg-[#F9F9F9]">
@@ -136,16 +108,7 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: "local",
-});
-const gallery = ref([]);
-const { pending, data: posts } = useLazyFetch(
-  "http://localhost:8000/api/gallery"
-);
-watch(posts, (newPosts: any) => {
-  gallery.value.push(...newPosts.data);
-});
+const { t } = useI18n();
 </script>
 
 <i18n lang="yaml">
@@ -167,8 +130,6 @@ en:
     agricultural ecosystem"
   acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
   acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
-  ourGoal: "Our goal is to always make farmers a place to grow a better life"
-  seeAll: "See All"
   plantation: "PLANTATION"
   hectares: "HECTARES OF PLANTATIONS"
   companyProperty: "COMPANY PROPERTY"
@@ -194,8 +155,6 @@ id:
     ekosistem pertanian"
   acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
   acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
-  ourGoal: "Tujuan kami selalu menjadikan petani sebagai tempat untuk menumbuhkan kehidupan yang lebih baik"
-  seeAll: "Lihat Semua"
   plantation: "PERKEBUNAN"
   hectares: "HEKTAR PERKEBUNAN"
   companyProperty: "PROPERTI PERUSAHAAN"

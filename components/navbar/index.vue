@@ -29,13 +29,21 @@
     class="w-full px-5 py-4 fixed transition-colors duration-150 z-50 bg-white text-black md:hidden"
   >
     <div class="flex justify-between">
-      <div class="">
+      <NuxtLink to="/">
         <img src="/logo.svg" alt="logo" class="w-[70px]" />
-      </div>
+      </NuxtLink>
       <div>
+        <select
+          class="bg-transparent hover:cursor-pointer outline-none"
+          v-model="$i18n.locale"
+        >
+          <option v-for="(val, i) in languageOption" :key="i" :value="val">
+            {{ val }}
+          </option>
+        </select>
         <NIcon
           size="30"
-          class="translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150"
+          class="ml-4 translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150"
           :class="[navbarItem.items == false ? 'hidden' : '']"
           @click="navbarItem.items = !navbarItem.items"
         >
@@ -43,7 +51,7 @@
         </NIcon>
         <NIcon
           size="30"
-          class="translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150"
+          class="ml-4 translate-y-1 py-1 cursor-pointer hover:origin-center hover:rotate-45 duration-150"
           :class="[navbarItem.items == true ? 'hidden' : '']"
           @click="navbarItem.items = !navbarItem.items"
         >
@@ -56,51 +64,29 @@
         <Search />
       </NIcon>
 
-      <NavbarItem
-        to="/about-us"
-        :title="t('aboutUs')"
-        class="block"
-        @click="navbarItem.items = !navbarItem.items"
-      />
-      <NavbarItem
-        to="/csr"
-        :title="t('csr')"
-        class="block"
-        @click="navbarItem.items = !navbarItem.items"
-      />
-      <NavbarItem
-        to="/product"
-        :title="t('product')"
-        class="block"
-        @click="navbarItem.items = !navbarItem.items"
-      />
-      <NavbarItem
-        to="/gallery"
-        :title="t('gallery')"
-        class="block"
-        @click="navbarItem.items = !navbarItem.items"
-      />
-      <NavbarItem
-        to="/contact-us"
-        :title="t('contactUs')"
-        class="block"
-        @click="navbarItem.items = !navbarItem.items"
-      />
+      <NavbarItem to="/about-us" :title="t('aboutUs')" class="block" />
+      <NavbarItem to="/csr" :title="t('csr')" class="block" />
+      <NavbarItem to="/product" :title="t('product')" class="block" />
+      <NavbarItem to="/gallery" :title="t('gallery')" class="block" />
+      <NavbarItem to="/contact-us" :title="t('contactUs')" class="block" />
     </div>
   </nav>
-
 </template>
 <script setup lang="ts">
 import { Search, Menu, Close } from "@vicons/ionicons5";
 import { NIcon } from "naive-ui";
 
 const { t, locale } = useI18n();
+const route = useRoute();
 let navbarItem = ref({
   items: true,
 });
 
 const languageOption = ["en", "id"];
+
+watch(toRef(route, "path"), () => (navbarItem.value.items = true));
 </script>
+
 <i18n lang="yaml">
 en:
   aboutUs: "About Us"
