@@ -68,7 +68,7 @@
               :position="team.role"
               :image="team.image"
               class="max-md:w-6/12 md:w-4/12"
-              v-show="team.role == 'Petani'"
+              v-show="team.group.name == 'Garden'"
             />
           </div>
           <br /><br />
@@ -85,7 +85,7 @@
               :position="team.role"
               :image="team.image"
               class="max-md:w-6/12 md:w-4/12"
-              v-show="team.role != 'Petani'"
+              v-show="team.group.name == 'Operational'"
             />
           </div>
           <br /><br />
@@ -155,7 +155,6 @@ const apiTeams = async () => {
     },
   }).then((val) => {
     teams.value.data.push(...val.data);
-    console.log(teams.value);
   });
 };
 
