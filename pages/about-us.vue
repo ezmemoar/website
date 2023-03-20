@@ -85,7 +85,7 @@
               :position="team.role"
               :image="team.image"
               class="max-md:w-6/12 md:w-4/12"
-              v-show="team.group.name != 'Garden'"
+              v-show="team.group.name == 'Operational'"
             />
           </div>
           <br /><br />

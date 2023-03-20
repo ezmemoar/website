@@ -28,7 +28,7 @@
               <h1 class="text-2xl font-bold mb-5">Comment:</h1>
               <div v-for="val in res.data.comments" class="flex w-[80%] px-5">
                 <div class="basis-1/12">
-                  <img src="http://localhost:8000/images/testing.jpg" class="rounded-full w-20 h-20" />
+                  <!-- <img src="/images/testing.jpg" class="rounded-full w-20 h-20" /> -->
                 </div>
                 <div class="basis-9/12 ml-3">
                   <p>{{ val.name }}</p>
