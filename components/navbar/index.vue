@@ -7,6 +7,7 @@
         <img src="/logo.svg" alt="logo" class="w-[9rem]" />
       </NuxtLink>
       <div class="ml-5 flex">
+        <NavbarItem to="/" :title="t('home')" />
         <NavbarItem to="/about-us" :title="t('aboutUs')" />
         <NavbarItem to="/csr" :title="t('csr')" />
         <NavbarItem to="/product" :title="t('product')" />
@@ -89,12 +90,14 @@ watch(toRef(route, "path"), () => (navbarItem.value.items = true));
 
 <i18n lang="yaml">
 en:
+  home: "Home"
   aboutUs: "About Us"
   csr: "CSR"
   product: "Product"
   gallery: "Gallery"
   contactUs: "Contact Us"
 id:
+  home: "Home"
   aboutUs: "Tentang Kami"
   csr: "CSR"
   product: "Produk"

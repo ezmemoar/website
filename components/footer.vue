@@ -30,19 +30,6 @@
         </IconRoundWrapper>
       </a>
     </div>
-    <br />
-    <div class="flex pt-5">
-      <div class="w-full">
-        <div class="font-bold text-lg">{{ t("navigation") }}</div>
-        <div class="mt-4 flex flex-col leading-[2rem]">
-          <NuxtLink to="/about-us">{{ t("aboutUs") }}</NuxtLink>
-          <NuxtLink to="/csr">{{ t("csr") }}</NuxtLink>
-          <NuxtLink to="/product">{{ t("product") }}</NuxtLink>
-          <NuxtLink to="/gallery">{{ t("gallery") }}</NuxtLink>
-          <NuxtLink to="/contact-us">{{ t("contactUs") }}</NuxtLink>
-        </div>
-      </div>
-    </div>
     <div class="mt-10">
       <div class="font-bold text-lg border-b border-[#FAB705]">
         {{ t("office") }}
@@ -80,16 +67,10 @@
   <WrapperSection
     class="bg-gradient-to-b from-[#0d650ec7] via-[#0D650E] to-[#0D650E] text-white max-md:hidden pt-10"
   >
-    <div class="flex justify-around">
-      <div class="w-3/12">
-        <img src="/logo-white.svg" class="w-[10rem]" />
-        <div class="mt-10">
-          <div class="font-bold">{{ t("office") }}</div>
-          <div class="mt-2">
-            {{ t("aboutMultiPropertindoIndonesia") }}
-          </div>
-        </div>
-        <div class="mt-10 flex space-x-3">
+    <div class="flex items-center justify-center">
+      <div class="">
+        <img src="/logo-white.svg" class="w-[10rem] m-auto" />
+        <div class="flex space-x-3">
           <a href="#">
             <IconRoundWrapper>
               <LogoFacebook />
@@ -117,23 +98,8 @@
           </a>
         </div>
       </div>
-      <div class="flex-1 flex justify-center gap-10 pt-5">
-        <div class="w-5/12 pl-10">
-          <div class="font-bold text-lg">{{ t("navigation") }}</div>
-          <div class="mt-4 flex flex-col leading-[2rem]">
-            <NuxtLink to="/about-us">{{ t("aboutUs") }}</NuxtLink>
-            <NuxtLink to="/csr">{{ t("csr") }}</NuxtLink>
-            <NuxtLink to="/product">{{ t("product") }}</NuxtLink>
-            <NuxtLink to="/gallery">{{ t("gallery") }}</NuxtLink>
-            <NuxtLink to="/contact-us">{{ t("contactUs") }}</NuxtLink>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-4/12 pl-10 pt-5">
-        <div class="font-bold text-lg">{{ t("contactInformation") }}</div>
-        <div class="mt-4 flex flex-col">
-          <div>
+      <div class="flex-1 flex justify-center gap-10">
+<div>
             <div class="flex items-center mb-3">
             <NIcon :size="30"><Business /></NIcon>
             <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
@@ -150,11 +116,13 @@
               <div>Email : multi.propertindo@yahoo.com</div>
             </div>
           </div>
+      </div>
 
-          <div class="mt-8">
+      <div class="w-4/12 pl-10">
+        <div class=" flex flex-col">
+          <div class="">
             <div class="flex items-center mb-3">
             <NIcon :size="30"><Home /></NIcon>
-
               <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
             </div>
             <div>
@@ -207,6 +175,7 @@ en:
   gallery: "Gallery"
   contactUs: "Contact Us"
   office: "Jakarta Office"
+  garden: "Garden Address"
   aboutMultiPropertindoIndonesia: "Multi Propertindo Indonesia was established to respond to corporate and public demand for practice which is efficient, effective, and Innovative in Resolving Agriculture Issues."
   contactInformation: "Contact Information"
   plantation: "Plantation"
@@ -218,6 +187,7 @@ id:
   gallery: "Galeri"
   contactUs: "Kontak Kami"
   office: "Kantor Jakarta"
+  garden: "Alamat Kebun"
   aboutMultiPropertindoIndonesia: "Multi Propertido Indonesia didirikan untuk menanggapi perusahaan dan permintaan publik untuk praktik yang efisien, efektif, dan Inovatif dalam menyelesaikan masalah pertanian."
   contactInformation: "Kontak Informasi"
   plantation: "Perkebunan"

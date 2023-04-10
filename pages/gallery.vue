@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-primary min-h-screen overflow-x-hidden">
+  <div class=" min-h-screen overflow-x-hidden">
     <div class="py-20">
       <NSpin stroke="white" :show="pending">
         <div v-if="res.data.length > 0">
           <div class="max-md:px-10 md:px-36 z-50">
-            <h1 class="text-2xl font-bold text-gray-50">{{ t("gallery") }}</h1>
+            <h1 class="text-2xl font-bold text-gray-900">{{ t("gallery") }}</h1>
 
             <div
               class="mt-5 grid max-md:gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -13,29 +13,11 @@
                 v-for="(gallery, index) in res.data"
                 :key="index"
                 @click="showContent(index)"
-                class="cursor-pointer rounded"
+                class="rounded"
               >
                 <Image :src="gallery.image" :alt="gallery.image" is-animated />
               </div>
             </div>
-            <NModal
-              v-model:show="isShowModal"
-              class="w-3/4 pb-5 px-5 pt-1"
-              preset="card"
-              transform-origin="center"
-            >
-              <div class="flex justify-between space-x-3">
-                <img class="w-1/2 rounded" :src="selectedData.image" />
-                <div class="w-1/2 py-2">
-                  <div class="text-lg font-bold">
-                    {{ selectedData.content.title }}
-                  </div>
-                  <div class="mt-3 text-base overflow-y-auto max-h-52">
-                    {{ selectedData.content.content }}
-                  </div>
-                </div>
-              </div>
-            </NModal>
           </div>
           <div class="flex justify-center pt-10" v-if="res.links.next">
             <button

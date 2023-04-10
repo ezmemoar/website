@@ -15,14 +15,15 @@
         <WrapperSection>
           <div class="md:my-20 max-md:my-10 md:flex md:justify-between">
             <div class="md:w-[50%]">
-              <div class="mt-7">
-                <TextSectionLabel :title="t('visionAndMission')" />
+              <div class="">
+                <TextSectionLabel :title="t('visionTitle')" class="" />
                 <div class="w-full mt-5 md:hidden">
                   <Image src="/about-us.jpg" />
                 </div>
                 <p class="mt-5">
                   {{ data.vision }}
                 </p>
+                <TextSectionLabel :title="t('missionTitle')" class="mt-3" />
                 <p class="mt-5">
                   {{ data.mission }}
                 </p>
@@ -68,7 +69,7 @@
               :position="team.role"
               :image="team.image"
               class="max-md:w-6/12 md:w-4/12"
-              v-show="team.role == 'Petani'"
+              v-show="team.group.name == 'Garden'"
             />
           </div>
           <br /><br />
@@ -85,7 +86,7 @@
               :position="team.role"
               :image="team.image"
               class="max-md:w-6/12 md:w-4/12"
-              v-show="team.role != 'Petani'"
+              v-show="team.group.name != 'Garden'"
             />
           </div>
           <br /><br />
@@ -175,7 +176,8 @@ watch(
 <i18n lang="yaml">
 id:
   aboutUs: "Tentang Kami"
-  visionAndMission: "Visi dan Misi"
+  visionTitle: "Visi"
+  missionTitle: "Misi"
   vision: "Visi kami adalah adalah menjadi perusahaan perkebunan dan pertanian terkemuka di dunia yang mampu memberikan nilai tambah bagi seluruh stakeholder."
   mission: "<ol><li>meningkatkan produktivitas perkebunan dan pertanian dengan menggunakan teknologi</li><li>fokus pada pengembangan program sosial yang bertujuan untuk meningkatkan kesejahteraan masyarakat setempat.</li></ol>"
   history: "Sejarah Kami"
@@ -184,7 +186,8 @@ id:
   happySentosaGarden: "Happy Sentosa Garden"
 en:
   aboutUs: "About Us"
-  visionAndMission: "Vision And Mission"
+  visionTitle: "Vision"
+  missionTitle: "Mission"
   vision: "Our vision is to become a leading plantation and plantation company in the world that is able to provide added value to all stakeholders."
   mission: "<ol><li>increase the productivity of plantations and agriculture using technology</li><li>focus on developing social programs aimed at improving the welfare of local communities.</li></ol>"
   history: "Our History"
