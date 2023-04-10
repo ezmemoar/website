@@ -29,9 +29,6 @@
                 </p>
               </div>
             </div>
-            <div class="w-[40%] max-md:hidden">
-              <Image src="/about-us.jpg" />
-            </div>
           </div>
         </WrapperSection>
 
@@ -156,7 +153,6 @@ const apiTeams = async () => {
     },
   }).then((val) => {
     teams.value.data.push(...val.data);
-    console.log(teams.value);
   });
 };
 
