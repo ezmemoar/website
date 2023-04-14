@@ -6,13 +6,10 @@
       <div class="max-md:px-10 md:px-36">
         <div class="max-md:text-3xl md:text-6xl font-bold text-white">
           {{ t("mainText") }}
-          <div class="mt-10">
-            <Button bg-class="bg-secondary" :title="t('learnButton')" />
-          </div>
         </div>
       </div>
     </section>
-    <WrapperSection class="mt-10">
+    <WrapperSection class="py-20">
       <TextSectionLabel :title="t('aboutUsLabel')" />
       <div class="mt-10 md:flex md:justify-between">
         <div class="md:w-[50%] max-md:w-full">
@@ -26,29 +23,16 @@
             <p>
               {{ t("aboutUsDescc") }}
             </p>
-            <Button
-              class="my-10"
-              bg-class="bg-secondary"
-              :title="t('learnButton')"
-            />
           </div>
         </div>
         <div class="max-md:w-full md:w-[40%] px-20">
           <Image src="/about-us.jpg" />
         </div>
       </div>
-
-      <div class="flex justify-center px-10">
-        <Quote
-          class="w-[100%] md:w-[80%] xl:w-[60%] max-md:translate-y-[4rem] md:translate-y-[5rem] max-md:text-sm"
-          :quote="t('quote')"
-          creator="Joel Salatin"
-        />
-      </div>
     </WrapperSection>
 
-    <WrapperSection class="bg-[#F9F9F9]">
-      <br /><br /><br /><br /><br /><br />
+    <WrapperSection class="bg-[#F9F9F9] py-20">
+      
       <div class="mt-5 md:flex">
         <div class="md:w-[30%] space-y-3">
           <TextSectionLabel :title="t('whatWeDoTitle')" />
@@ -89,8 +73,6 @@
           </div>
         </div>
       </div>
-      <br />
-      <br />
     </WrapperSection>
 
     <WrapperSection class="bg-primary">
@@ -125,7 +107,6 @@ en:
   whatWeDoTopas: "Topas seed"
   whatWeDoCommitment: "Ongoing commitment"
   quote: "Agriculture is the best profession in the world. You can make it, water, and feel invaluable satisfaction when you see the results grow and grow."
-  learnButton: "Learn further"
   ecosystem: "Upholding farmers' partnerships in maintaining balance
     agricultural ecosystem"
   acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
@@ -149,7 +130,6 @@ id:
   whatWeDoDevelopment: "Penelitian dan pengembangan"
   whatWeDoTopas: "Benih Topas"
   whatWeDoCommitment: "Komitmen Berkelanjutan"
-  learnButton: "Pelajari Lebih Lanjut"
   quote: "Pertanian adalah profesi terbaik di dunia. Anda dapat menanam, menyiram, dan merasakan kepuasan yang tak ternilai saat melihat hasilnya tumbuh dan tumbuh."
   ecosystem: "Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
     ekosistem pertanian"

@@ -19,11 +19,7 @@
                   <div class="bg-gray-200 rounded-xl shadow" :key="index">
                     <div
                       class="w-full h-52 bg-cover rounded-xl bg-center"
-                      :style="{
-                        'background-image':
-                          'url(' + productVal.attachment.image + ')',
-                      }"
-                    ></div>
+                      :style="{'background-image': `url('${productVal.attachment.image}')`}"></div>
                   </div>
                 </NuxtLink>
               </div>
@@ -56,7 +52,7 @@ const loadData = async () => {
   })
     .then((val) => {
       const newRes: any = {};
-      console.log(val);
+
 
       for (let product of val.data) {
         if (!newRes[product.company.name]) {
@@ -65,8 +61,6 @@ const loadData = async () => {
 
         newRes[product.company.name].push(product);
       }
-
-      console.log(newRes);
       res.value.data = newRes;
     })
     .finally(() => (pending.value = false));
