@@ -1,6 +1,6 @@
 <template>
   <WrapperSection
-    class="bg-gradient-to-b from-[#0d650ec7] via-[#0D650E] to-[#0D650E] text-white md:hidden"
+    class="bg-gradient-to-b from-[#0d650ec7] via-[#0d650ede] to-[#0d650ec9] text-white md:hidden"
   >
     <img src="/logo-white.svg" class="w-[35%] m-auto" />
     <div class="flex space-x-3 w-full justify-center">
@@ -65,7 +65,7 @@
   </WrapperSection>
 
   <WrapperSection
-    class="bg-gradient-to-b from-[#0d650ec7] via-[#0D650E] to-[#0D650E] text-white max-md:hidden pt-10"
+    class="bg-gradient-to-b from-[#0d650ec7] via-[#0d650ede] to-[#0d650ede] text-white max-md:hidden pt-10"
   >
     <div class="flex items-center justify-center">
       <div class="">
@@ -139,9 +139,9 @@
     <br /><br />
     <template #end>
       <hr class="opacity-20" />
-      <div class="flex justify-between text-white font-normal px-36 py-5">
-        <div class="flex">
-          <p class="py-1 border-r border-white">
+      <div class="flex justify-center text-white font-normal px-36 py-5">
+        <div class="flex ">
+          <p class="py-1 border-r border-white ">
             © 2022 Multi Propertindo Indonesia. All rights reserved.
           </p>
           <p class="py-1 pl-2 underline cursor-pointer">Policies & Privacy</p>
