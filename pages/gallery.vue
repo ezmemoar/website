@@ -1,5 +1,5 @@
 <template>
-  <div class=" min-h-screen overflow-x-hidden">
+  <div class="min-h-screen overflow-x-hidden">
     <div class="py-20">
       <NSpin stroke="white" :show="pending">
         <div v-if="res.data.length > 0">
@@ -7,15 +7,20 @@
             <h1 class="text-2xl font-bold text-gray-900">{{ t("gallery") }}</h1>
 
             <div
-              class="mt-5 grid max-md:gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              class="mt-5 flex justify-center flex-wrap gap-10"
             >
               <div
                 v-for="(gallery, index) in res.data"
                 :key="index"
                 @click="showContent(index)"
-                class="rounded"
+                class="rounded w-[22rem] h-[22rem] p-5"
               >
-                <Image :src="gallery.image" :alt="gallery.image" is-animated />
+                <div
+                  :style="`background-image: url('http://localhost:8000${gallery.image}')`"
+                  :alt="gallery.image"
+                  class="w-full h-full bg-cover bg-center rounded hover:scale-105 transition duration-150"
+                  is-animated
+                />
               </div>
             </div>
           </div>

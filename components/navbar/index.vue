@@ -97,7 +97,7 @@ en:
   gallery: "Gallery"
   contactUs: "Contact Us"
 id:
-  home: "Home"
+  home: "Beranda"
   aboutUs: "Tentang Kami"
   csr: "CSR"
   product: "Produk"

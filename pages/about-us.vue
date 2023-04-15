@@ -29,6 +29,27 @@
                 </p>
               </div>
             </div>
+            <div class="md:w-[50%] px-10 text-center flex justify-center">
+              <n-card title="Happy Sentosa Garden">
+                <div>
+                  <img
+                    src="/happy-sentosa-garden.png"
+                    class="m-auto w-full mb-5"
+                  />
+                </div>
+                <div>
+                  <p
+                  class="
+                  textlimit
+                  "
+                >
+                  {{ data.happySentosaGarden }}
+                </p>
+                <button class="border border-gray-400 p-2" v-show="readMore == false" @click="readMore = true">lihat selengkapnya</button>
+                </div>
+                
+              </n-card>
+            </div>
           </div>
         </WrapperSection>
 
@@ -89,7 +110,7 @@
           <br /><br />
         </WrapperSection>
 
-        <WrapperSection class="bg-[#F9F9F9] py-10">
+        <!-- <WrapperSection class="bg-[#F9F9F9] py-10">
           <div class="py-1 text-center">
             <TextSectionLabel :title="t('happySentosaGarden')" />
             <img
@@ -100,21 +121,40 @@
           <div class="mt-5 text-center md:px-20 max-md:text-base md:text-lg">
             {{ data.happySentosaGarden }}
           </div>
-        </WrapperSection>
+        </WrapperSection> -->
       </template>
     </NSpin>
+    <n-modal v-model:show="readMore">
+    <n-card
+      style="width: 1000px"
+      :bordered="false"
+      role="dialog"
+      aria-modal="true"
+    >
+          <div class="py-1 text-center">
+            <TextSectionLabel :title="t('happySentosaGarden')" />
+            <img
+              src="/happy-sentosa-garden.png"
+              class="m-auto w-full mb-5 mt-10"
+            />
+          </div>
+          <div class="">
+            {{ data.happySentosaGarden }}
+          </div>
+    </n-card>
+  </n-modal>
   </main>
 </template>
 
 <script setup lang="ts">
-import { NSpin } from "naive-ui";
+import { NSpin, NCard, NModal } from "naive-ui";
 
 const { t, locale } = useI18n({
   useScope: "local",
 });
 const { API_LIST } = useApiUrl();
 
-const isLoading = ref(true);
+const isLoading = ref(false);
 const data = ref<any>({
   mission: "",
   vision: "",
@@ -174,8 +214,19 @@ watch(
   },
   { immediate: true }
 );
+const readMore = ref(false);
 </script>
-
+<style scoped>
+.n-card {
+  max-width: 300px;
+}
+.textlimit{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+</style>
 <i18n lang="yaml">
 id:
   aboutUs: "Tentang Kami"

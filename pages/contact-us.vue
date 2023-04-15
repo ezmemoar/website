@@ -1,57 +1,36 @@
 <template>
    <div class="max-md:px-10 md:px-36 pt-20">
-      <div class="max-md:w-full md:w-8/12">
+      <div class="w-full">
          <div class="max-md:text-2xl md:text-4xl font-bold max-md:text-center">
             {{ t("aboutUsLabel") }}
          </div>
-         <div class="max-md:w-full md:w-3/4 max-md:text-center">
+         <div class="w-full max-md:text-center mb-20">
             <div class="mt-8">
                <div class="mt-8">
                   <p>
                      {{ t("aboutUsDesc") }}
                   </p>
-               </div>
-            </div>
-         </div>
-         <div class="flex gap-10">
-            <div class="flex-1 mt-10 text-lg">
-               <div>
-                  <input
-                     type="text"
-                     class="w-full px-5 py-3 rounded bg-gray-200"
-                     :placeholder="t('name')"
-                  />
-                  <div class="mt-5">
-                     <input
-                        type="text"
-                        class="w-full px-5 py-3 rounded bg-gray-200"
-                        placeholder="email"
-                     />
-                     <div class="mt-5">
-                        <textarea
-                           :placeholder="t('message')"
-                           class="w-full px-5 py-3 rounded bg-gray-200"
-                        ></textarea>
-                     </div>
-                  </div>
-                  <div class="mt-5">
-                     <Button class="!rounded max-md:w-full">{{ t('send') }}</Button>
-                  </div>
+                  <NuxtLink
+                     to="https://wa.me/085736921243/?text=Saya Tertarik dengan produk ini"
+                     target="_blank"
+                  >
+                     <button class="flex items-center text-white py-2 px-3 rounded my-5 hover:scale-105 transition duration-150" style="background: #25d366;">
+                        <LogoWhatsapp class="w-6" />
+                        <p class="px-1">Silvya Evitarani</p>
+                     </button>
+                  </NuxtLink>
                </div>
             </div>
          </div>
       </div>
-      <br />
-      <br />
-      <br />
       <p class="text-center font-bold max-md:text-xl md:text-2xl my-5">
-         {{t('ourAddress')}}
+         {{ t("ourAddress") }}
       </p>
       <div class="mb-32">
          <br />
          <div class="justify-evenly gap-16">
             <p class="font-bold max-md:text-base md:text-xl mb-5">
-               {{t('office')}}
+               {{ t("office") }}
             </p>
             <div class="md:flex md:justify-between">
                <div class="w-full items-center">
@@ -77,7 +56,7 @@
                         </n-icon>
                      </div>
                      <div>
-                        <h1 class="font-bold">{{t('address')}}</h1>
+                        <h1 class="font-bold">{{ t("address") }}</h1>
                         <p class="text-base">Kirana Boutiqe Office,</p>
                         <p class="text-base">
                            Kirana Avenue III, Blok E 1 Nomor 3.
@@ -146,7 +125,7 @@
                         </n-icon>
                      </div>
                      <div>
-                        <h1 class="font-bold">{{t('address')}}</h1>
+                        <h1 class="font-bold">{{ t("address") }}</h1>
                         <p class="text-base">
                            Kp Tamansari, RT.1/RW.5, Desa Karyasari, Leuwiliang,
                            Kab.Bogor, Jawa Barat – 16640
@@ -195,7 +174,7 @@ const copyText = (value: string) => {
 en:
    aboutUsLabel: "Let's make a connection with us"
    send: "Send"
-   aboutUsDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptas ipsum! Ducimus debitis temporibus voluptatum. Facere, eaque? Esse deserunt assumenda suscipit corrupti? Non tenetur dicta expedita eius ipsa, totam est."
+   aboutUsDesc: "To order garden products, please contact the Whatsapp number, 085736921243 (Silvya Evitarani)."
    ourAddress: "OUR ADDRESS"
    office: "Jakarta Office"
    address: "Address"
@@ -204,12 +183,11 @@ en:
 
 id:
    aboutUsLabel: "Mari jalin kerja sama dengan kami"
-   aboutUsDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptas ipsum! Ducimus debitis temporibus voluptatum. Facere, eaque? Esse deserunt assumenda suscipit corrupti? Non tenetur dicta expedita eius ipsa, totam est."
+   aboutUsDesc: "Untuk pemesanan hasil kebun silahkan hubungi nomor Whatsapp, 085736921243 (Silvya Evitarani)."
    send: "Kirim"
    ourAddress: "ALAMAT KAMI"
    office: "KANTOR JAKARTA"
    address: "Alamat"
    message: "Pesan"
    name: "Nama"
-
 </i18n>

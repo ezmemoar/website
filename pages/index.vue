@@ -34,26 +34,8 @@
     <WrapperSection class="bg-[#F9F9F9] py-20">
       
       <div class="mt-5 md:flex">
-        <div class="md:w-[30%] space-y-3">
-          <TextSectionLabel :title="t('whatWeDoTitle')" />
 
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            {{ t("whatWeDoPatnership") }}
-          </div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            {{ t("whatWeDoDevelopment") }}
-          </div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            {{ t("whatWeDoTopas") }}
-          </div>
-          <div class="font-bold max-md:border-b max-md:border-gray-200 pb-1">
-            {{ t("whatWeDoCommitment") }}
-          </div>
-        </div>
-        <br class="md:hidden" />
-        <br class="md:hidden" />
-
-        <div class="md:w-[70%] space-y-8">
+        <div class="space-y-8">
           <div class="font-bold text-2xl">
             {{ t("ecosystem") }}
           </div>
