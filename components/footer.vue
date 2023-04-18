@@ -67,10 +67,10 @@
   <WrapperSection
     class="bg-gradient-to-b from-[#0d650ec7] via-[#0d650ede] to-[#0d650ede] text-white max-md:hidden pt-10"
   >
-    <div class="flex items-center justify-center">
-      <div class="">
+    <div class="flex items-start gap-6">
+      <div class="basis-1/3">
         <img src="/logo-white.svg" class="w-[10rem] m-auto" />
-        <div class="flex space-x-3">
+        <div class="flex gap-3 justify-center mt-5">
           <a href="#">
             <IconRoundWrapper>
               <LogoFacebook />
@@ -98,32 +98,29 @@
           </a>
         </div>
       </div>
-      <div class="flex-1 flex justify-center gap-10">
-<div>
-            <div class="flex items-center mb-3">
-            <NIcon :size="30"><Business /></NIcon>
-            <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
-            </div>
-            <div>
-              <div>
-                Kirana Boutique Office,
-                <br />
-                Kirana Avenue III Blok E 1 No 3
-                <br />
-                Kelapa Gading, Jakarta Utara – 14240.
-              </div>
-              <div>Phone: (021) 29365166</div>
-              <div>Email : multi.propertindo@yahoo.com</div>
-            </div>
+      <div class="basis-1/3">
+        <div class="flex items-center mb-3">
+          <NIcon :size="30"><Business /></NIcon>
+          <p class="pl-2 text-lg font-bold">{{ t("office") }}</p>
+        </div>
+        <div>
+          <div>
+            Kirana Boutique Office,
+            <br />
+            Kirana Avenue III Blok E 1 No 3
+            <br />
+            Kelapa Gading, Jakarta Utara – 14240.
           </div>
+          <div>Phone: (021) 29365166</div>
+          <div>Email : multi.propertindo@yahoo.com</div>
+        </div>
       </div>
-
-      <div class="w-4/12 pl-10">
-        <div class=" flex flex-col">
+      <div class="basis-1/3">
+        <div class="flex flex-col">
           <div class="">
             <div class="flex items-center mb-3">
-            <NIcon :size="30"><Home /></NIcon>
-              <p class="pl-2 text-lg font-bold">{{ t('office') }}</p>
+              <NIcon :size="30"><Home /></NIcon>
+              <p class="pl-2 text-lg font-bold">{{ t("plantation") }}</p>
             </div>
             <div>
               <div>
@@ -178,7 +175,7 @@ en:
   garden: "Garden Address"
   aboutMultiPropertindoIndonesia: "Multi Propertindo Indonesia was established to respond to corporate and public demand for practice which is efficient, effective, and Innovative in Resolving Agriculture Issues."
   contactInformation: "Contact Information"
-  plantation: "Plantation"
+  plantation: "Garden Address"
 id:
   navigation: "Navigasi Menu"
   aboutUs: "Tentang Kami"
@@ -190,5 +187,5 @@ id:
   garden: "Alamat Kebun"
   aboutMultiPropertindoIndonesia: "Multi Propertido Indonesia didirikan untuk menanggapi perusahaan dan permintaan publik untuk praktik yang efisien, efektif, dan Inovatif dalam menyelesaikan masalah pertanian."
   contactInformation: "Kontak Informasi"
-  plantation: "Perkebunan"
+  plantation: "Alamat Kebun"
 </i18n>

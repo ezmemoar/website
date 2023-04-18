@@ -1,11 +1,17 @@
 <template>
-  <div class="min-h-screen overflow-x-hidden bg-[#f1f1f1]">
+  <div class="min-h-screen overflow-x-hidden">
+    <section
+      class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat pb-10"
+    >
+      <div class="px-10 text-center">
+        <div class="max-md:text-3xl md:text-4xl font-bold text-primary">
+          {{ t("csr") }}
+        </div>
+      </div>
+    </section>
     <div class="py-1">
       <div class="absolute z-[-1] w-full overflow-x-hidden"></div>
       <div class="max-md:px-20 px-36 z-50">
-        <h1 class="text-3xl font-bold mt-20 mb-10 text-center">
-          {{ t("csr") }}
-        </h1>
         <NSpin :show="pending" class="pb-20 w-full">
           <template v-if="res.data.length != 0">
             <div
@@ -17,7 +23,7 @@
                 <img
                   :src="val.attachment.image"
                   alt=""
-                  class="w-full shadow-xl"
+                  class="w-full md:w-60 shadow-xl"
                 />
               </div>
               <div class="md:px-7 max-md:basis-full basis-8/12">

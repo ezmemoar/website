@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary min-h-screen">
+  <div class="min-h-screen">
     <div class="pt-5 pb-20">
       <div class="max-md:px-10 max-lg:px-20 lg:px-36 z-50">
         <NSpin stroke="white" :show="pending">

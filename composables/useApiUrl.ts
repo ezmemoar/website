@@ -7,6 +7,8 @@ export default () => {
     GET_GALLERY_LIST: `${API_URL}/gallery`,
     GET_VISION: `${API_URL}/vision-mission`,
     GET_TEAMS: `${API_URL}/team`,
+    GET_TEAM_GROUP: `${API_URL}/team-group`,
+    GET_DIRECTOR: `${API_URL}/director`,
   };
 
   return {

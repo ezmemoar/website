@@ -9,10 +9,11 @@
         </div>
       </div>
     </section>
+
     <WrapperSection class="py-20">
       <TextSectionLabel :title="t('aboutUsLabel')" />
       <div class="mt-10 md:flex md:justify-between">
-        <div class="md:w-[50%] max-md:w-full">
+        <div class="basis-1/2 max-md:w-full">
           <div class="text-3xl font-bold">
             {{ t("aboutUsTitle") }}
           </div>
@@ -25,34 +26,8 @@
             </p>
           </div>
         </div>
-        <div class="max-md:w-full md:w-[40%] px-20">
+        <div class="basis-1/2 max-md:w-full px-20">
           <Image src="/about-us.jpg" />
-        </div>
-      </div>
-    </WrapperSection>
-
-    <WrapperSection class="bg-[#F9F9F9] py-20">
-      
-      <div class="mt-5 md:flex">
-
-        <div class="space-y-8">
-          <div class="font-bold text-2xl">
-            {{ t("ecosystem") }}
-          </div>
-          <div class="md:flex">
-            <div class="pr-5">
-              <p>
-                {{ t("acosystemAbout1") }}
-              </p>
-              <p class="mt-3">
-                {{ t("acosystemAbout2") }}
-              </p>
-            </div>
-            <br class="md:hidden" />
-            <div class="w-[100%] max-md:px-5">
-              <Image src="/about-us.jpg" alt="About Us" />
-            </div>
-          </div>
         </div>
       </div>
     </WrapperSection>
@@ -89,10 +64,6 @@ en:
   whatWeDoTopas: "Topas seed"
   whatWeDoCommitment: "Ongoing commitment"
   quote: "Agriculture is the best profession in the world. You can make it, water, and feel invaluable satisfaction when you see the results grow and grow."
-  ecosystem: "Upholding farmers' partnerships in maintaining balance
-    agricultural ecosystem"
-  acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
-  acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
   plantation: "PLANTATION"
   hectares: "HECTARES OF PLANTATIONS"
   companyProperty: "COMPANY PROPERTY"
@@ -113,10 +84,6 @@ id:
   whatWeDoTopas: "Benih Topas"
   whatWeDoCommitment: "Komitmen Berkelanjutan"
   quote: "Pertanian adalah profesi terbaik di dunia. Anda dapat menanam, menyiram, dan merasakan kepuasan yang tak ternilai saat melihat hasilnya tumbuh dan tumbuh."
-  ecosystem: "Menjunjung tinggi kemitraan petani dalam menjaga keseimbangan
-    ekosistem pertanian"
-  acosystemAbout1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque eget nisl dapibus aliquam. Duis in velit eu orci aliquam laoreet imperdiet vitae turpis."
-  acosystemAbout2: "Ut bibendum enim vel porttitor ornare. Nullam non accumsan elit, elementum rutrum ex. Morbi aliquam hendrerit semper. Ut mollis commodo lacus, eget viverra dui"
   plantation: "PERKEBUNAN"
   hectares: "HEKTAR PERKEBUNAN"
   companyProperty: "PROPERTI PERUSAHAAN"

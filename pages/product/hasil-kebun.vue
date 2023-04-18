@@ -1,26 +1,46 @@
 <template>
-  <div class="bg-primary min-h-screen overflow-x-hidden">
+  <div class="min-h-screen overflow-x-hidden">
+    <section
+      class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat pb-10"
+    >
+      <div class="px-10 text-center">
+        <div class="max-md:text-3xl md:text-4xl font-bold text-primary">
+          Hasil Kebun
+        </div>
+      </div>
+    </section>
     <div class="pt-5 pb-20">
       <div class="max-md:px-10 max-lg:px-20 lg:px-36 z-50">
-        <h1 class="text-2xl font-bold text-gray-50 my-10">Hasil Kebun</h1>
-        <NSpin stroke="white" :show="pending" class="w-full">
-          <div
-            v-if="res.data.length > 0"
-            class="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
-          >
+        <NSpin :show="pending" class="w-full">
+          <template v-if="!pending">
             <div
-              v-for="(val, index) in res.data"
-              :key="index"
-              @click="showContent(index)"
-              class="cursor-pointer rounded"
+              class="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
             >
-              <Image
-                :src="val.attachment.image"
-                :alt="val.attachment.image"
-                is-animated
-              />
+              <div
+                v-for="(val, index) in res.data"
+                :key="index"
+                @click="showContent(index)"
+                class="cursor-pointer rounded"
+              >
+                <Image
+                  :src="val.attachment.image"
+                  :alt="val.attachment.image"
+                  is-animated
+                />
+              </div>
             </div>
-          </div>
+
+            <NCard>
+              <div class="px-5 py-3" style="bottom: 0">
+                <p class="font-semibold text-2xl mb-1 opacity-100">
+                  Hasil Kebun
+                </p>
+                <small class="text-lg font-medium font-[Poppins]">
+                  Contact: 085736921243 (Sellvya Evitarani)
+                </small>
+              </div>
+            </NCard>
+          </template>
         </NSpin>
         <NModal
           v-model:show="showModal"
@@ -46,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-import { NModal, NSpin } from "naive-ui";
+import { NCard, NModal, NSpin } from "naive-ui";
 
 const { API_LIST } = useApiUrl();
 

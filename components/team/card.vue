@@ -1,12 +1,15 @@
 <template>
   <div>
-    <NCard class="text-center" style="border-style: none" size="huge">
-      <img :src="$props.image" class="w-32 m-auto" />
+    <NCard class="text-center" size="huge">
+      <div
+        class="w-32 h-32 rounded-full !bg-cover mx-auto"
+        :style="`background: url(${$props.image}) no-repeat center center;`"
+      ></div>
       <div class="mt-5 text-xl font-bold text-primary max-md:text-base">
         {{ $props.name }}
       </div>
       <div class="mt-3 text-xl text-gray-500 max-md:text-base">
-        {{ $props.position }}
+        {{ $props.role }}
       </div>
     </NCard>
   </div>
@@ -15,11 +18,9 @@
 <script setup lang="ts">
 import { NCard } from "naive-ui";
 
-const { STORAGE_URL } = useRuntimeConfig().public;
-
 defineProps<{
   name: string;
-  position: string;
+  role: string;
   image: string;
 }>();
 </script>

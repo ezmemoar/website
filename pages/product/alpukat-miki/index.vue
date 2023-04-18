@@ -34,8 +34,6 @@
 <script lang="ts" setup>
 import { NSpin } from "naive-ui";
 
-const active = "tersedia";
-
 const { API_LIST } = useApiUrl();
 const res = ref<any>({ data: {} });
 const pending = ref(true);

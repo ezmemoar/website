@@ -1,6 +1,6 @@
 <template>
   <NImage
-    class="rounded transition-transform duration-150 shadow-md"
+    class="rounded transition-transform duration-150 shadow-md md:w-5/6"
     :preview-disabled="isPreviewable"
     :src="src"
     :alt="aboutUs"

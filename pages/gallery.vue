@@ -1,27 +1,33 @@
 <template>
-  <div class="min-h-screen overflow-x-hidden">
+  <section
+    class="w-full max-md:pt-6 md:pt-14 bg-cover bg-center bg-no-repeat pb-10"
+  >
+    <div class="px-10 text-center">
+      <div class="max-md:text-3xl md:text-4xl font-bold text-primary">
+        {{ t("gallery") }}
+      </div>
+    </div>
+  </section>
+
+  <section class="min-h-screen overflow-x-hidden">
     <div class="py-20">
-      <NSpin stroke="white" :show="pending">
+      <NSpin :show="pending">
         <div v-if="res.data.length > 0">
           <div class="max-md:px-10 md:px-36 z-50">
-            <h1 class="text-2xl font-bold text-gray-900">{{ t("gallery") }}</h1>
-
-            <div
-              class="mt-5 flex justify-center flex-wrap gap-10"
-            >
-              <div
+            <div class="mt-5 flex justify-center flex-wrap gap-10">
+              <NCard
                 v-for="(gallery, index) in res.data"
                 :key="index"
                 @click="showContent(index)"
                 class="rounded w-[22rem] h-[22rem] p-5"
               >
                 <div
-                  :style="`background-image: url('http://localhost:8000${gallery.image}')`"
+                  :style="`background-image: url('${gallery.image}')`"
                   :alt="gallery.image"
                   class="w-full h-full bg-cover bg-center rounded hover:scale-105 transition duration-150"
                   is-animated
-                />
-              </div>
+                ></div>
+              </NCard>
             </div>
           </div>
           <div class="flex justify-center pt-10" v-if="res.links.next">
@@ -36,11 +42,11 @@
         </div>
       </NSpin>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
-import { NModal, NSpin } from "naive-ui";
+import { NCard, NSpin } from "naive-ui";
 
 const { API_LIST } = useApiUrl();
 const { t, locale } = useI18n();
@@ -52,7 +58,6 @@ const res = ref<any>({ data: [], links: {}, meta: {} });
 const isShowModal = ref(false);
 
 const selectedIndex = ref(0);
-const selectedData = computed(() => res.value.data[selectedIndex.value]);
 
 const nextPage = () => page.value++;
 const loadData = async () => {
@@ -66,7 +71,6 @@ const loadData = async () => {
   })
     .then((val) => {
       if (val) {
-        console.log(val);
         res.value.data.push(...val.data);
         res.value.links = val.links;
         res.value.meta = val.meta;

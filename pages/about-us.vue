@@ -23,7 +23,12 @@
                 <p class="mt-5">
                   {{ data.vision }}
                 </p>
-                <TextSectionLabel :title="t('missionTitle')" class="mt-3" />
+              </div>
+              <div class="mt-16">
+                <TextSectionLabel :title="t('missionTitle')" class="" />
+                <div class="w-full mt-5 md:hidden">
+                  <Image src="/about-us.jpg" />
+                </div>
                 <p class="mt-5">
                   {{ data.mission }}
                 </p>
@@ -38,16 +43,16 @@
                   />
                 </div>
                 <div>
-                  <p
-                  class="
-                  textlimit
-                  "
-                >
-                  {{ data.happySentosaGarden }}
-                </p>
-                <button class="border border-gray-400 p-2" v-show="readMore == false" @click="readMore = true">lihat selengkapnya</button>
+                  <p class="textlimit">
+                    {{ data.happySentosaGarden }}
+                  </p>
+                  <button
+                    class="border border-gray-400 p-2"
+                    @click="readMore = true"
+                  >
+                    lihat selengkapnya
+                  </button>
                 </div>
-                
               </n-card>
             </div>
           </div>
@@ -69,81 +74,53 @@
                   class="!text-white max-md:hidden"
                   :title="t('history')"
                 />
-                <p class="mt-5" v-html="data.history"></p>
+                <p class="mt-5">
+                  {{ data.history }}
+                </p>
               </div>
             </div>
           </div>
           <br />
         </WrapperSection>
 
-        <WrapperSection class="text-white mt-10">
+        <WrapperSection class="text-white py-20">
           <div class="py-5 text-center">
-            <TextSectionLabel :title="t('ourTeamFarmer')" />
+            <TextSectionLabel :title="t('ourTeam')" />
           </div>
-          <div class="mt-5 flex flex-wrap justify-center border-none">
-            <TeamCard
+          <div class="py-10 flex justify-center">
+            <TeamCard class="basis-1/4" v-bind="director" />
+          </div>
+          <div
+            class="mt-5 flex flex-col md:flex-row gap-4 justify-center flex-wrap"
+          >
+            <TeamGroupCard
               v-for="team in teams.data"
-              :name="team.name"
-              :position="team.role"
-              :image="team.image"
-              class="max-md:w-6/12 md:w-4/12"
-              v-show="team.group.name == 'Garden'"
+              v-bind="team"
+              class="basis-full md:basis-1/4"
             />
           </div>
           <br /><br />
         </WrapperSection>
-
-        <WrapperSection class="text-white">
-          <div class="py-5 text-center">
-            <TextSectionLabel :title="t('ourTeamOperasional')" />
-          </div>
-          <div class="mt-5 flex flex-wrap justify-center border-none">
-            <TeamCard
-              v-for="team in teams.data"
-              :name="team.name"
-              :position="team.role"
-              :image="team.image"
-              class="max-md:w-6/12 md:w-4/12"
-              v-show="team.group.name == 'Operational'"
-            />
-          </div>
-          <br /><br />
-        </WrapperSection>
-
-        <!-- <WrapperSection class="bg-[#F9F9F9] py-10">
-          <div class="py-1 text-center">
-            <TextSectionLabel :title="t('happySentosaGarden')" />
-            <img
-              src="/happy-sentosa-garden.png"
-              class="m-auto w-5/12 mb-5 mt-10"
-            />
-          </div>
-          <div class="mt-5 text-center md:px-20 max-md:text-base md:text-lg">
-            {{ data.happySentosaGarden }}
-          </div>
-        </WrapperSection> -->
       </template>
     </NSpin>
-    <n-modal v-model:show="readMore">
-    <n-card
-      style="width: 1000px"
-      :bordered="false"
-      role="dialog"
-      aria-modal="true"
-    >
-          <div class="py-1 text-center">
-            <TextSectionLabel :title="t('happySentosaGarden')" />
-            <img
-              src="/happy-sentosa-garden.png"
-              class="m-auto w-full mb-5 mt-10"
-            />
-          </div>
-          <div class="">
-            {{ data.happySentosaGarden }}
-          </div>
-    </n-card>
-  </n-modal>
   </main>
+
+  <NModal v-model:show="readMore">
+    <div class="w-full flex items-center justify-center h-screen">
+      <NCard :bordered="false" role="dialog" aria-modal="true" class="w-full">
+        <div class="py-1 text-center">
+          <TextSectionLabel :title="t('happySentosaGarden')" />
+          <img
+            src="/happy-sentosa-garden.png"
+            class="m-auto w-full mb-5 mt-10"
+          />
+        </div>
+        <div class="">
+          {{ data.happySentosaGarden }}
+        </div>
+      </NCard>
+    </div>
+  </NModal>
 </template>
 
 <script setup lang="ts">
@@ -161,7 +138,8 @@ const data = ref<any>({
   history: "",
   happySentosaGarden: "",
 });
-const teams = ref({ data: [] });
+const director = ref<any>();
+const teams = ref<{ data: any[] }>({ data: [] });
 const isDataExist = computed(() =>
   Boolean(
     data.value.mission &&
@@ -194,13 +172,22 @@ const apivisi = async () => {
 };
 
 const apiTeams = async () => {
-  await $fetch<any>(API_LIST.GET_TEAMS, {
+  await $fetch<any>(API_LIST.GET_TEAM_GROUP, {
     params: {
       lang: locale.value,
     },
   }).then((val) => {
+    console.log(teams.value);
     teams.value.data.push(...val.data);
   });
+};
+
+const apiDirector = async () => {
+  await $fetch<any>(API_LIST.GET_DIRECTOR, {
+    params: {
+      lang: locale.value,
+    },
+  }).then((val) => (director.value = val.data));
 };
 
 watch(
@@ -208,6 +195,7 @@ watch(
   async () => {
     isLoading.value = true;
     teams.value.data = [];
+    await apiDirector();
     await apiTeams();
     await apivisi();
     isLoading.value = false;
@@ -220,7 +208,7 @@ const readMore = ref(false);
 .n-card {
   max-width: 300px;
 }
-.textlimit{
+.textlimit {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -235,8 +223,7 @@ id:
   vision: "Visi kami adalah adalah menjadi perusahaan perkebunan dan pertanian terkemuka di dunia yang mampu memberikan nilai tambah bagi seluruh stakeholder."
   mission: "<ol><li>meningkatkan produktivitas perkebunan dan pertanian dengan menggunakan teknologi</li><li>fokus pada pengembangan program sosial yang bertujuan untuk meningkatkan kesejahteraan masyarakat setempat.</li></ol>"
   history: "Sejarah Kami"
-  ourTeamFarmer: "Tim Kebun"
-  ourTeamOperasional: "Tim Operasional"
+  ourTeam: "Tim Kami"
   happySentosaGarden: "Happy Sentosa Garden"
 en:
   aboutUs: "About Us"
@@ -245,7 +232,6 @@ en:
   vision: "Our vision is to become a leading plantation and plantation company in the world that is able to provide added value to all stakeholders."
   mission: "<ol><li>increase the productivity of plantations and agriculture using technology</li><li>focus on developing social programs aimed at improving the welfare of local communities.</li></ol>"
   history: "Our History"
-  ourTeamFarmer: "Garden Team"
-  ourTeamOperasional: "Operational Team"
+  ourTeam: "Our Team"
   happySentosaGarden: "Happy Sentosa Garden"
 </i18n>
