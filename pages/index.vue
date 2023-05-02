@@ -1,53 +1,77 @@
 <template>
-  <main>
-    <section
-      class="w-full py-44 bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat"
-    >
-      <div class="max-md:px-10 md:px-36">
-        <div class="max-md:text-3xl md:text-6xl font-bold text-white">
-          {{ t("mainText") }}
-        </div>
-      </div>
-    </section>
-
-    <WrapperSection class="py-20">
-      <TextSectionLabel :title="t('aboutUsLabel')" />
-      <div class="mt-10 md:flex md:justify-between">
-        <div class="basis-1/2 max-md:w-full">
-          <div class="text-3xl font-bold">
-            {{ t("aboutUsTitle") }}
-          </div>
-          <div class="mt-10">
-            <p>
-              {{ t("aboutUsDesc") }}
-            </p>
-            <p>
-              {{ t("aboutUsDescc") }}
-            </p>
+  <NSpin :show="pending">
+    <main v-if="res">
+      <section
+        :style="`background: url(${res.data.title_image}) no-repeat center center; background-size: cover;`"
+        class="w-full py-44 bg-cover bg-center bg-no-repeat"
+      >
+        <div class="max-md:px-10 md:px-36">
+          <div class="max-md:text-3xl md:text-6xl font-bold text-white">
+            {{ res.data.title }}
           </div>
         </div>
-        <div class="basis-1/2 max-md:w-full px-20">
-          <Image src="/about-us.jpg" />
+      </section>
+
+      <WrapperSection class="py-20">
+        <TextSectionLabel :title="t('aboutUsLabel')" />
+        <div class="mt-10 md:flex md:justify-between">
+          <div class="basis-1/2 max-md:w-full">
+            <div class="mt-10">
+              <p>
+                {{ res.data.about }}
+              </p>
+            </div>
+          </div>
+          <div class="basis-1/2 max-md:w-full px-20">
+            <Image v-if="res.data.about_image" :src="res.data.about_image" />
+          </div>
         </div>
+      </WrapperSection>
+
+      <WrapperSection class="bg-primary">
+        <GalleryShowcase />
+      </WrapperSection>
+
+      <WrapperSection class="bg-[#F9F9F9]">
+        <CsrShowcase />
+      </WrapperSection>
+
+      <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">
+        <WhatsappBubble />
       </div>
-    </WrapperSection>
-
-    <WrapperSection class="bg-primary">
-      <GalleryShowcase />
-    </WrapperSection>
-
-    <WrapperSection class="bg-[#F9F9F9]">
-      <CsrShowcase />
-    </WrapperSection>
-
-    <div class="fixed right-8 bottom-8 md:right-14 md:bottom-14">
-      <WhatsappBubble />
-    </div>
-  </main>
+    </main>
+  </NSpin>
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
+import { NSpin } from "naive-ui";
+
+const { t, locale } = useI18n();
+const { API_LIST } = useApiUrl();
+
+const pending = ref(true);
+const res = ref<any>({ data: {} });
+
+const loadData = async () => {
+  pending.value = true;
+
+  await $fetch<any>(API_LIST.GET_HOME_VIEW, {
+    params: {
+      lang: locale.value,
+    },
+  })
+    .then((val) => {
+      if (val) {
+        console.log(val);
+        res.value.data = val.data;
+      }
+    })
+    .finally(() => (pending.value = false));
+};
+
+watch(locale, () => loadData(), {
+  immediate: true,
+});
 </script>
 
 <i18n lang="yaml">

@@ -139,7 +139,7 @@
       <div class="flex justify-center text-white font-normal px-36 py-5">
         <div class="flex ">
           <p class="py-1 border-r border-white ">
-            © 2022 Multi Propertindo Indonesia. All rights reserved.
+            © {{ currentYear }} Multi Propertindo Indonesia. All rights reserved.
           </p>
           <p class="py-1 pl-2 underline cursor-pointer">Policies & Privacy</p>
         </div>
@@ -158,11 +158,15 @@ import {
   Business,
   Home,
 } from "@vicons/ionicons5";
-import { NIcon, NIconWrapper } from "naive-ui";
+import { NIcon } from "naive-ui";
+
 const { t } = useI18n({
   useScope: "local",
 });
+
+const currentYear = new Date().getFullYear();
 </script>
+
 <i18n lang="yaml">
 en:
   navigation: "Navigation Menu"

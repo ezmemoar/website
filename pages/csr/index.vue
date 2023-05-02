@@ -20,11 +20,24 @@
               :key="i"
             >
               <div class="lg:basis-4/12 md:basis-6/12 max-md:mb-5">
-                <img
-                  :src="val.attachment.image"
-                  alt=""
-                  class="w-full md:w-60 shadow-xl"
-                />
+                <NCarousel
+                  v-if="val.attachment.length > 1"
+                  class="bg-gray-200 h-[30vh]"
+                  autoplay
+                >
+                  <div
+                    v-for="img in val.attachment"
+                    :key="img.id"
+                    :style="`background: url(${img.image}) no-repeat center center; background-size: cover;`"
+                    class="w-full h-[30vh] bg-cover bg-center bg-no-repeat"
+                  ></div>
+                </NCarousel>
+                <template v-else>
+                  <div
+                    :style="`background: url(${val.attachment[0].image}) no-repeat center center; background-size: cover;`"
+                    class="w-full h-[30vh] bg-cover bg-center bg-no-repeat"
+                  ></div>
+                </template>
               </div>
               <div class="md:px-7 max-md:basis-full basis-8/12">
                 <small
@@ -51,7 +64,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { NButton, NSpin } from "naive-ui";
+import { NButton, NCarousel, NSpin } from "naive-ui";
 
 const { API_LIST } = useApiUrl();
 const { formatDate } = useDate();

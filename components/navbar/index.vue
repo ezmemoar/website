@@ -9,9 +9,9 @@
       <div class="ml-5 flex">
         <NavbarItem to="/" :title="t('home')" />
         <NavbarItem to="/about-us" :title="t('aboutUs')" />
-        <NavbarItem to="/csr" :title="t('csr')" />
         <NavbarItem to="/product" :title="t('product')" />
         <NavbarItem to="/gallery" :title="t('gallery')" />
+        <NavbarItem to="/csr" :title="t('csr')" />
         <NavbarItem to="/contact-us" :title="t('contactUs')" />
       </div>
     </div>

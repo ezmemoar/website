@@ -13,20 +13,23 @@
     <div class="py-20">
       <NSpin :show="pending">
         <div v-if="res.data.length > 0">
-          <div class="max-md:px-10 md:px-36 z-50">
-            <div class="mt-5 flex justify-center flex-wrap gap-10">
+          <div class="max-md:px-10">
+            <div class="flex flex-wrap justify-center gap-6">
               <NCard
                 v-for="(gallery, index) in res.data"
                 :key="index"
-                @click="showContent(index)"
-                class="rounded w-[22rem] h-[22rem] p-5"
+                class="sm:w-full h-full md:w-[50vh]"
+                :bordered="false"
               >
                 <div
-                  :style="`background-image: url('${gallery.image}')`"
+                  :style="`background-image: url('${gallery.image}'); bg-size: cover;`"
                   :alt="gallery.image"
-                  class="w-full h-full bg-cover bg-center rounded hover:scale-105 transition duration-150"
-                  is-animated
+                  class="h-[30vh] w-full md:h-[42vh] md:w-[42vh] bg-center rounded"
                 ></div>
+                <div class="py-3 font-bold text-base">
+                  {{ gallery.content.title }}
+                </div>
+                {{ gallery.content.content }}
               </NCard>
             </div>
           </div>
@@ -54,10 +57,6 @@ const { t, locale } = useI18n();
 const page = ref(1);
 const pending = ref(true);
 const res = ref<any>({ data: [], links: {}, meta: {} });
-
-const isShowModal = ref(false);
-
-const selectedIndex = ref(0);
 
 const nextPage = () => page.value++;
 const loadData = async () => {
@@ -92,11 +91,6 @@ watch(locale, () => {
     page.value = 1;
   }
 });
-
-const showContent = (index: number) => {
-  selectedIndex.value = index;
-  isShowModal.value = true;
-};
 </script>
 <i18n lang="yaml">
 en:

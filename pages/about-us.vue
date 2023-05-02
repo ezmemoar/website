@@ -11,24 +11,18 @@
     </section>
 
     <NSpin :show="isLoading">
-      <template v-if="isDataExist">
+      <template v-if="data">
         <WrapperSection>
           <div class="md:my-20 max-md:my-10 md:flex md:justify-between">
             <div class="md:w-[50%]">
               <div class="">
                 <TextSectionLabel :title="t('visionTitle')" class="" />
-                <div class="w-full mt-5 md:hidden">
-                  <Image src="/about-us.jpg" />
-                </div>
                 <p class="mt-5">
                   {{ data.vision }}
                 </p>
               </div>
               <div class="mt-16">
                 <TextSectionLabel :title="t('missionTitle')" class="" />
-                <div class="w-full mt-5 md:hidden">
-                  <Image src="/about-us.jpg" />
-                </div>
                 <p class="mt-5">
                   {{ data.mission }}
                 </p>
@@ -38,20 +32,17 @@
               <n-card title="Happy Sentosa Garden">
                 <div>
                   <img
-                    src="/happy-sentosa-garden.png"
+                    :src="data.hsg_image"
                     class="m-auto w-full mb-5"
                   />
                 </div>
                 <div>
                   <p class="textlimit">
-                    {{ data.happySentosaGarden }}
+                    {{ data.hsg }}
                   </p>
-                  <button
-                    class="border border-gray-400 p-2"
-                    @click="readMore = true"
-                  >
-                    lihat selengkapnya
-                  </button>
+                  <NButton class="mt-3" @click="readMore = true">
+                    {{ t('seeMore') }}
+                  </NButton>
                 </div>
               </n-card>
             </div>
@@ -66,7 +57,7 @@
               :title="t('history')"
             />
             <div class="md:w-[40%]">
-              <Image src="/about-us.jpg" />
+              <Image v-if="data.history_image" :src="data.history_image" />
             </div>
             <div class="md:w-[50%]">
               <div class="mt-7">
@@ -111,12 +102,12 @@
         <div class="py-1 text-center">
           <TextSectionLabel :title="t('happySentosaGarden')" />
           <img
-            src="/happy-sentosa-garden.png"
+            :src="data.hsg_image"
             class="m-auto w-full mb-5 mt-10"
           />
         </div>
         <div class="">
-          {{ data.happySentosaGarden }}
+          {{ data.hsg }}
         </div>
       </NCard>
     </div>
@@ -124,7 +115,7 @@
 </template>
 
 <script setup lang="ts">
-import { NSpin, NCard, NModal } from "naive-ui";
+import { NSpin, NCard, NModal, NButton } from "naive-ui";
 
 const { t, locale } = useI18n({
   useScope: "local",
@@ -132,22 +123,9 @@ const { t, locale } = useI18n({
 const { API_LIST } = useApiUrl();
 
 const isLoading = ref(false);
-const data = ref<any>({
-  mission: "",
-  vision: "",
-  history: "",
-  happySentosaGarden: "",
-});
+const data = ref<any>({});
 const director = ref<any>();
 const teams = ref<{ data: any[] }>({ data: [] });
-const isDataExist = computed(() =>
-  Boolean(
-    data.value.mission &&
-      data.value.vision &&
-      data.value.history &&
-      data.value.happySentosaGarden
-  )
-);
 
 const setNewData = () => {
   data.value.mission = "";
@@ -164,10 +142,8 @@ const apivisi = async () => {
       lang: locale.value,
     },
   }).then((val) => {
-    data.value.mission = val.data.mission;
-    data.value.vision = val.data.vision;
-    data.value.history = val.data.history;
-    data.value.happySentosaGarden = val.data.happy_sentosa_garden;
+    console.log(val.data);
+    data.value = val.data;
   });
 };
 
@@ -177,7 +153,6 @@ const apiTeams = async () => {
       lang: locale.value,
     },
   }).then((val) => {
-    console.log(teams.value);
     teams.value.data.push(...val.data);
   });
 };
@@ -225,6 +200,7 @@ id:
   history: "Sejarah Kami"
   ourTeam: "Tim Kami"
   happySentosaGarden: "Happy Sentosa Garden"
+  seeMore: "lihat selengkapnya"
 en:
   aboutUs: "About Us"
   visionTitle: "Vision"
@@ -234,4 +210,5 @@ en:
   history: "Our History"
   ourTeam: "Our Team"
   happySentosaGarden: "Happy Sentosa Garden"
+  seeMore: "See More"
 </i18n>

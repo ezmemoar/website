@@ -172,7 +172,7 @@ const copyText = (value: string) => {
 
 <i18n lang="yaml">
 en:
-   aboutUsLabel: "Let's make a connection with us"
+   aboutUsLabel: "Contact Us"
    send: "Send"
    aboutUsDesc: "To order garden products, please contact the Whatsapp number, 085736921243 (Silvya Evitarani)."
    ourAddress: "OUR ADDRESS"
@@ -182,7 +182,7 @@ en:
    name: "Name"
 
 id:
-   aboutUsLabel: "Mari jalin kerja sama dengan kami"
+   aboutUsLabel: "Hubungi Kami"
    aboutUsDesc: "Untuk pemesanan hasil kebun silahkan hubungi nomor Whatsapp, 085736921243 (Silvya Evitarani)."
    send: "Kirim"
    ourAddress: "ALAMAT KAMI"
