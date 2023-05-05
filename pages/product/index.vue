@@ -21,7 +21,7 @@
             <NuxtLink to="/product/alpukat-miki">
               <div class="bg-gray-200 rounded-xl shadow">
                 <div
-                  class="w-full h-64 bg-center rounded-xl bg-cover bg-[url('/hasil-kebun.jpg')]"
+                  class="w-full h-64 bg-center rounded-xl bg-cover bg-[url('/hasil-kebun.jpeg')]"
                 >
                   <div class="pb-10 relative h-full rounded-xl">
                     <div

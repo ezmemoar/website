@@ -31,17 +31,14 @@
             <div class="md:w-[50%] px-10 text-center flex justify-center">
               <n-card title="Happy Sentosa Garden">
                 <div>
-                  <img
-                    :src="data.hsg_image"
-                    class="m-auto w-full mb-5"
-                  />
+                  <img :src="data.hsg_image" class="m-auto w-full mb-5" />
                 </div>
                 <div>
                   <p class="textlimit">
                     {{ data.hsg }}
                   </p>
                   <NButton class="mt-3" @click="readMore = true">
-                    {{ t('seeMore') }}
+                    {{ t("seeMore") }}
                   </NButton>
                 </div>
               </n-card>
@@ -94,24 +91,19 @@
         </WrapperSection>
       </template>
     </NSpin>
-  </main>
 
-  <NModal v-model:show="readMore">
-    <div class="w-full flex items-center justify-center h-screen">
-      <NCard :bordered="false" role="dialog" aria-modal="true" class="w-full">
+    <NModal v-model:show="readMore" mask-closable>
+      <NCard :bordered="false" role="dialog" aria-modal="true" size="huge">
         <div class="py-1 text-center">
           <TextSectionLabel :title="t('happySentosaGarden')" />
-          <img
-            :src="data.hsg_image"
-            class="m-auto w-full mb-5 mt-10"
-          />
+          <img :src="data.hsg_image" class="m-auto w-full mb-5 mt-10" />
         </div>
         <div class="">
           {{ data.hsg }}
         </div>
       </NCard>
-    </div>
-  </NModal>
+    </NModal>
+  </main>
 </template>
 
 <script setup lang="ts">
